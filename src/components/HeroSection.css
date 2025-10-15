@@ -1,13 +1,34 @@
+/* === Allgemeines Layout === */
+.hero-section {
+  text-align: center; /* zentriert Text & Inline-Elemente */
+  padding: 60px 20px;
+  border: 2px dashed #999;
+  margin-top: 80px;
+}
+
+/* === Schrift === */
+.hero-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/* === Buttons === */
 .hero-btns {
   display: flex;
+  justify-content: center; /* zentriert Buttons horizontal */
   gap: 15px;
   margin-top: 20px;
 }
 
-/* Buttons im Stil des Logos */
+/* === Button-Design (Logo-Stil) === */
 .darkgold-btn {
-  background-color: #0c0f1c; /* Dunkelblauer Hintergrund wie im Logo */
-  color: #c5a762; /* Goldene Schriftfarbe */
+  background-color: #0c0f1c; /* Dunkelblau wie Logo */
+  color: #c5a762; /* Goldene Schrift */
   font-weight: bold;
   border: 2px solid #c5a762;
   border-radius: 12px;
@@ -17,9 +38,8 @@
   transition: all 0.3s ease;
 }
 
-/* Hover-Effekt */
 .darkgold-btn:hover {
-  background-color: #c5a762; /* invertiert die Farben beim Hover */
+  background-color: #c5a762; /* invertierte Farben */
   color: #0c0f1c;
   transform: translateY(-2px);
 }
