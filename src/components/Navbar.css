@@ -1,0 +1,77 @@
+:root{
+  --navy: rgb(11,16,32);
+  --gold: rgb(212,175,55);
+  --gold-600: rgb(192,153,46);
+  --gold-300: rgb(227,200,105);
+  --text: rgb(245,245,245);
+}
+
+.header{
+  position: fixed;
+  inset: 0 0 auto 0;
+  width: 100%;
+  padding: 30px 10%;
+  background: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold-300) 40%, transparent);
+}
+
+.logo{
+  color: var(--gold);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  gap: 36px; 
+}
+
+.navbar a{
+  position: relative;
+  color: var(--gold);
+  font-size: 22px;         
+  font-weight: 600;        
+  letter-spacing: 0.01em;  
+  line-height: 1.2;
+  padding: 10px 0;          
+  text-decoration: none;
+}
+
+.navbar a::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;              
+  width: 0;
+  height: 2px;
+  background: var(--gold-600);
+  transition: width .25s ease;
+}
+
+.navbar a:hover::before,
+.navbar a[aria-current="page"]::before{
+  width: 100%;
+}
+
+.navbar a:focus-visible{
+  outline: 2px solid var(--gold-300);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px){
+  .header.scrolled{
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce){
+  .navbar a::before{ transition: none; }
+}

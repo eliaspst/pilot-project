@@ -1,10 +1,12 @@
 
 import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Yo</h1>
+    <div className = "App">
+      <Navbar />
     </div>
   );
 }
