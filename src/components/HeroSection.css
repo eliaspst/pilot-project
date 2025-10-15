@@ -1,0 +1,25 @@
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons im Stil des Logos */
+.darkgold-btn {
+  background-color: #0c0f1c; /* Dunkelblauer Hintergrund wie im Logo */
+  color: #c5a762; /* Goldene Schriftfarbe */
+  font-weight: bold;
+  border: 2px solid #c5a762;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover-Effekt */
+.darkgold-btn:hover {
+  background-color: #c5a762; /* invertiert die Farben beim Hover */
+  color: #0c0f1c;
+  transform: translateY(-2px);
+}
