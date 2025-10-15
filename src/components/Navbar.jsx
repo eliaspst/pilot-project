@@ -1,21 +1,20 @@
-import React from 'react';
-import './Navbar.css';
+import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import "./Navbar.css";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <header className="header">
-        <a href="" className="logo">Logo</a>
+      <Link to="/" className="logo">Logo</Link>
 
-        <nav className="navbar">
-            <a href="/">LEISTUNGEN</a>
-            <a href="/">PREISE</a>
-            <a href="/">FAQ & STUDIEN</a>
-            <a href="/">KOSTENFREIE BERATUNG</a>
-            <a href="/">ÜBER UNS</a>
-            <a href="/">KONTAKT</a>
-        </nav>
+      <nav className="navbar">
+        <NavLink to="/leistungen" end>LEISTUNGEN</NavLink>
+        <NavLink to="/preise">PREISE</NavLink>
+        <NavLink to="/faq">FAQ & STUDIEN</NavLink>
+        <NavLink to="/beratung">KOSTENFREIE BERATUNG</NavLink>
+        <NavLink to="/ueber-uns">ÜBER UNS</NavLink>
+        <NavLink to="/kontakt">KONTAKT</NavLink>
+      </nav>
     </header>
-  )
+  );
 }
-
-export default Navbar;
