@@ -3,7 +3,7 @@ import React from "react";
 const ACCENT = "#0c0f1c";   // Akzentfarbe (Rahmen, Header, Linien)
 const TEXT = "#c5a762";     // Schriftfarbe
 const TABLE_BG = "#ffffff"; // Tabellenhintergrund
-const HERO_IMAGE = "/Beine.jpeg"; // Hero-Bild im public-Ordner
+const HERO_IMAGE = "/DamenPreise.jpeg"; // Hero-Bild im public-Ordner
 
 const rowsHead = [
   { part: "Gesicht komplett", price: "70 €" },
