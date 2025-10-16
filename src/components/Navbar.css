@@ -95,9 +95,22 @@
   .navbar a::before{ transition: none; }
 }
 
+/* Logo-Container bleibt gleich hoch → Navbar-Höhe ändert sich nicht */
+.logo {
+  display: flex;             /* Bild vertikal mittig */
+  align-items: center;
+  text-decoration: none;
+  height: 55px;              /* feste „Layout“-Höhe fürs Logo */
+}
+
+/* Bild wird nur optisch größer gemacht, ohne das Layout zu strecken */
 .logo-img {
-  height: 80px;
+  height: 80px;              /* reale Layout-Höhe */
   width: auto;
   object-fit: contain;
   display: block;
+
+  /* Trick: vergrößern ohne Navbar zu strecken */
+  transform: scale(1.3);     /* passe 1.3 auf deinen Wunsch an */
+  transform-origin: left center;
 }
