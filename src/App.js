@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import BottomBar from "./components/BottomBar";
 import Home from "./pages/Home";
 import PricesMen from "./pages/PricesMen";
 import PricesWomen from "./pages/PricesWomen";
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/ueber-uns/team" element={<Team />} />
         <Route path="/ueber-uns/galerie" element={<Galerie />} />
       </Routes>
+      <BottomBar />
     </>
   );
 }
