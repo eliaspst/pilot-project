@@ -1,61 +1,74 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
+import Dropdown from "./Dropdown";
+import { MENU_PREISE, MENU_FAQ, MENU_UEBER_UNS } from './MenuItems';
+
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const ddRef = useRef(null);
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(null);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
- useEffect(() => {
-    const onDocClick = (e) => {
-      if (!ddRef.current?.contains(e.target)) setOpen(false);
-    };
-    const onKey = (e) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("click", onDocClick);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("click", onDocClick);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, []); 
+  const onMouseEnter = (key) => {
+    if (window.innerWidth >= 960)
+      setDropdown(key);
+  };
 
-      return (
-        <header className="header">
-          <Link to="/" className="logo">Logo</Link>
+  const onMouseLeave = () => {
+    setDropdown(null);
+  };
 
-          <nav className="navbar">
-            {}
-            <div className="nav-item has-dropdown" ref={ddRef}>
-              <button 
-              className="nav-trigger" 
-              aria-haspopup="menu"
-              aria-expanded={open}
-              onClick={() => setOpen((o) => !o)}
-              >
-                LEISTUNGEN
-                <span className ={`chevron ${open ? "up" : ""}`} aria-hidden>▾</span>
-              </button>
-              {open && (
-                <div id ="leistungen-menu" role="menu" className="dropdown">
-                  <NavLink
-                to="/leistungen/haarentfernung"
-                role="menuitem"
-                className="dropdown-link"
-                onClick={() => setOpen(false)}
-              >
-                DAUERHAFTE HAARENTFERNUNG
-              </NavLink>
-            </div>
-          )}
+  return (
+    <header className="header">
+      <Link to="/" className="logo">Logo</Link>
+
+      <nav className="navbar">
+
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+
         </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li><NavLink to="/leistungen" className="nav-links">LEISTUNGEN</NavLink></li>
 
-        <NavLink to="/preise">PREISE</NavLink>
-        <NavLink to="/faq">FAQ & STUDIEN</NavLink>
-        <NavLink to="/beratung">KOSTENFREIE BERATUNG</NavLink>
-        <NavLink to="/ueber-uns">ÜBER UNS</NavLink>
-        <NavLink to="/kontakt">KONTAKT</NavLink>
+          <li className="nav-item"
+            onMouseEnter={() => onMouseEnter('preise')}
+            onMouseLeave={onMouseLeave}>
+
+            <NavLink to="/preise" className="nav-links" onClick={closeMobileMenu}>
+              PREISE <i className="fas fa-caret-down" />
+            </NavLink>
+            {dropdown === 'preise' && <Dropdown items={MENU_PREISE} />}
+          </li>
+
+          <li className="nav-item"
+            onMouseEnter={() => onMouseEnter('faq')}
+            onMouseLeave={onMouseLeave}>
+
+            <NavLink to="/faq" className="nav-links" onClick={closeMobileMenu} >
+              FAQ & STUDIEN <i className="fas fa-caret-down" />
+            </NavLink>
+            {dropdown === 'faq' && <Dropdown items={MENU_FAQ} />}
+          </li>
+
+          <li><NavLink to="/beratung" className="nav-links">KOSTENFREIE BERATUNG</NavLink></li>
+
+
+          <li className="nav-item"
+            onMouseEnter={() => onMouseEnter('ueber')}
+            onMouseLeave={onMouseLeave}>
+            <NavLink to="/ueber-uns" className="nav-links" onClick={closeMobileMenu}>
+              ÜBER UNS <i className="fas fa-caret-down" />
+            </NavLink>
+            {dropdown === 'ueber' && <Dropdown items={MENU_UEBER_UNS} />}
+          </li>
+
+
+          <li><NavLink to="/kontakt" className="nav-links">KONTAKT</NavLink></li>
+
+        </ul>
       </nav>
     </header>
   );
