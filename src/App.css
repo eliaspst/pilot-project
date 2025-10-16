@@ -1,12 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bodoni Moda', serif;
 }
 
 a {
   text-decoration: none;
+}
+
+html, body {
+  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
+  font-optical-sizing: auto; /* wichtig bei variable fonts */
+}
+
+h1, h2, .brand { 
+  font-weight: 700;   /* Bodoni wirkt erst mit fetteren Schnitten richtig “luxuriös” */
+  letter-spacing: 0.5px;
+}
+p, li { 
+  font-weight: 400; 
+  line-height: 1.6;
 }
