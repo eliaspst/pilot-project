@@ -5,7 +5,6 @@
   --maxw: 1200px;
 }
 
-/* --- Layout --- */
 .bottombar{
   border-top: 1px solid color-mix(in srgb, var(--footer-accent) 30%, transparent);
   background: var(--footer-bg);
@@ -13,13 +12,6 @@
   padding: 20px 16px;
 }
 
-.bottombar__logo{
-  color: var(--footer-accent);
-  font-weight: 700;
-  letter-spacing: .02em;
-}
-
-/* Innen-Container für zentrierte Breite */
 .bottombar,
 .bottombar > *{
   display: block;
@@ -29,12 +21,10 @@
   margin-inline: auto;
 }
 
-/* Zeile: Logo links, Links rechts */
 .bottombar{
   display: flex;
   justify-content: center;
 }
-.bottombar__logo,
 .bottombar__nav{
   width: 100%;
   max-width: var(--maxw);
@@ -44,7 +34,7 @@
   gap: 16px;
 }
 
-/* Menü */
+
 .bottombar__menu{
   list-style: none;
   display: flex;
@@ -73,11 +63,11 @@
 }
 
 .bottombar__link:hover::after,
-.bottombar__link.active::after{ /* NavLink setzt .active */
+.bottombar__link.active::after{ 
   width: 100%;
 }
 
-/* --- Responsive --- */
+
 @media (max-width: 700px){
   .bottombar{
     padding: 16px;
@@ -96,6 +86,7 @@
   }
 }
 
+html, body { margin: 0; padding: 0; }
 
 html, body, #root{ height: 100%; }
 body{
@@ -103,14 +94,13 @@ body{
   min-height: 100dvh;
   flex-direction: column;
 }
-#root > *:not(.bottombar){ /* dein Page-Container */
+#root > *:not(.bottombar){ 
   flex: 1 0 auto;
 }
 .bottombar{
   flex-shrink: 0;
 }
 
-/* --- Feinheiten & Accessibility --- */
 @media (prefers-reduced-motion: reduce){
   .bottombar__link::after{ transition: none; }
 }
