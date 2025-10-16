@@ -3,14 +3,27 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BottomBar from "./components/BottomBar";
 import Home from "./pages/Home";
+import Leistungen from "./pages/Leistungen";
 import PricesMen from "./pages/PricesMen";
 import PricesWomen from "./pages/PricesWomen";
 import Team from "./pages/Team"; // <- echte Team-Seite (Hero + Card)
 
 // Platzhalter (optional)
-const FAQ = () => <div style={{ padding: "2rem" }}><h1>FAQ</h1></div>;
-const Studien = () => <div style={{ padding: "2rem" }}><h1>Studien</h1></div>;
-const Galerie = () => <div style={{ padding: "2rem" }}><h1>Galerie</h1></div>;
+const FAQ = () => (
+  <div style={{ padding: "2rem" }}>
+    <h1>FAQ</h1>
+  </div>
+);
+const Studien = () => (
+  <div style={{ padding: "2rem" }}>
+    <h1>Studien</h1>
+  </div>
+);
+const Galerie = () => (
+  <div style={{ padding: "2rem" }}>
+    <h1>Galerie</h1>
+  </div>
+);
 
 export default function App() {
   return (
@@ -20,7 +33,12 @@ export default function App() {
         {/* Startseite */}
         <Route path="/" element={<Home />} />
 
+        {/* Leistungen */}
+        <Route path="/leistungen" element={<Leistungen />} />
+
         {/* Preise */}
+        {/* Wenn man nur auf „Preise“ klickt → automatisch zu „/preise/frauen“ weiterleiten */}
+        <Route path="/preise" element={<Navigate to="/preise/frauen" replace />} />
         <Route path="/preise/maenner" element={<PricesMen />} />
         <Route path="/preise/frauen" element={<PricesWomen />} />
 
@@ -39,4 +57,3 @@ export default function App() {
     </>
   );
 }
-
