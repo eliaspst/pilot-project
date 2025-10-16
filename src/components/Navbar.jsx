@@ -20,7 +20,14 @@ export default function Navbar() {
 
   return (
     <header className="header">
-      <Link to="/" className="logo">Logo</Link>
+      {/* 🔹 Logo-Bild statt Text */}
+      <Link to="/" className="logo" onClick={closeMobileMenu}>
+        <img
+          src="/logo.png"
+          alt="Medusa Beauty Lounge Logo"
+          className="logo-img"
+        />
+      </Link>
 
       <nav className="navbar">
         <div className="menu-icon" onClick={handleClick}>

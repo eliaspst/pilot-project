@@ -94,3 +94,10 @@
 @media (prefers-reduced-motion: reduce){
   .navbar a::before{ transition: none; }
 }
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
