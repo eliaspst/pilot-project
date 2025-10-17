@@ -1,0 +1,190 @@
+:root{
+  --accent: #0c0f1c;
+  --text:   #c5a762;
+  --bg:     #ffffff;
+}
+
+/* ===== PAGE ===== */
+.page{
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
+}
+
+.hero{
+  position: relative;
+  height: 78vh;
+  overflow: hidden; 
+}
+
+.heroBg{
+  position: relative;   
+  top: auto;            
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.heroVideo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* optional: dunkle Tönung nur über dem Video */
+.heroOverlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(12,15,28,0.62), rgba(12,15,28,0.62));
+}
+
+.heroContent{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  color: var(--text);
+  padding: 20px;
+}
+
+.heroFade{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(12,15,28,0) 0%,
+    rgba(12,15,28,0.25) 40%,
+    rgba(12,15,28,0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.title{
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.subtitle{
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ===== ÜBERLAPPENDER KARTEN-ABSCHNITT ===== */
+.overlapSection{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;       /* über dem Hero-Hintergrund */
+  margin-top: -90px;/* zieht die Card nach oben, liegt über dem Logo */
+  margin-bottom: 80px;
+}
+
+.card{
+  background: #fff;
+  border-radius: 18px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.card h2{
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.card p{
+  color: var(--accent);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card .button{
+  background-color: var(--text);
+  color: var(--accent);
+  border: none;
+  padding: 12px 28px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+
+/* ===== REVIEWS ===== */
+.reviewsSection{
+  background-color: var(--accent);
+  color: var(--text);
+  text-align: center;
+  padding: 80px 20px 120px;
+}
+
+.reviewBox{
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewInner{ max-width: 760px; padding: 20px 36px; }
+
+.reviewText{
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  white-space: pre-line;
+}
+
+.reviewAuthor{ font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+
+.googleLogo{ height: 28px; width: auto; opacity: 0.9; }
+
+.navButton{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.9);
+  background: rgba(12,15,28,0.85);
+  color: #fff; font-size: 22px; line-height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 3;
+}
+
+.navButton.prev { left: 12px; }
+.navButton.next { right: 12px; }
+
+.dots{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
