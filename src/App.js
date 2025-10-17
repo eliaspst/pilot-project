@@ -36,11 +36,10 @@ export default function App() {
         {/* Leistungen */}
         <Route path="/leistungen" element={<Leistungen />} />
 
-        {/* Preise */}
-        {/* Wenn man nur auf „Preise“ klickt → automatisch zu „/preise/frauen“ weiterleiten */}
-        <Route path="/preise" element={<Navigate to="/preise/frauen" replace />} />
-        <Route path="/preise/maenner" element={<PricesMen />} />
-        <Route path="/preise/frauen" element={<PricesWomen />} />
+        <Route path="preise">
+          <Route path="frauen" element={<PricesWomen />} />
+          <Route path="maenner" element={<PricesMen />} />
+        </Route>
 
         {/* FAQ & Studien */}
         <Route path="/faq" element={<FAQ />} />

@@ -43,35 +43,92 @@ export default function Navbar() {
             onMouseEnter={() => onMouseEnter("preise")}
             onMouseLeave={onMouseLeave}
           >
-            <NavLink to="/preise" className="nav-links" onClick={closeMobileMenu}>
+            <NavLink
+              to="#"
+              className="nav-links"
+              role="button"
+              aria-haspopup="menu"
+              aria-expanded={dropdown === "preise"}
+              onClick={(e) => {
+                e.preventDefault(); 
+                if (window.innerWidth < 960) {
+                  setDropdown(d => (d === "preise" ? null : "preise"));
+                }
+              }}
+              onKeyDown={(e) => {
+                if ((e.key === "Enter" || e.key === " ") && window.innerWidth < 960) {
+                  e.preventDefault();
+                  setDropdown(d => (d === "preise" ? null : "preise"));
+                }
+              }}
+            >
               PREISE <i className="fas fa-caret-down" />
             </NavLink>
+
             {dropdown === "preise" && <Dropdown items={MENU_PREISE} />}
           </li>
 
           {/* FAQ & STUDIEN */}
-          <li
+         <li
             className="nav-item"
             onMouseEnter={() => onMouseEnter("faq")}
             onMouseLeave={onMouseLeave}
           >
-            <NavLink to="/faq" className="nav-links" onClick={closeMobileMenu}>
+            <NavLink
+              to="#"
+              className="nav-links"
+              role="button"
+              aria-haspopup="menu"
+              aria-expanded={dropdown === "faq"}
+              onClick={(e) => {
+                e.preventDefault(); 
+                if (window.innerWidth < 960) {
+                  setDropdown(d => (d === "faq" ? null : "faq"));
+                }
+              }}
+              onKeyDown={(e) => {
+                if ((e.key === "Enter" || e.key === " ") && window.innerWidth < 960) {
+                  e.preventDefault();
+                  setDropdown(d => (d === "faq" ? null : "faq"));
+                }
+              }}
+            >
               FAQ & STUDIEN <i className="fas fa-caret-down" />
             </NavLink>
+
             {dropdown === "faq" && <Dropdown items={MENU_FAQ} />}
           </li>
 
           <li><NavLink to="/beratung" className="nav-links">KOSTENFREIE BERATUNG</NavLink></li>
 
           {/* ÜBER UNS */}
-          <li
+            <li
             className="nav-item"
             onMouseEnter={() => onMouseEnter("ueber")}
             onMouseLeave={onMouseLeave}
           >
-            <NavLink to="/ueber-uns" className="nav-links" onClick={closeMobileMenu}>
+            <NavLink
+              to="#"
+              className="nav-links"
+              role="button"
+              aria-haspopup="menu"
+              aria-expanded={dropdown === "ueber"}
+              onClick={(e) => {
+                e.preventDefault(); 
+                if (window.innerWidth < 960) {
+                  setDropdown(d => (d === "ueber" ? null : "ueber"));
+                }
+              }}
+              onKeyDown={(e) => {
+                if ((e.key === "Enter" || e.key === " ") && window.innerWidth < 960) {
+                  e.preventDefault();
+                  setDropdown(d => (d === "ueber" ? null : "ueber"));
+                }
+              }}
+            >
               ÜBER UNS <i className="fas fa-caret-down" />
             </NavLink>
+
             {dropdown === "ueber" && <Dropdown items={MENU_UEBER_UNS} />}
           </li>
 

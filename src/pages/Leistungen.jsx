@@ -21,8 +21,9 @@ const BA_IMAGES = [
 export default function Leistungen() {
   return (
     <main style={styles.page}>
-      <Hero />
 
+      <Hero />
+      
       {/* Haupt-Textkarte */}
       <section style={styles.section}>
         <div style={styles.card}>
