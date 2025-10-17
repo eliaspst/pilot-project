@@ -45,6 +45,8 @@ export default function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/faq/studien" element={<Studien />} />
 
+    
+
         {/* Über uns */}
         <Route path="/ueber-uns/team" element={<Team />} />
         <Route path="/ueber-uns/galerie" element={<Galerie />} />
