@@ -6,7 +6,8 @@ import Home from "./pages/Home";
 import Leistungen from "./pages/Leistungen";
 import PricesMen from "./pages/PricesMen";
 import PricesWomen from "./pages/PricesWomen";
-import Team from "./pages/Team"; // <- echte Team-Seite (Hero + Card)
+import Team from "./pages/Team"; 
+import KostenfreieBeratung from "./pages/KostenfreieBeratung";
 
 // Platzhalter (optional)
 const FAQ = () => (
@@ -45,7 +46,8 @@ export default function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/faq/studien" element={<Studien />} />
 
-    
+        {/* Kostenfreie Beratung */}
+        <Route path="/beratung" element={<KostenfreieBeratung />} />
 
         {/* Über uns */}
         <Route path="/ueber-uns/team" element={<Team />} />
