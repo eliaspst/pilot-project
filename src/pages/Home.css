@@ -2,6 +2,10 @@
   --accent: #0c0f1c;
   --text:   #c5a762;
   --bg:     #ffffff;
+
+  /* Fixe Höhe für den Slider, Desktop & Mobile separat */
+  --review-h: 320px;
+  --review-h-sm: 420px;
 }
 
 /* ===== PAGE ===== */
@@ -135,42 +139,73 @@
   padding: 80px 20px 120px;
 }
 
+/* Fixe Höhe, damit der Balken nicht „springt“ */
 .reviewBox{
   max-width: 900px;
   margin: 0 auto;
-  min-height: 220px;
+  height: var(--review-h);   /* feste Höhe am Desktop */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.reviewInner{ max-width: 760px; padding: 20px 36px; }
+/* Auf kleineren Screens etwas höher */
+@media (max-width: 640px){
+  .reviewBox{
+    height: var(--review-h-sm);
+  }
+}
+
+/* Inhalt bleibt zentriert */
+.reviewInner{
+  max-width: 760px;
+  padding: 20px 36px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .reviewText{
   font-size: 20px;
   font-style: italic;
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   white-space: pre-line;
 }
 
-.reviewAuthor{ font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+.reviewAuthor{
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-.googleLogo{ height: 28px; width: auto; opacity: 0.9; }
+.googleLogo{
+  height: 28px;
+  width: auto;
+  opacity: 0.9;
+}
 
 .navButton{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px; height: 44px; border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.9);
   background: rgba(12,15,28,0.85);
-  color: #fff; font-size: 22px; line-height: 40px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 3;
+  color: #fff;
+  font-size: 22px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
 }
-
 .navButton.prev { left: 12px; }
 .navButton.next { right: 12px; }
 
@@ -187,4 +222,8 @@
   border-radius: 12px;
   border: none;
   cursor: pointer;
+}
+
+.dot.active{
+  background-color: var(--text);
 }
