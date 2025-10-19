@@ -1,7 +1,7 @@
 import "../pages/KostenfreieBeratung.css";
 import React from "react";
 
-
+const HeroImage = "/Beratung-Frau.jpg";
 
 const KostenfreieBeratung = () => {
 
@@ -30,26 +30,37 @@ const KostenfreieBeratung = () => {
 
 
   return (
-    <section className="contact">
-      <form onSubmit={onSubmit} >
-        <h2>Kostenfreie Beratung</h2>
-        <div className="input-Box">
-          <label>Full Name</label>
-          <input type="text" className = "field" placeholder = "Enter your Name" required />
+    <>
+      <header className="hero-section">
+        <div
+          className="hero-bg"
+          style={{ backgroundImage: `url(${HeroImage})` }}  
+        />
+        <div className="hero-content">
+          <h1>Kostenfreie Beratung</h1>
         </div>
-        <div className="input-Box">
-          <label>Email Address</label>
-          <input type="email" className = "field" placeholder = "Enter your Email" required />
-        </div>
-        <div className="input-Box">
-          <label>Deine Nachricht</label>
-          <textarea name = "" id = "" className = "field mess" placeholder = "Type your Message..." required></textarea>
-          </div>
-        <button type="submit" className="submitBtn">Absenden</button>
-      </form>
-    </section>
-  )
+      </header>
 
+      <section className="contact">
+        <form onSubmit={onSubmit} >
+          <h2>Ihre Kontaktdaten</h2>
+          <div className="input-Box">
+            <label>Name</label>
+            <input type="text" className="field" placeholder="Ihr Name..." required />
+          </div>
+          <div className="input-Box">
+            <label>Email Addresse</label>
+            <input type="email" className="field" placeholder="Ihre Email..." required />
+          </div>
+          <div className="input-Box">
+            <label>Deine Nachricht</label>
+            <textarea name="" id="" className="field mess" placeholder="Type your Message..." required></textarea>
+          </div>
+          <button type="submit" className="submitBtn">Absenden</button>
+        </form>
+      </section>
+    </>
+  )
 }
 
 export default KostenfreieBeratung;

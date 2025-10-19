@@ -3,7 +3,6 @@
   --text:   #c5a762;
   --bg:     #ffffff;
 
-  /* Fixe Höhe für den Slider, Desktop & Mobile separat */
   --review-h: 320px;
   --review-h-sm: 420px;
 }
@@ -38,7 +37,6 @@
   object-fit: cover;
 }
 
-/* optional: dunkle Tönung nur über dem Video */
 .heroOverlay{
   position: absolute;
   inset: 0;
@@ -139,25 +137,22 @@
   padding: 80px 20px 120px;
 }
 
-/* Fixe Höhe, damit der Balken nicht „springt“ */
 .reviewBox{
   max-width: 900px;
   margin: 0 auto;
-  height: var(--review-h);   /* feste Höhe am Desktop */
+  height: var(--review-h);   
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Auf kleineren Screens etwas höher */
 @media (max-width: 640px){
   .reviewBox{
     height: var(--review-h-sm);
   }
 }
 
-/* Inhalt bleibt zentriert */
 .reviewInner{
   max-width: 760px;
   padding: 20px 36px;

@@ -1,8 +1,8 @@
 
 
 export const MENU_PREISE = [
-  { title: 'Männer', path: '/preise/männer', cName: 'dropdown-link' },
-  { title: 'Frauen', path: '/preise/frauen', cName: 'dropdown-link' },
+  { title: 'Herren', path: '/preise/herren', cName: 'dropdown-link' },
+  { title: 'Damen', path: '/preise/damen', cName: 'dropdown-link' },
 ];
 
 export const MENU_FAQ = [

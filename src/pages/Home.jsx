@@ -115,7 +115,7 @@ export default function Home() {
   </div>
       <div className="heroContent">
         <h1 className="title">Medusa Beauty Lounge</h1>
-        <p className="subtitle">Professionelle & schmerzfreie Haarentfernung mit modernster Lasertechnologie</p>
+        <p className="subtitle">Ihr Premium Schönheitssalon für Stuttgart</p>
       </div>
       <div className="heroFade" />
     </section>

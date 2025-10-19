@@ -38,8 +38,8 @@ export default function App() {
         <Route path="/leistungen" element={<Leistungen />} />
 
         <Route path="preise">
-          <Route path="frauen" element={<PricesWomen />} />
-          <Route path="maenner" element={<PricesMen />} />
+          <Route path="damen" element={<PricesWomen />} />
+          <Route path="herren" element={<PricesMen />} />
         </Route>
 
         {/* FAQ & Studien */}

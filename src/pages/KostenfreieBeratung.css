@@ -1,60 +1,155 @@
-.contact {
+:root{
+  --accent: #0c0f1c; /* Navy */
+  --text:   #c5a762; /* Gold */
+  --bg:     #ffffff; /* Weiß */
+}
+
+.hero-section{
+  position: relative;
+  min-height: 44vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(36px, 8vw, 96px) 16px 28px;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 55%, transparent);
+  overflow: hidden;
+}
+
+.hero-bg{
+  position:absolute; inset:0;
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(0.85);
+}
+
+.hero-section::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:0; height:140px;
+  background: linear-gradient(to bottom,
+              transparent 0%,
+              color-mix(in srgb, var(--accent) 65%, transparent) 60%,
+              var(--accent) 100%);
+  pointer-events:none;
+}
+
+.hero-content{
+  position: relative;
+  text-align: center;
+  max-width: 1100px;
+  color: var(--text);
+  padding: 12px 16px;
+}
+
+.hero-content h1{
+  margin: 0;
+  font-size: clamp(28px, 6vw, 64px);
+  line-height: 1.12;
+  color: var(--text);
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+.hero-content h1::after{
+  content:"";
+  display:block;
+  width: 220px;
+  height: 3px;
+  margin: 16px auto 0;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+/* Seite zentrieren */
+section.contact{
+  min-height: 100dvh;
   display: flex;
+  align-items: center;
   justify-content: center;
-    align-items: center;
-    min-height : 100vh;
-    background : #f5f5f5;
+  padding: clamp(36px, 6vw, 72px) 16px;
 }
 
-form {
-    max-width: 600px;
-  background : white;
-  padding : 25px 25px 30px;
-  border-radius : 8px;
-  box-shadow : 0 0 10px rgba(0, 0, 0, 0.1);
-  width : 100%;
-  color: #333;
-  margin: 25px;
+/* NAVY-Karte (dein <form> hat keine Klasse) */
+section.contact > form{
+  width: min(780px, 100%);
+  margin: auto;
+  background: var(--accent) !important;
+  color: var(--text) !important;
+  border: 1px solid color-mix(in srgb, var(--text) 70%, transparent);
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(0,0,0,.35);
+  padding: clamp(24px, 4vw, 40px);
 }
 
-form h2 {
-    font-size : 30px;
-    text-align: center;
+/* Titel */
+section.contact > form > h2{
+  text-align: center;
+  color: var(--text);
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 0 0 8px;
+  letter-spacing: .3px;
+}
+section.contact > form > h2::after{
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin: 12px auto 4px;
+  background: var(--text);
 }
 
-form .input-box {
-    margin-top: 20px;
+/* Felder-Wrapper (du nutzt "input-Box" mit großem B) */
+.input-Box{ margin-top: 16px; }
+
+/* Label in Gold */
+.input-Box > label{
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 8px;
+  opacity: .95;
 }
 
-.input-box .field {
-    width: 100%;
-    height: 50px;
-    background : transparent;
-    border : 2px solid #ddd;
-    outline : none;
-    border-radius : 6px;
-    font-size : 16px;
-    padding : 15px;
-    color: #333;
-    margin-top: 8px;
+/* Weiße Inputs/Textarea */
+.field{
+  width: 100%;
+  height: 52px;
+  padding: 12px 14px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 12%, var(--bg));
+  border-radius: 12px;
+  background: var(--bg);
+  color: color-mix(in srgb, var(--accent) 84%, var(--bg));
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.field::placeholder{ color: color-mix(in srgb, var(--accent) 45%, var(--bg)); }
+.field:hover{ background: color-mix(in srgb, var(--bg) 96%, var(--accent)); }
+.field:focus{
+  border-color: var(--text);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--text) 28%, transparent);
 }
 
-.input-box .field.mess {
-    height: 200px;
-    resize : none;
+/* Textarea */
+.field.mess{
+  height: 160px;
+  resize: vertical;
+  line-height: 1.45;
 }
 
-form .submit-btn {
-    width: 100%;
-    height: 50px;
-    background : #0c0f1c;
-    border : none;
-    outline : none;
-    border-radius : 6px;
-    font-size : 18px;
-    font-weight : 600;
-    color: white;
-    cursor : pointer;
-    margin-top: 20px;
-    transition : all 0.3s ease;
+/* Goldener CTA-Button */
+.submitBtn{
+  margin-top: 18px;
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--text);
+  background: var(--text);
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .22s ease, filter .22s ease;
 }
+.submitBtn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--text) 45%, transparent);
+  filter: brightness(1.03);
+}
+.submitBtn:active{ transform: translateY(0); }
+.submitBtn:disabled{ opacity: .55; cursor: not-allowed; }
