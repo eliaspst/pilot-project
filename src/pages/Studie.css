@@ -1,0 +1,71 @@
+:root{
+  --accent: #0c0f1c;
+  --text:   #c5a762;
+  --bg:     #ffffff;
+}
+
+/* Page */
+.studie-page{
+  background: var(--bg);
+  color: var(--accent);
+  font-family: 'Lora', serif;
+}
+
+/* Hero */
+.studie-hero{
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  background:
+    linear-gradient(rgba(12,15,28,0.65), rgba(12,15,28,0.65)),
+    var(--hero-image) center/contain no-repeat;
+}
+
+.studie-hero-content{ max-width: 900px; padding: 0 20px; }
+.studie-title{ color: var(--text); font-size: 42px; font-weight: 800; margin: 0; }
+.studie-subtitle{ color: var(--text); font-size: 18px; margin-top: 10px; }
+
+/* Sections & text */
+.studie-section{ max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+.studie-textblock{
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  line-height: 1.7;
+}
+
+.studie-h2{ color: var(--text); font-size: 26px; font-weight: 700; margin: 0 0 10px; }
+.studie-h3{ color: var(--text); font-size: 20px; font-weight: 700; margin: 20px 0 10px; }
+
+.studie-textblock a{ color: var(--text); text-decoration: underline; }
+
+/* Images (untereinander, volle Breite, ohne Beschnitt) */
+.studie-image-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.studie-image{
+  width: 100%;
+  max-width: 900px;   /* angenehme Lese-Breite */
+  height: auto;       /* keine Verzerrung, kein Beschnitt */
+  display: block;
+  border: none;
+  border-radius: 0;
+  object-fit: contain;        /* NICHT zuschneiden */
+  background: transparent;
+}
+
+/* List basics */
+.studie-textblock ul{
+  padding-left: 22px;
+  margin: 6px 0 16px;
+}
+.studie-textblock li{ margin: 4px 0; }

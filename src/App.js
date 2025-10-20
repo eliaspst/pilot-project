@@ -6,20 +6,18 @@ import Home from "./pages/Home";
 import Leistungen from "./pages/Leistungen";
 import PricesMen from "./pages/PricesMen";
 import PricesWomen from "./pages/PricesWomen";
-import Team from "./pages/Team"; 
+import Team from "./pages/Team";
 import KostenfreieBeratung from "./pages/KostenfreieBeratung";
+import Studie from "./pages/Studie"; // <- ECHTE Studien-Seite importieren
+// optional: wenn du später eine echte Galerie-Seite hast, importiere sie:
+// import Galerie from "./pages/Galerie";
 
-// Platzhalter (optional)
 const FAQ = () => (
   <div style={{ padding: "2rem" }}>
     <h1>FAQ</h1>
   </div>
 );
-const Studien = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Studien</h1>
-  </div>
-);
+
 const Galerie = () => (
   <div style={{ padding: "2rem" }}>
     <h1>Galerie</h1>
@@ -30,6 +28,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+
       <Routes>
         {/* Startseite */}
         <Route path="/" element={<Home />} />
@@ -37,14 +36,14 @@ export default function App() {
         {/* Leistungen */}
         <Route path="/leistungen" element={<Leistungen />} />
 
-        <Route path="preise">
-          <Route path="damen" element={<PricesWomen />} />
-          <Route path="herren" element={<PricesMen />} />
-        </Route>
+        {/* Preise */}
+        <Route path="/preise" element={<Navigate to="/preise/damen" replace />} />
+        <Route path="/preise/damen" element={<PricesWomen />} />
+        <Route path="/preise/herren" element={<PricesMen />} />
 
         {/* FAQ & Studien */}
         <Route path="/faq" element={<FAQ />} />
-        <Route path="/faq/studien" element={<Studien />} />
+        <Route path="/faq/studien" element={<Studie />} /> {/* <- HIER die echte Seite */}
 
         {/* Kostenfreie Beratung */}
         <Route path="/beratung" element={<KostenfreieBeratung />} />
@@ -53,9 +52,12 @@ export default function App() {
         <Route path="/ueber-uns/team" element={<Team />} />
         <Route path="/ueber-uns/galerie" element={<Galerie />} />
 
-        {/* Weiterleitung (falls alte Links existieren) */}
+        {/* Weiterleitungen / Fallbacks */}
         <Route path="/team" element={<Navigate to="/ueber-uns/team" replace />} />
+        {/* Optional: Catch-all auf Startseite */}
+        {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
+
       <BottomBar />
     </>
   );
