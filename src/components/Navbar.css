@@ -168,7 +168,7 @@
   .menu-icon {
     display: block;
     position: absolute;
-    right: clamp(12px, 5vw, 56px);
+    right: calc(clamp(12px, 5vw, 56px) + 10px);
     top: 50%;
     transform: translateY(-50%);
     width: 40px;
@@ -181,8 +181,8 @@
 
   .menu-icon span {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 6px;
+    right: 6px;
     height: 3px;
     background: var(--gold);
     border-radius: 2px;
