@@ -44,7 +44,6 @@
 
 .studie-textblock a{ color: var(--text); text-decoration: underline; }
 
-/* Images (untereinander, volle Breite, ohne Beschnitt) */
 .studie-image-wrap{
   width: 100%;
   display: flex;
@@ -54,8 +53,8 @@
 
 .studie-image{
   width: 100%;
-  max-width: 900px;   /* angenehme Lese-Breite */
-  height: auto;       /* keine Verzerrung, kein Beschnitt */
+  max-width: 900px;   
+  height: auto;       
   display: block;
   border: none;
   border-radius: 0;

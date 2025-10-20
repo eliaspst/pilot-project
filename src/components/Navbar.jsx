@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 import { MENU_PREISE, MENU_FAQ, MENU_UEBER_UNS } from "./MenuItems";
@@ -10,6 +10,12 @@ export default function Navbar() {
   const [dropdown, setDropdown] = useState(null);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setClick(false);
+    setDropdown(null);
+  }, [location.pathname]);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -54,7 +60,7 @@ export default function Navbar() {
 
 
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li><NavLink to="/leistungen" className="nav-links">LEISTUNGEN</NavLink></li>
+          <li><NavLink to="/leistungen" className="nav-links" onClick = {closeMobileMenu}>LEISTUNGEN</NavLink></li>
 
           {/* PREISE */}
           <li
@@ -118,7 +124,7 @@ export default function Navbar() {
             {dropdown === "faq" && <Dropdown items={MENU_FAQ} />}
           </li>
 
-          <li><NavLink to="/beratung" className="nav-links">KOSTENFREIE BERATUNG</NavLink></li>
+          <li><NavLink to="/beratung" className="nav-links" onClick = {closeMobileMenu}>KOSTENFREIE BERATUNG</NavLink></li>
 
           {/* ÜBER UNS */}
           <li
@@ -151,7 +157,7 @@ export default function Navbar() {
             {dropdown === "ueber" && <Dropdown items={MENU_UEBER_UNS} />}
           </li>
 
-          <li><NavLink to="/kontakt" className="nav-links">KONTAKT</NavLink></li>
+          <li><NavLink to="/kontakt" className="nav-links" onClick = {closeMobileMenu} >KONTAKT</NavLink></li>
         </ul>
       </nav>
       {click && <div className="nav-overlay" onClick={closeMobileMenu} aria-hidden="true" />}
