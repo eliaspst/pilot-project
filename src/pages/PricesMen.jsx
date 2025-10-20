@@ -15,7 +15,7 @@ const rowsHead = [
 
 const rowsBody = [
   { part: "Achseln", price: "55 €" },
-  { part: "Oberarme", price: "75 €" },       
+  { part: "Oberarme", price: "75 €" },
   { part: "Unterarme", price: "75 €" },
   { part: "Hände", price: "30 €" },
   { part: "Schultern", price: "75 €" },

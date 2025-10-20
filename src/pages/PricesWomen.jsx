@@ -104,7 +104,7 @@ export default function PricesWomen() {
       <Hero />
 
       <div style={{ width: "100%", maxWidth: 1000, margin: "0 auto", padding: "0 16px 40px" }}>
-       
+        <p style={{ color: TEXT, margin: "24px 0 4px 0" }}>Unsere Preisliste für Haarentfernung</p>
 
         <div style={styles.infoBox}>
           <p style={styles.infoP}>
