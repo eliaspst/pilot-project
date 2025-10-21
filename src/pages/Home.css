@@ -1,6 +1,7 @@
 :root{
-  --accent: #0c0f1c;
-  --text:   #c5a762;
+  --accent: #0c0f1c; /* Navy */
+  --text:   #c5a762; /* Gold */
+  --bg:     #D9CFBF;
 
   --review-h: 320px;
   --review-h-sm: 420px;
