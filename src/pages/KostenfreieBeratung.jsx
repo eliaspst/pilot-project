@@ -34,30 +34,52 @@ const KostenfreieBeratung = () => {
       <header className="hero-section">
         <div
           className="hero-bg"
-          style={{ backgroundImage: `url(${HeroImage})` }}  
+          style={{ backgroundImage: `url(${HeroImage})` }}
         />
         <div className="hero-content">
           <h1>Kostenfreie Beratung</h1>
         </div>
       </header>
 
-      <section className="contact">
-        <form onSubmit={onSubmit} >
-          <h2>Ihre Kontaktdaten</h2>
-          <div className="input-Box">
-            <label>Name</label>
-            <input type="text" className="field" placeholder="Ihr Name..." required />
-          </div>
-          <div className="input-Box">
-            <label>Email Addresse</label>
-            <input type="email" className="field" placeholder="Ihre Email..." required />
-          </div>
-          <div className="input-Box">
-            <label>Deine Nachricht</label>
-            <textarea name="" id="" className="field mess" placeholder="Type your Message..." required></textarea>
-          </div>
-          <button type="submit" className="submitBtn">Absenden</button>
-        </form>
+      <section className="contact-wrap">
+        <div className="intro">
+          <p>
+            Kostenfreie Erstberatung: Wir prüfen Ihr Anliegen, erklären den Ablauf
+            und beantworten alle Fragen.
+          </p>
+        </div>
+
+        <section className="contact">
+          <form onSubmit={onSubmit} >
+            <h2>Ihre Kontaktdaten</h2>
+            <div className="row-two">
+              <div className="input-Box">
+                <label>Vorname*</label>
+                <input type="text" className="field" name="firstName" placeholder="Ihr Vorname..." required />
+              </div>
+
+              <div className="input-Box">
+                <label>Nachname*</label>
+                <input type="text" className="field" name="lastName" placeholder="Ihr Nachname..." required />
+              </div>
+            </div>
+            <div className="input-Box">
+              <label>Telefonnummer*</label>
+              <input type="tel" className="field" placeholder="Ihre Telefonnummer..." required
+                inputMode="numeric" pattern="^\s*\+?\s*(?=(?:\D*\d){6,15}\D*$)[\d\s()-]+$" title="Bitte geben Sie eine gültige Telefonnummer ein."
+              />
+            </div>
+            <div className="input-Box">
+              <label>Email Addresse*</label>
+              <input type="email" className="field" placeholder="Ihre Email..." required />
+            </div>
+            <div className="input-Box">
+              <label>Deine Nachricht</label>
+              <textarea name="" id="" className="field mess" placeholder="Ihre Nachricht..."></textarea>
+            </div>
+            <button type="submit" className="submitBtn">Absenden</button>
+          </form>
+        </section>
       </section>
     </>
   )

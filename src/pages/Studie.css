@@ -1,17 +1,14 @@
 :root{
   --accent: #0c0f1c;
   --text:   #c5a762;
-  --bg:     #ffffff;
 }
 
-/* Page */
 .studie-page{
   background: var(--bg);
   color: var(--accent);
   font-family: 'Lora', serif;
 }
 
-/* Hero */
 .studie-hero{
   height: 45vh;
   display: flex;
