@@ -1,19 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./Galerie.css";
 
-const IMAGES = [
+// Hilfsfunktion: Pfad sicher aus /public auflösen
+const pub = (p) => `${process.env.PUBLIC_URL || ""}${p}`;
+
+const RAW_IMAGES = [
   { src: "/Bilder/Galerie/Studio2.png", alt: "Behandlungsraum – Ansicht 2" },
   { src: "/Bilder/Galerie/Studio3.png", alt: "Behandlungsraum – Ansicht 3" },
 ];
 
 export default function Galerie() {
+  // Pfade erst zur Laufzeit mit PUBLIC_URL zusammensetzen
+  const IMAGES = useMemo(
+    () => RAW_IMAGES.map((x) => ({ ...x, src: pub(x.src) })),
+    []
+  );
+
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
 
-  const show = (i) => { setIdx(i); setOpen(true); };
+  const show  = (i) => { setIdx(i); setOpen(true); };
   const close = () => setOpen(false);
-  const prev = () => setIdx((i) => (i - 1 + IMAGES.length) % IMAGES.length);
-  const next = () => setIdx((i) => (i + 1) % IMAGES.length);
+  const prev  = () => setIdx((i) => (i - 1 + IMAGES.length) % IMAGES.length);
+  const next  = () => setIdx((i) => (i + 1) % IMAGES.length);
 
   useEffect(() => {
     if (!open) return;
@@ -24,7 +33,7 @@ export default function Galerie() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, IMAGES.length]);
 
   return (
     <main className="galerie-page">
@@ -33,7 +42,7 @@ export default function Galerie() {
         className="galerie-hero"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(12,15,28,0.55), rgba(12,15,28,0.55)), url(/Bilder/Galerie/Studio1.png)",
+            `linear-gradient(rgba(12,15,28,0.55), rgba(12,15,28,0.55)), url(${pub("/Bilder/Galerie/Studio1.png")})`,
         }}
       >
         <h1>Galerie</h1>
@@ -44,13 +53,18 @@ export default function Galerie() {
       <section className="galerie-wrap">
         <div className="galerie-grid">
           {IMAGES.map((img, i) => (
-            <figure key={i} className="galerie-figure">
+            <figure key={img.src} className="galerie-figure">
               <img
                 src={img.src}
                 alt={img.alt}
                 className="galerie-img"
                 loading="lazy"
                 onClick={() => show(i)}
+                onError={(e) => {
+                  // Fallback, falls ein Pfad doch nicht gefunden wird
+                  e.currentTarget.style.display = "none";
+                  console.warn("Bild nicht gefunden:", img.src);
+                }}
               />
               <figcaption className="sr-only">{img.alt}</figcaption>
             </figure>
