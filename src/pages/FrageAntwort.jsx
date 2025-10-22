@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import "./FrageAntwort.css";
 
 const QA = [
-  { q: "Wie lange dauert eine Behandlung? (Platzhalter)", a: "Antwort 1: Kurze, prägnante Platzhalterantwort über Dauer und Ablauf." },
-  { q: "Ist die Behandlung schmerzfrei? (Platzhalter)", a: "Antwort 2: Platzhaltertext zur Schmerzempfindung und Technologie." },
-  { q: "Für wen ist die Behandlung geeignet? (Platzhalter)", a: "Antwort 3: Geeignete Haut-/Haartypen sowie Ausschlusskriterien (Platzhalter)." },
-  { q: "Wie viele Sitzungen sind nötig? (Platzhalter)", a: "Antwort 4: Durchschnittliche Sitzungsanzahl und Abstände (Platzhalter)." },
-  { q: "Was kostet die Behandlung? (Platzhalter)", a: "Antwort 5: Preishinweise / Link zur Preisseite (Platzhalter)." },
-  { q: "Gibt es Nebenwirkungen? (Platzhalter)", a: "Antwort 6: Mögliche kurzzeitige Reaktionen & Pflegehinweise (Platzhalter)." },
-  { q: "Wie bereite ich mich vor? (Platzhalter)", a: "Antwort 7: Rasur, Sonne meiden, kein Waxing/Epilieren vorab (Platzhalter)." },
-  { q: "Wie sieht die Nachpflege aus? (Platzhalter)", a: "Antwort 8: Kühlung, Sonnenschutz, milde Pflege (Platzhalter)." },
+  { q: "Wie funktioniert die dauerhafte Haarentfernung?", a: "Unsere dauerhafte Haarentfernungsmethode basiert auf der Verwendung von hochmoderner Technologie, die Lichtenergie verwendet, um die Haarfollikel zu zerstören und so das Nachwachsen der Haare zu verhindern. Dies geschieht durch gezielte Energieimpulse, die das Haarwachstum unterbinden." },
+  { q: "Ist die dauerhafte Haarentfernung schmerzhaft?", a: "Unsere Technologie minimiert Unannehmlichkeiten und sorgt für ein komfortables Erlebnis. Einige Kunden empfinden ein leichtes Kribbeln oder Wärmegefühl während der Behandlung, aber die meisten empfinden dies als gut verträglich." },
+  { q: "Wie viele Sitzungen sind für die dauerhafte Haarentfernung erforderlich?", a: "Die Anzahl der Sitzungen kann je nach Hauttyp, Haarfarbe und -dicke variieren. In der Regel sind jedoch mehrere Sitzungen erforderlich, um die besten Ergebnisse zu erzielen. Unsere Experten beraten Sie gerne individuell zu Ihrem Behandlungsplan." },
+  { q: "Welche Körperbereiche können mit der dauerhaften Haarentfernung behandelt werden?", a: "Unsere Technologie ermöglicht die Behandlung verschiedener Körperbereiche, einschließlich Gesicht, Beine, Arme, Bikinizone und mehr. Sprechen Sie mit unseren Fachleuten über Ihre spezifischen Bedürfnisse." },
+  { q: "Sind die Ergebnisse der dauerhaften Haarentfernung dauerhaft?", a: "Ja, die Ergebnisse unserer dauerhaften Haarentfernung sind langfristig. Die meisten Kunden erleben eine signifikante Reduzierung des Haarwuchses, der oft dauerhaft ist. Gelegentliche Auffrischungsbehandlungen können jedoch erforderlich sein, um optimale Ergebnisse aufrechtzuerhalten." },
+  { q: "Gibt es Einschränkungen oder Nachsorgemaßnahmen nach der Behandlung?", a: "Nach der Behandlung können leichte Rötungen oder Hautirritationen auftreten, die jedoch normalerweise innerhalb weniger Stunden nachlassen. Es wird empfohlen, Sonneneinstrahlung zu vermeiden und die Haut mit Feuchtigkeit zu versorgen. Unsere Fachleute geben Ihnen gerne individuelle Empfehlungen für die Nachsorge." },
+  { q: "Ist die dauerhafte Haarentfernung für alle Hauttypen geeignet?", a: "Unsere Technologie ist für die meisten Hauttypen geeignet, jedoch können einige Ausnahmen vorliegen. Wir bieten eine individuelle Beratung an, um sicherzustellen, dass die Behandlung Ihren spezifischen Bedürfnissen entspricht." },
+  { q: "Wie kann ich einen Termin für eine dauerhafte Haarentfernung vereinbaren?", a: "Sie können ganz einfach online einen Termin vereinbaren oder uns telefonisch kontaktieren, um einen Termin zu vereinbaren. Unsere Fachleute stehen Ihnen gerne zur Verfügung, um Ihre Fragen zu beantworten und Ihnen bei der Planung Ihrer Behandlung zu helfen." },
 ];
 
 function Item({ i, q, a, open, onToggle }) {
@@ -17,9 +17,7 @@ function Item({ i, q, a, open, onToggle }) {
   const [max, setMax] = useState(0);
 
   useEffect(() => {
-    if (panelRef.current) {
-      setMax(open ? panelRef.current.scrollHeight : 0);
-    }
+    if (panelRef.current) setMax(open ? panelRef.current.scrollHeight : 0);
   }, [open, q, a]);
 
   const id = `faq-panel-${i}`;
@@ -67,12 +65,16 @@ export default function FrageAntwort() {
 
   return (
     <main className="faq-page">
-      {/* Hero mit Logo aus /public */}
+      {/* Hero mit Logo aus /public – Bild weiter unten positioniert */}
       <section
         className="faq-hero"
         style={{
           backgroundImage:
             "linear-gradient(rgba(12,15,28,0.55), rgba(12,15,28,0.55)), url(/MedusaFace.png)",
+          backgroundPosition: "center 80%",  // <<< Bild weiter nach unten
+          backgroundSize: "contain",          // Bild vollständig sichtbar
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "scroll",
         }}
       >
         <h1>FAQ</h1>
