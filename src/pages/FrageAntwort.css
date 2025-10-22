@@ -1,0 +1,99 @@
+:root{
+  --accent:#0c0f1c;   /* Navy */
+  --text:#c5a762;     /* Gold */
+  --bg:#ffffff;
+}
+
+/* Seite & Hero */
+.faq-page{ background:var(--bg); color:var(--text); }
+.faq-hero{
+  position:relative;
+  height:340px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-bottom:2px solid var(--accent);
+  background-position:center 35%;
+  background-size:contain;
+  background-repeat:no-repeat;
+  padding:0 16px;
+}
+.faq-hero h1{ font-size:42px; font-weight:800; margin:0 0 6px; }
+.faq-hero p{ margin:0; opacity:.95; }
+
+/* Container */
+.faq-wrap{
+  max-width:900px;
+  margin:32px auto 80px;
+  padding:0 16px;
+}
+
+/* Item */
+.faq-item{
+  border:2px solid var(--accent);
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+  margin-bottom:14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+/* Frage-Button */
+.faq-q{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 18px;
+  background:#fff;
+  color:var(--text);
+  font-weight:700;
+  font-size:18px;
+  border:none;
+  cursor:pointer;
+}
+.faq-q:focus-visible{
+  outline:2px solid var(--text);
+  outline-offset:3px;
+}
+.faq-q-text{ text-align:left; }
+
+/* Pfeil-Icon */
+.faq-icon{
+  flex:0 0 auto;
+  width:32px; height:32px;
+  border-radius:50%;
+  display:grid; place-items:center;
+  border:2px solid var(--accent);
+  background:var(--accent);
+  color:#fff;
+}
+.chev{
+  width:18px; height:18px;
+  transition: transform .25s ease;
+}
+.faq-item.open .chev{ transform: rotate(180deg); }
+
+/* Antwortpanel (animierte Höhe) */
+.faq-a{
+  overflow:hidden;
+  transition:max-height .28s ease;
+  border-top:1px solid var(--accent);
+}
+.faq-a p{
+  margin:0;
+  padding:14px 18px 18px;
+  color:var(--accent);
+  line-height:1.6;
+  background:#fff;
+}
+
+/* Kleine Screens */
+@media (max-width: 480px){
+  .faq-hero{ height:300px; }
+  .faq-hero h1{ font-size:34px; }
+  .faq-q{ font-size:17px; }
+}
