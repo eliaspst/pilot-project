@@ -8,10 +8,10 @@
 .faq-page {
   background: var(--bg);
   color: var(--text);
+  padding: 0 !important;
 }
 
-/* HERO – Bild kommt weiterhin per inline-style aus JSX,
-   hier sorgen wir nur dafür, dass es vollständig sichtbar ist */
+
 .faq-hero {
   position: relative;
   height: 440px;               /* wie vorher, leicht großzügig */

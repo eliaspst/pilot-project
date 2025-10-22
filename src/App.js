@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BottomBar from "./components/BottomBar";
@@ -9,8 +10,13 @@ import PricesWomen from "./pages/PricesWomen";
 import Team from "./pages/Team";
 import KostenfreieBeratung from "./pages/KostenfreieBeratung";
 import Studie from "./pages/Studie";
-import FrageAntwort from "./pages/FrageAntwort";
-import Galerie from "./pages/Galerie";  // ✅ echte Galerie-Seite importiert
+import FrageAntwort from "./pages/FrageAntwort"; 
+
+const Galerie = () => (
+  <div style={{ padding: "2rem" }}>
+    <h1>Galerie</h1>
+  </div>
+);
 
 export default function App() {
   return (

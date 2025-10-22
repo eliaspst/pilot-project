@@ -90,8 +90,8 @@
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
-  z-index: 2;       /* über dem Hero-Hintergrund */
-  margin-top: -90px;/* zieht die Card nach oben, liegt über dem Logo */
+  z-index: 2;       
+  margin-top: -90px;
   margin-bottom: 80px;
 }
 
