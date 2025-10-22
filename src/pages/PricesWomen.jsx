@@ -136,6 +136,9 @@ export default function PricesWomen() {
 
         <p style={styles.footnote}>*Einzelpreis ab 6 Behandlungen</p>
         <p style={styles.footnote}>Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
+         <button className ="contact-button" onClick={() => window.location.href = '/beratung'}
+         style={{ marginTop: 20 }}>Jetzt beraten lassen
+         </button>
       </div>
     </main>
   );

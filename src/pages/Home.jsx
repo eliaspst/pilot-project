@@ -3,6 +3,7 @@ import "../pages/Home.css";
 import { useNavigate } from "react-router-dom";
 
 const HomeVideo = "/HomeVideo.mp4";
+const GoogleBewertungen = "/Google-Bewertungen.webp";
 
 const REVIEWS = [
   {
@@ -129,7 +130,7 @@ export default function Home() {
         </div>
         <div className="heroContent">
           <h1 className="title">Medusa Beauty Lounge</h1>
-          <p className="subtitle">Ihr Premium Schönheitssalon für Stuttgart</p>
+          <p className="subtitle">Dauerhafte Haarentfernung im Premium-Studio für Damen und Herren.</p>
         </div>
         <div className="heroFade" />
       </section>
@@ -151,7 +152,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="LaserSection">
+        <div className="laserGrid">
+          <div className="laserText">
+            <span className="eyebrow">Technologie</span>
+            <h3>Dauerhafte Haarentfernung</h3>
+            <p>
+              Erleben Sie glatte Haut ohne Kompromisse. Unsere fortschrittlichen
+              Laserbehandlungen bieten eine effektive und komfortable Lösung zur
+              dauerhaften Haarentfernung – für mehr Freiheit und Selbstbewusstsein.
+            </p>
+
+            <ul className="specList">
+              <li>Präzise Behandlung dank moderner Spot-Technologie</li>
+              <li>360°-Kühlung für besonders hautschonende Sessions</li>
+              <li>Schnelle Sitzungen – ideal auch für größere Areale</li>
+              <li>Geeignet für verschiedene Haut- und Haartypen</li>
+            </ul>
+
+            <button className="cta" onClick={() => window.location.href = '/faq/studien'}>
+              Mehr erfahren
+            </button>
+          </div>
+
+          <div className="laserMedia">
+            <img
+              src="/Laser.jpg"
+              alt="Handstück des Lasers für die dauerhafte Haarentfernung"
+              loading="lazy"
+              className="laserImg"
+            />
+            <div className="shadowRing" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
       <section className="reviewsSection">
+        <img
+          src={GoogleBewertungen}
+          alt=""
+          aria-hidden="true"
+          className="reviewsBadge"
+        />
+
         <div
           className="reviewBox"
           onTouchStart={handleTouchStart}
