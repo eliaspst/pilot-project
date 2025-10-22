@@ -10,13 +10,8 @@ import PricesWomen from "./pages/PricesWomen";
 import Team from "./pages/Team";
 import KostenfreieBeratung from "./pages/KostenfreieBeratung";
 import Studie from "./pages/Studie";
-import FrageAntwort from "./pages/FrageAntwort"; 
-
-const Galerie = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Galerie</h1>
-  </div>
-);
+import FrageAntwort from "./pages/FrageAntwort";
+import Galerie from "./pages/Galerie"; 
 
 export default function App() {
   return (
@@ -44,9 +39,10 @@ export default function App() {
 
         {/* Über uns */}
         <Route path="/ueber-uns/team" element={<Team />} />
-        <Route path="/ueber-uns/galerie" element={<Galerie />} />
+        <Route path="/ueber-uns/galerie" element={<Galerie />} /> 
 
-        {/* Weiterleitungen */}
+        {/* Bequeme Weiterleitungen */}
+        <Route path="/galerie" element={<Navigate to="/ueber-uns/galerie" replace />} />
         <Route path="/team" element={<Navigate to="/ueber-uns/team" replace />} />
       </Routes>
 
