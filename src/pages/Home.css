@@ -1,7 +1,7 @@
 :root{
   --accent: #0c0f1c; /* Navy */
   --text:   #c5a762; /* Gold */
-  --bg:     #D9CFBF;
+  --bg:     #0303030e;
 
   --review-h: 320px;
   --review-h-sm: 420px;
@@ -207,13 +207,7 @@
   display: grid;
   place-items: center;
 }
-.laserImg{
-  max-width: min(520px, 100%);
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 18px 32px rgba(0,0,0,.18));
-}
+
 .shadowRing{
   position: absolute;
   inset: auto 0 -14px 0;

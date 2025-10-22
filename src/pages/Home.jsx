@@ -46,7 +46,6 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const timerRef = useRef(null);
   const navigate = useNavigate();
-  // Touch / swipe state
   const touchStartX = useRef(null);
   const touchDeltaX = useRef(0);
   const SWIPE_THRESHOLD = 50; // px
@@ -176,13 +175,6 @@ export default function Home() {
           </div>
 
           <div className="laserMedia">
-            <img
-              src="/Laser.jpg"
-              alt="Handstück des Lasers für die dauerhafte Haarentfernung"
-              loading="lazy"
-              className="laserImg"
-            />
-            <div className="shadowRing" aria-hidden="true" />
           </div>
         </div>
       </section>
