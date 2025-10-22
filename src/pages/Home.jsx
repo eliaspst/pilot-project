@@ -156,7 +156,7 @@ export default function Home() {
         <div className="laserGrid">
           <div className="laserText">
             <span className="eyebrow">Technologie</span>
-            <h3>Dauerhafte Haarentfernung</h3>
+            <h3>Dauerhafte Haarentfernung mit Diodenlaser</h3>
             <p>
               Erleben Sie glatte Haut ohne Kompromisse. Unsere fortschrittlichen
               Laserbehandlungen bieten eine effektive und komfortable Lösung zur

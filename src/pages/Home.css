@@ -7,7 +7,6 @@
   --review-h-sm: 420px;
 }
 
-/* ===== PAGE ===== */
 .page{
   background-color: var(--bg);
   color: var(--text);
