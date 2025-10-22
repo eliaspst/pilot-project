@@ -3,7 +3,7 @@ import React from "react";
 // Farben / Stil wie bei den Preis-Seiten
 const ACCENT = "#0c0f1c";   // Rahmen, Linien, Header-Hintergrund
 const TEXT = "#c5a762";     // Schriftfarbe
-const BG = "#ffffff";       // Seitenhintergrund
+const BG = "#D9CFBF";       // Seitenhintergrund
 
 // Pfade zu deinen Bildern im public-Ordner
 // → Lege die Dateien unter /public/ ab und passe die Namen hier an
