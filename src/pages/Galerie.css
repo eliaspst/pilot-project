@@ -1,0 +1,106 @@
+:root{
+  --accent:#0c0f1c;   /* Navy */
+  --text:#c5a762;     /* Gold */
+  --bg:#ffffff;
+}
+
+/* Seite & Hero */
+.galerie-page{ background:var(--bg); color:var(--text); }
+
+.galerie-hero{
+  position:relative;
+  height:380px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-bottom:2px solid var(--accent);
+  background-position:center center;
+  background-size:55%;
+  background-repeat:no-repeat;
+  padding:0 16px;
+}
+.galerie-hero h1{ font-size:42px; font-weight:800; margin:0 0 8px; }
+.galerie-hero p{ margin:0; opacity:.95; }
+
+/* Container */
+.galerie-wrap{ max-width:1200px; margin:32px auto 80px; padding:0 16px; }
+
+/* Grid – Bilder ohne Rahmen oder Zuschnitt */
+.galerie-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:22px;
+}
+
+.galerie-figure{
+  margin:0;
+  border-radius:16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  overflow:hidden;
+  background:#fff;
+}
+
+.galerie-img{
+  display:block;
+  width:100%;
+  height:auto;
+  cursor: zoom-in;
+  transition: transform .25s ease, filter .25s ease;
+}
+.galerie-img:hover{ transform: scale(1.02); filter: saturate(1.03); }
+
+/* Lightbox */
+.lightbox{
+  position:fixed; inset:0;
+  background: rgba(12,15,28,.9);
+  display:flex; align-items:center; justify-content:center;
+  z-index: 1000;
+}
+
+.lightbox-img{
+  max-width: min(92vw, 1400px);
+  max-height: 84vh;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  cursor: default;
+}
+
+.lightbox-btn{
+  position:fixed; top:50%;
+  transform: translateY(-50%);
+  width:54px; height:54px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.85);
+  background: rgba(12,15,28,.8);
+  color:#fff; font-size:32px; line-height:48px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; z-index:1001;
+}
+.lightbox-btn.prev{ left:24px; }
+.lightbox-btn.next{ right:24px; }
+
+.lightbox-close{
+  position:fixed; top:20px; right:20px;
+  width:42px; height:42px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.9);
+  background: rgba(12,15,28,.85);
+  color:#fff; font-size:22px;
+  cursor:pointer; z-index:1001;
+}
+
+/* Screenreader Helper */
+.sr-only{
+  position:absolute !important;
+  height:1px; width:1px;
+  overflow:hidden; clip:rect(1px,1px,1px,1px);
+  white-space:nowrap; border:0; padding:0; margin:-1px;
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 520px){
+  .galerie-hero{ height:320px; background-size:80%; }
+  .lightbox-btn{ width:46px; height:46px; font-size:28px; line-height:42px; }
+}

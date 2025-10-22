@@ -9,14 +9,8 @@ import PricesWomen from "./pages/PricesWomen";
 import Team from "./pages/Team";
 import KostenfreieBeratung from "./pages/KostenfreieBeratung";
 import Studie from "./pages/Studie";
-import FrageAntwort from "./pages/FrageAntwort"; // ✅ richtige FAQ-Seite
-
-// Temporäre Galerie, bis du eine eigene Datei hast
-const Galerie = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Galerie</h1>
-  </div>
-);
+import FrageAntwort from "./pages/FrageAntwort";
+import Galerie from "./pages/Galerie";  // ✅ echte Galerie-Seite importiert
 
 export default function App() {
   return (
@@ -36,8 +30,8 @@ export default function App() {
         <Route path="/preise/herren" element={<PricesMen />} />
 
         {/* FAQ & Studien */}
-        <Route path="/faq" element={<FrageAntwort />} />   {/* ✅ FAQ zeigt jetzt auf die echte Seite */}
-        <Route path="/faq/studien" element={<Studie />} /> {/* ✅ Studien-Seite */}
+        <Route path="/faq" element={<FrageAntwort />} />
+        <Route path="/faq/studien" element={<Studie />} />
 
         {/* Kostenfreie Beratung */}
         <Route path="/beratung" element={<KostenfreieBeratung />} />
@@ -48,8 +42,6 @@ export default function App() {
 
         {/* Weiterleitungen */}
         <Route path="/team" element={<Navigate to="/ueber-uns/team" replace />} />
-        {/* Optionaler Fallback */}
-        {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
 
       <BottomBar />
