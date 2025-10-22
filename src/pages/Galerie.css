@@ -1,10 +1,13 @@
+.galerie-page{
+  background:var(--bg);
+  color:var(--text);
+}
 
-/* Seite & Hero */
-.galerie-page{ background:var(--bg); color:var(--text); }
-
+/* HERO */
 .galerie-hero{
   position:relative;
-  height:380px;
+  height:48vh;                 /* feste Höhe -> sichtbar */
+  min-height:360px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -12,90 +15,108 @@
   text-align:center;
   border-bottom:2px solid var(--accent);
   background-position:center center;
-  background-size:55%;
+  background-size:cover;       /* Bild füllt Hero */
   background-repeat:no-repeat;
   padding:0 16px;
 }
-.galerie-hero h1{ font-size:42px; font-weight:800; margin:0 0 8px; }
-.galerie-hero p{ margin:0; opacity:.95; }
-
-/* Container */
-.galerie-wrap{ max-width:1200px; margin:32px auto 80px; padding:0 16px; }
-
-/* Grid – Bilder ohne Rahmen oder Zuschnitt */
-.galerie-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap:22px;
+.galerie-hero h1{
+  margin:0 0 8px;
+  font-size:42px;
+  font-weight:800;
+  color:var(--text);
+}
+.galerie-hero p{
+  margin:0;
+  font-size:18px;
+  color:var(--text);
 }
 
+/* GRID */
+.galerie-wrap{
+  max-width:1200px;
+  margin:32px auto 80px;
+  padding:0 16px;
+}
+.galerie-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:18px;
+}
 .galerie-figure{
   margin:0;
-  border-radius:16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
-  overflow:hidden;
+  overflow:hidden;       /* sanftes Rundung + Shadow ohne Rand */
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
   background:#fff;
 }
 
+/* WICHTIG: Die Bilder bekommen eigene Höhe über aspect-ratio */
 .galerie-img{
   display:block;
   width:100%;
-  height:auto;
-  cursor: zoom-in;
-  transition: transform .25s ease, filter .25s ease;
+  height:auto;           /* natürliche Höhe */
+  aspect-ratio: 4 / 3;   /* konsistentes Kachelverhältnis */
+  object-fit:cover;      /* füllt die Kachel */
+  cursor:zoom-in;
 }
-.galerie-img:hover{ transform: scale(1.02); filter: saturate(1.03); }
 
-/* Lightbox */
+/* LIGHTBOX */
 .lightbox{
-  position:fixed; inset:0;
-  background: rgba(12,15,28,.9);
-  display:flex; align-items:center; justify-content:center;
-  z-index: 1000;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
 }
-
 .lightbox-img{
-  max-width: min(92vw, 1400px);
-  max-height: 84vh;
-  border-radius: 10px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
-  cursor: default;
+  max-width:92vw;
+  max-height:86vh;
+  width:auto;
+  height:auto;
+  box-shadow:0 12px 40px rgba(0,0,0,.45);
+  border-radius:8px;
 }
-
 .lightbox-btn{
-  position:fixed; top:50%;
-  transform: translateY(-50%);
-  width:54px; height:54px;
-  border-radius:50%;
-  border:2px solid rgba(255,255,255,.85);
-  background: rgba(12,15,28,.8);
-  color:#fff; font-size:32px; line-height:48px;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer; z-index:1001;
-}
-.lightbox-btn.prev{ left:24px; }
-.lightbox-btn.next{ right:24px; }
-
-.lightbox-close{
-  position:fixed; top:20px; right:20px;
-  width:42px; height:42px;
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  width:46px; height:46px;
   border-radius:50%;
   border:2px solid rgba(255,255,255,.9);
-  background: rgba(12,15,28,.85);
-  color:#fff; font-size:22px;
-  cursor:pointer; z-index:1001;
+  background:rgba(12,15,28,.85);
+  color:#fff; font-size:28px; line-height:42px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; z-index:10000;
+}
+.lightbox-btn.prev{ left:16px; }
+.lightbox-btn.next{ right:16px; }
+
+.lightbox-close{
+  position:fixed;
+  top:16px; right:16px;
+  width:40px; height:40px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.9);
+  background:rgba(12,15,28,.85);
+  color:#fff; font-size:20px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; z-index:10000;
 }
 
-/* Screenreader Helper */
+/* A11y helper */
 .sr-only{
   position:absolute !important;
-  height:1px; width:1px;
-  overflow:hidden; clip:rect(1px,1px,1px,1px);
-  white-space:nowrap; border:0; padding:0; margin:-1px;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
 }
 
-/* Mobile Anpassungen */
+/* Mobile Feinschliff */
 @media (max-width: 520px){
-  .galerie-hero{ height:320px; background-size:80%; }
-  .lightbox-btn{ width:46px; height:46px; font-size:28px; line-height:42px; }
+  .galerie-hero{ min-height:300px; height:44vh; }
+  .galerie-hero h1{ font-size:34px; }
+  .galerie-grid{ grid-template-columns:1fr; }
 }
