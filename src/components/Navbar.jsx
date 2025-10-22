@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
-import { MENU_PREISE, MENU_FAQ, MENU_UEBER_UNS } from "./MenuItems";
+import { MENU_PREISE, MENU_FAQ, MENU_UEBER_UNS, MENU_UNSER_STUDIO } from "./MenuItems";
 
 
 export default function Navbar() {
@@ -157,7 +157,35 @@ export default function Navbar() {
             {dropdown === "ueber" && <Dropdown items={MENU_UEBER_UNS} />}
           </li>
 
-          <li><NavLink to="/kontakt" className="nav-links" onClick = {closeMobileMenu} >KONTAKT</NavLink></li>
+          <li
+            className="nav-item"
+            onMouseEnter={() => onMouseEnter("studio")}
+            onMouseLeave={onMouseLeave}
+          >
+            <NavLink
+              to="#"
+              className="nav-links"
+              role="button"
+              aria-haspopup="menu"
+              aria-expanded={dropdown === "studio"}
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.innerWidth < 960) {
+                  setDropdown(d => (d === "studio" ? null : "studio"));
+                }
+              }}
+              onKeyDown={(e) => {
+                if ((e.key === "Enter" || e.key === " ") && window.innerWidth < 960) {
+                  e.preventDefault();
+                  setDropdown(d => (d === "studio" ? null : "studio"));
+                }
+              }}
+            >
+              UNSERE STUDIOS <i className="fas fa-caret-down" />
+            </NavLink>
+
+            {dropdown === "studio" && <Dropdown items={MENU_UNSER_STUDIO} />}
+          </li>
         </ul>
       </nav>
       {click && <div className="nav-overlay" onClick={closeMobileMenu} aria-hidden="true" />}

@@ -12,3 +12,8 @@ export const MENU_UEBER_UNS = [
   { title: 'Unser Team', path: '/ueber-uns/team',    cName: 'dropdown-link' },
   { title: 'Galerie',    path: '/ueber-uns/galerie', cName: 'dropdown-link' },
 ];
+
+export const MENU_UNSER_STUDIO = [
+  { title: 'Stuttgart', path: '/unser-studio/stuttgart',    cName: 'dropdown-link' },
+  { title: 'Sindelfingen',    path: '/unser-studio/sindelfingen', cName: 'dropdown-link' },
+];
