@@ -170,11 +170,67 @@ export default function Home() {
             </ul>
 
             <button className="cta" onClick={() => window.location.href = '/faq/studien'}>
-              Mehr erfahren
+              Klinische Studien dazu
             </button>
           </div>
 
           <div className="laserMedia">
+            <img
+              src="/MediostarLaser.png"
+              alt="Diodenlaser MeDioStar"
+              loading="lazy"
+              width="520"
+              height="820"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="StudioSection">
+        <div className="studioGrid">
+          <div className="studioText">
+            <h3>Unsere Studios</h3>
+            <p>
+              Entscheiden sie sich für eins unserer tollen Studios.
+              Jedes Studio besticht durch sein einzigartiges Design und seine
+              hochwertige Ausstattung.
+            </p>
+          </div>
+
+          <div className="studioGrid" role="list">
+            <figure className="studioItem" role="listitem">
+              <img
+                src="/images/studios/stuttgart.jpg"
+                alt="Studio Stuttgart"
+                className="studioImg"
+                loading="lazy"
+              />
+              <figcaption className="studioActions">
+                <button
+                  className="studioBtn"
+                  onClick={() => navigate("/unser-studio/stuttgart")}
+                >
+                  Mehr erfahren
+                </button>
+              </figcaption>
+            </figure>
+
+            <figure className="studioItem" role="listitem">
+              <img
+                src="/StudioSindelfingen.png"
+                alt="Studio Sindelfingen"
+                className="studioImg"
+                loading="lazy"
+              />
+              <figcaption className="studioActions">
+                <button
+                  className="studioBtn"
+                  onClick={() => navigate("/unser-studio/sindelfingen")}
+                >
+                  Mehr erfahren
+                </button>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
