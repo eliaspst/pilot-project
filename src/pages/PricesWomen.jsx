@@ -1,7 +1,7 @@
 import React from "react";
 import "./PricesWomen.css";
 
-const HERO_IMAGE = "/DamenPreise.jpeg"; // Hero-Bild im public-Ordner
+const HERO_IMAGE = "/DamenPreise.jpeg"; // Bild im public-Ordner
 
 const rowsHead = [
   { part: "Gesicht komplett", price: "70 €" },
@@ -55,10 +55,10 @@ const rowsPackages = [
 
 function Hero() {
   return (
-    <header className="hero">
-      <div className="heroBg" style={{ "--hero-image": `url(${HERO_IMAGE})` }} />
-      <div className="heroContent">
-        <h1 className="heroTitle">Preise Haarentfernung – Damen</h1>
+    <header className="priceswomen-hero">
+      <div className="priceswomen-heroBg" style={{ "--hero-image": `url(${HERO_IMAGE})` }} />
+      <div className="priceswomen-heroContent">
+        <h1 className="priceswomen-heroTitle">Preise Haarentfernung – Damen</h1>
       </div>
     </header>
   );
@@ -66,32 +66,32 @@ function Hero() {
 
 function SectionHeading({ title }) {
   return (
-    <div className="sectionHeading">
-      <h2 className="sectionTitle">{title}</h2>
-      <span className="sectionRule" />
+    <div className="priceswomen-sectionHeading">
+      <h2 className="priceswomen-sectionTitle">{title}</h2>
+      <span className="priceswomen-sectionRule" />
     </div>
   );
 }
 
 function PricingTable({ rows }) {
   return (
-    <div className="card">
-      <table className="table">
+    <div className="priceswomen-card">
+      <table className="priceswomen-table">
         <colgroup>
           <col style={{ width: "70%" }} />
           <col style={{ width: "30%" }} />
         </colgroup>
         <thead>
-          <tr className="headerRow">
-            <th className="th left">Körperteil</th>
-            <th className="th right">Preis pro Behandlung</th>
+          <tr className="priceswomen-headerRow">
+            <th className="priceswomen-th priceswomen-left">Körperteil</th>
+            <th className="priceswomen-th priceswomen-right">Preis pro Behandlung</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((r, i) => (
-            <tr key={i} className="tr">
-              <td className="td left">{r.part}</td>
-              <td className="td right nowrap">{r.price}</td>
+            <tr key={i} className="priceswomen-tr">
+              <td className="priceswomen-td priceswomen-left">{r.part}</td>
+              <td className="priceswomen-td priceswomen-right priceswomen-nowrap">{r.price}</td>
             </tr>
           ))}
         </tbody>
@@ -102,20 +102,20 @@ function PricingTable({ rows }) {
 
 export default function PricesWomen() {
   return (
-    <main className="page">
+    <main className="priceswomen-page">
       <Hero />
 
-      <div className="container">
-        <div className="infoBox">
-          <p className="infoP">
+      <div className="priceswomen-container">
+        <div className="priceswomen-infoBox">
+          <p className="priceswomen-infoP">
             Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.
           </p>
-          <p className="infoP">
+          <p className="priceswomen-infoP">
             Beim Kauf von 6 Behandlungen bekommen Sie 1 Behandlungen kostenlos dazu + 50€ Gutschein
             (für jede beliebige Behandlungen einlösbar)
           </p>
-          <p className="infoP">Jedes Paket ist zudem in Gutscheinform erhältlich!</p>
-          <p className="infoP">
+          <p className="priceswomen-infoP">Jedes Paket ist zudem in Gutscheinform erhältlich!</p>
+          <p className="priceswomen-infoP">
             Wir danken für deine Weiterempfehlung! Bist du zufrieden mit unserer Leistung empfehle
             uns weiter! Für jede Empfehlung an Neukunden gibt es einen 50€ Gutschein als Dankeschön.
           </p>
@@ -136,8 +136,8 @@ export default function PricesWomen() {
         <SectionHeading title="Pakete" />
         <PricingTable rows={rowsPackages} />
 
-        <p className="footnote">*Einzelpreis ab 6 Behandlungen</p>
-        <p className="footnote">Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
+        <p className="priceswomen-footnote">*Einzelpreis ab 6 Behandlungen</p>
+        <p className="priceswomen-footnote">Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
 
         <button
           className="contact-button"

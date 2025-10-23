@@ -48,10 +48,10 @@ const rowsPackages = [
 
 function Hero() {
   return (
-    <header className="hero">
-      <div className="heroBg" style={{ "--hero-image": `url(${HERO_IMAGE})` }} />
-      <div className="heroContent">
-        <h1 className="heroTitle">Preise Haarentfernung – Herren</h1>
+    <header className="pricesmen-hero">
+      <div className="pricesmen-heroBg" style={{ "--hero-image": `url(${HERO_IMAGE})` }} />
+      <div className="pricesmen-heroContent">
+        <h1 className="pricesmen-heroTitle">Preise Haarentfernung – Herren</h1>
       </div>
     </header>
   );
@@ -59,32 +59,32 @@ function Hero() {
 
 function SectionHeading({ title }) {
   return (
-    <div className="sectionHeading">
-      <h2 className="sectionTitle">{title}</h2>
-      <span className="sectionRule" />
+    <div className="pricesmen-sectionHeading">
+      <h2 className="pricesmen-sectionTitle">{title}</h2>
+      <span className="pricesmen-sectionRule" />
     </div>
   );
 }
 
 function PricingTable({ rows }) {
   return (
-    <div className="card">
-      <table className="table">
+    <div className="pricesmen-card">
+      <table className="pricesmen-table">
         <colgroup>
           <col style={{ width: "70%" }} />
           <col style={{ width: "30%" }} />
         </colgroup>
         <thead>
-          <tr className="headerRow">
-            <th className="th left">Körperteil</th>
-            <th className="th right">Preis pro Behandlung</th>
+          <tr className="pricesmen-headerRow">
+            <th className="pricesmen-th pricesmen-left">Körperteil</th>
+            <th className="pricesmen-th pricesmen-right">Preis pro Behandlung</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((r, i) => (
-            <tr key={i} className="tr">
-              <td className="td left">{r.part}</td>
-              <td className="td right nowrap">{r.price}</td>
+            <tr key={i} className="pricesmen-tr">
+              <td className="pricesmen-td pricesmen-left">{r.part}</td>
+              <td className="pricesmen-td pricesmen-right pricesmen-nowrap">{r.price}</td>
             </tr>
           ))}
         </tbody>
@@ -95,17 +95,18 @@ function PricingTable({ rows }) {
 
 export default function PricesMen() {
   return (
-    <main className="page">
+    <main className="pricesmen-page">
       <Hero />
-      <div className="container">
-        <div className="infoBox">
-          <p className="infoP">Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.</p>
-          <p className="infoP">
+
+      <div className="pricesmen-container">
+        <div className="pricesmen-infoBox">
+          <p className="pricesmen-infoP">Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.</p>
+          <p className="pricesmen-infoP">
             Beim Kauf von 6 Behandlungen bekommen Sie 1 Behandlungen kostenlos dazu + 50€ Gutschein
             (für jede beliebige Behandlungen einlösbar)
           </p>
-          <p className="infoP">Jedes Paket ist zudem in Gutscheinform erhältlich!</p>
-          <p className="infoP">
+          <p className="pricesmen-infoP">Jedes Paket ist zudem in Gutscheinform erhältlich!</p>
+          <p className="pricesmen-infoP">
             Wir danken für deine Weiterempfehlung! Bist du zufrieden mit unserer Leistung empfehle uns
             weiter! Für jede Empfehlung an Neukunden gibt es einen 50€ Gutschein als Dankeschön.
           </p>
@@ -126,8 +127,8 @@ export default function PricesMen() {
         <SectionHeading title="Pakete" />
         <PricingTable rows={rowsPackages} />
 
-        <p className="footnote">*Einzelpreis ab 6 Behandlungen</p>
-        <p className="footnote">Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
+        <p className="pricesmen-footnote">*Einzelpreis ab 6 Behandlungen</p>
+        <p className="pricesmen-footnote">Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
 
         <button
           className="contact-button"
