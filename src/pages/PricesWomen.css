@@ -1,0 +1,89 @@
+/* nutzt deine globalen Variablen --accent, --text, --bg */
+
+.page { background: var(--bg); }
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid var(--accent);
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(12, 15, 28, 0.5), rgba(12, 15, 28, 0.5)),
+    var(--hero-image);
+}
+.heroContent { position: relative; z-index: 1; text-align: center; }
+.heroTitle { color: var(--text); font-size: 42px; font-weight: 800; letter-spacing: 0.3px; margin: 0; }
+
+/* Abschnittsüberschrift */
+.sectionHeading { margin: 28px 0 12px; display: flex; align-items: center; gap: 12px; }
+.sectionTitle { color: var(--text); margin: 0; font-size: 22px; font-weight: 700; }
+.sectionRule { flex: 1; height: 2px; background: var(--accent); display: block; border-radius: 2px; }
+
+/* Karte + Tabelle (weiß wie im Original, bündig bis zum Rand) */
+.card {
+  width: 100%;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 0;          /* kein Innenabstand */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: #ffffff;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;           /* bündig */
+  border-spacing: 0;   /* keine Lücken */
+}
+
+.headerRow { background: var(--accent); }
+.th {
+  padding: 16px 20px;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-bottom: 2px solid var(--accent);
+}
+.tr { border-bottom: 1px solid var(--accent); }
+.td { padding: 14px 20px; color: var(--text); }
+.left { text-align: left; }
+.right { text-align: right; }
+.nowrap { white-space: nowrap; }
+
+/* Info-Box */
+.infoBox {
+  margin: 12px 0 20px 0;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px;
+  background: #ffffff;
+}
+.infoP { margin: 0 0 8px 0; color: var(--text); line-height: 1.5; }
+
+/* Fußnoten */
+.footnote { color: var(--text); font-size: 14px; font-style: italic; margin-top: 8px; }
