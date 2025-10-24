@@ -37,7 +37,7 @@ export default function App() {
 
         {/* Über uns */}
         <Route path="/ueber-uns/team" element={<Team />} />
-        <Route path="/ueber-uns/galerie" element={<Galerie />} /> 
+        <Route path="/ueber-uns/behandlungen" element={<Galerie />} /> 
 
         {/* Bequeme Weiterleitungen */}
         <Route path="/galerie" element={<Navigate to="/ueber-uns/galerie" replace />} />

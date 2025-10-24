@@ -10,7 +10,7 @@ export const MENU_TIPPS = [
 
 export const MENU_UEBER_UNS = [
   { title: 'Unser Team', path: '/ueber-uns/team',    cName: 'dropdown-link' },
-  { title: 'Galerie',    path: '/ueber-uns/galerie', cName: 'dropdown-link' },
+  { title: 'Behandlungen',    path: '/ueber-uns/behandlungen', cName: 'dropdown-link' },
 ];
 
 export const MENU_UNSER_STUDIO = [
