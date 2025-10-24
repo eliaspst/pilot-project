@@ -29,8 +29,8 @@ export default function App() {
         <Route path="/leistungen/herren" element={<PricesMen />} />
 
         {/* FAQ & Studien */}
-        <Route path="/faq" element={<FrageAntwort />} />
-        <Route path="/faq/studien" element={<Studie />} />
+        <Route path="/tipps" element={<FrageAntwort />} />
+        <Route path="/tipps/studien" element={<Studie />} />
 
         {/* Kostenfreie Beratung */}
         <Route path="/beratung" element={<KostenfreieBeratung />} />

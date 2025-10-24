@@ -1,7 +1,7 @@
 import React from "react";
 import "./Studie.css";
 
-const BASE = "/"; // falls die Bilder in /public liegen (z. B. "1.png", "2.png", ...)
+const BASE = "/"; 
 
 const Img = ({ src, alt }) => (
   <div className="studie-image-wrap">

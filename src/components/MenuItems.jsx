@@ -1,11 +1,11 @@
-export const MENU_PREISE = [
-  { title: 'Herren', path: '/preise/herren', cName: 'dropdown-link' },
-  { title: 'Damen',  path: '/preise/damen',  cName: 'dropdown-link' },
+export const MENU_LEISTUNGEN = [
+  { title: 'Herren', path: '/leistungen/herren', cName: 'dropdown-link' },
+  { title: 'Damen',  path: '/leistungen/damen',  cName: 'dropdown-link' },
 ];
 
-export const MENU_FAQ = [
-  { title: 'FAQ',     path: '/faq',          cName: 'dropdown-link' },
-  { title: 'Studien', path: '/faq/studien',  cName: 'dropdown-link' },
+export const MENU_TIPPS = [
+  { title: 'Tipps',     path: '/tipps',          cName: 'dropdown-link' },
+  { title: 'Studien', path: '/tipps/studien',  cName: 'dropdown-link' },
 ];
 
 export const MENU_UEBER_UNS = [

@@ -174,7 +174,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="laserMedia">
+          <div className="laserMedia" aria-hidden="true">
             <img
               src="/MediostarLaser.png"
               alt="Diodenlaser MeDioStar"

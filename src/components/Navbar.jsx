@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
-import { MENU_PREISE, MENU_FAQ, MENU_UEBER_UNS, MENU_UNSER_STUDIO } from "./MenuItems";
+import { MENU_LEISTUNGEN, MENU_TIPPS, MENU_UEBER_UNS, MENU_UNSER_STUDIO } from "./MenuItems";
 
 
 export default function Navbar() {
@@ -61,10 +61,10 @@ export default function Navbar() {
 
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           
-          {/* PREISE */}
+          {/* LEISTUNGEN */}
           <li
             className="nav-item"
-            onMouseEnter={() => onMouseEnter("preise")}
+            onMouseEnter={() => onMouseEnter("leistungen")}
             onMouseLeave={onMouseLeave}
           >
             <NavLink
@@ -72,30 +72,30 @@ export default function Navbar() {
               className="nav-links"
               role="button"
               aria-haspopup="menu"
-              aria-expanded={dropdown === "preise"}
+              aria-expanded={dropdown === "leistungen"}
               onClick={(e) => {
                 e.preventDefault();
                 if (window.innerWidth < 960) {
-                  setDropdown(d => (d === "preise" ? null : "preise"));
+                  setDropdown(d => (d === "leistungen" ? null : "leistungen"));
                 }
               }}
               onKeyDown={(e) => {
                 if ((e.key === "Enter" || e.key === " ") && window.innerWidth < 960) {
                   e.preventDefault();
-                  setDropdown(d => (d === "preise" ? null : "preise"));
+                  setDropdown(d => (d === "leistungen" ? null : "leistungen"));
                 }
               }}
             >
               LEISTUNGEN <i className="fas fa-caret-down" />
             </NavLink>
 
-            {dropdown === "preise" && <Dropdown items={MENU_PREISE} />}
+            {dropdown === "leistungen" && <Dropdown items={MENU_LEISTUNGEN} />}
           </li>
 
-          {/* FAQ & STUDIEN */}
+          {/* TIPPS & STUDIEN */}
           <li
             className="nav-item"
-            onMouseEnter={() => onMouseEnter("faq")}
+            onMouseEnter={() => onMouseEnter("tipps")}
             onMouseLeave={onMouseLeave}
           >
             <NavLink
@@ -103,24 +103,24 @@ export default function Navbar() {
               className="nav-links"
               role="button"
               aria-haspopup="menu"
-              aria-expanded={dropdown === "faq"}
+              aria-expanded={dropdown === "tipps"}
               onClick={(e) => {
                 e.preventDefault();
                 if (window.innerWidth < 960) {
-                  setDropdown(d => (d === "faq" ? null : "faq"));
+                  setDropdown(d => (d === "tipps" ? null : "tipps"));
                 }
               }}
               onKeyDown={(e) => {
                 if ((e.key === "Enter" || e.key === " ") && window.innerWidth < 960) {
                   e.preventDefault();
-                  setDropdown(d => (d === "faq" ? null : "faq"));
+                  setDropdown(d => (d === "tipps" ? null : "tipps"));
                 }
               }}
             >
-              FAQ & STUDIEN <i className="fas fa-caret-down" />
+              TIPPS & STUDIEN <i className="fas fa-caret-down" />
             </NavLink>
 
-            {dropdown === "faq" && <Dropdown items={MENU_FAQ} />}
+            {dropdown === "tipps" && <Dropdown items={MENU_TIPPS} />}
           </li>
 
           <li><NavLink to="/beratung" className="nav-links" onClick = {closeMobileMenu}>KOSTENFREIE BERATUNG</NavLink></li>
