@@ -60,8 +60,7 @@ export default function Navbar() {
 
 
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li><NavLink to="/leistungen" className="nav-links" onClick = {closeMobileMenu}>LEISTUNGEN</NavLink></li>
-
+          
           {/* PREISE */}
           <li
             className="nav-item"
@@ -87,7 +86,7 @@ export default function Navbar() {
                 }
               }}
             >
-              PREISE <i className="fas fa-caret-down" />
+              LEISTUNGEN <i className="fas fa-caret-down" />
             </NavLink>
 
             {dropdown === "preise" && <Dropdown items={MENU_PREISE} />}
