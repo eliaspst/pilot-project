@@ -1,7 +1,7 @@
 import "../pages/KostenfreieBeratung.css";
 import React from "react";
 
-const HeroImage = "/Beratung-Frau.jpg";
+const HeroImage = "/Beratung-Frau.JPG";
 
 const KostenfreieBeratung = () => {
 

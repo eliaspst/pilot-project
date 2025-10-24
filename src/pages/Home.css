@@ -379,15 +379,15 @@
 
 .reviewsBadge {
   position: absolute;
-  top: clamp(12px, 3vw, 40px);
-  left: clamp(12px, 4vw, 56px);
+  right: clamp(12px, 4vw, 56px);
+  bottom: clamp(12px, 3vw, 40px);
+  top: auto;
+  left: auto;
   width: clamp(140px, 16vw, 220px);
   opacity: .38;
-  /* kann auch .3 – .45 sein */
   mix-blend-mode: screen;
-  /* hellt auf dunklem BG auf */
   pointer-events: none;
-  z-index: 0;
+  z-index: 0; 
 }
 
 .reviewBox {

@@ -5,6 +5,7 @@ import "./BottomBar.css";
 const PARTNERS = [
   { name: "Breuninger", href: "https://www.breuninger.com/de" },
   { name: "Pieksfein", href: "https://pieksfein.de/" },
+  { name: "Big Mama`s", href: "https://www.big-mamas.de/" }
 ];
 
 export default function BottomBar() {
