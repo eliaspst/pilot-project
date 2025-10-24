@@ -73,6 +73,14 @@ const KostenfreieBeratung = () => {
               <label>Email Addresse*</label>
               <input type="email" className="field" placeholder="Ihre Email..." required />
             </div>
+            <div className="option-Box">
+              <label>Standort des Studios*</label>
+              <select className="field" required>
+                <option value="" disabled selected>Bitte wählen...</option>
+                <option value="Stuttgart">Stuttgart</option>
+                <option value="Sindelfingen">Sindelfingen</option>
+              </select>
+            </div>
             <div className="input-Box">
               <label>Deine Nachricht</label>
               <textarea name="" id="" className="field mess" placeholder="Ihre Nachricht..."></textarea>
