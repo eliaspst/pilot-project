@@ -4,7 +4,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BottomBar from "./components/BottomBar";
 import Home from "./pages/Home";
-import Leistungen from "./pages/Leistungen";
 import PricesMen from "./pages/PricesMen";
 import PricesWomen from "./pages/PricesWomen";
 import Team from "./pages/Team";
@@ -12,6 +11,8 @@ import KostenfreieBeratung from "./pages/KostenfreieBeratung";
 import Studie from "./pages/Studie";
 import FrageAntwort from "./pages/FrageAntwort";
 import Galerie from "./pages/Galerie"; 
+import StudioStuttgart from "./pages/StudioStuttgart";
+import StudioSindelfingen from "./pages/StudioSindelfingen";
 
 export default function App() {
   return (
@@ -23,12 +24,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
 
         {/* Leistungen */}
-        <Route path="/leistungen" element={<Leistungen />} />
-
-        {/* Preise */}
-        <Route path="/preise" element={<Navigate to="/preise/damen" replace />} />
-        <Route path="/preise/damen" element={<PricesWomen />} />
-        <Route path="/preise/herren" element={<PricesMen />} />
+        <Route path="/leistungen" element={<Navigate to="/leistungen/damen" replace />} />
+        <Route path="/leistungen/damen" element={<PricesWomen />} />
+        <Route path="/leistungen/herren" element={<PricesMen />} />
 
         {/* FAQ & Studien */}
         <Route path="/faq" element={<FrageAntwort />} />
@@ -44,6 +42,12 @@ export default function App() {
         {/* Bequeme Weiterleitungen */}
         <Route path="/galerie" element={<Navigate to="/ueber-uns/galerie" replace />} />
         <Route path="/team" element={<Navigate to="/ueber-uns/team" replace />} />
+
+        {/* Unsere Studios */}
+        <Route path = "unser-studio/stuttgart" element = {<StudioStuttgart/>} />
+        <Route path = "unser-studio/sindelfingen" element = {<StudioSindelfingen/>}/>
+
+        
       </Routes>
 
       <BottomBar />
