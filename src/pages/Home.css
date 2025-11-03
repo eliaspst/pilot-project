@@ -134,64 +134,64 @@
 }
 
 /* ===== LASER  ===== */
-.LaserSection {
+.LaserSection{
   position: relative;
   isolation: isolate;
-  min-height: 100svh;            /* volle Bildschirmhöhe (Mobile-safe) */
-  min-height: 100vh;
+  min-height: 90svh;
   padding: clamp(24px, 4vw, 56px);
-  overflow: hidden;               /* „beschränkt nach oben“ – nichts ragt raus */
+  overflow: hidden;
   background: #eeeff1;
+
+  --laserW: min(44vw, 560px);
+  --laserOffset: clamp(16px, 3vw, 40px);
 }
 
-/* zarter Verlauf links für Lesbarkeit des Textes */
 .LaserSection::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+  content:"";
+  position:absolute; inset:0;
+  z-index:-1;
   background: linear-gradient(90deg,
-    rgba(10,12,16,.12) 0%,
-    rgba(10,12,16,.06) 35%,
-    rgba(10,12,16,0) 70%);
+    rgba(10,12,16,.14) 0%,
+    rgba(10,12,16,.08) 40%,
+    rgba(10,12,16,0) 75%);
 }
 
-/* === VOLLFLÄCHIGES BILD HINTEN === */
-.laserMedia {
+.laserMedia{
   position: absolute;
-  inset: 0;            /* füllt die komplette Section */
-  z-index: -2;         /* hinter allem anderen */
+  top: 50%;
+  right: var(--laserOffset);
+  transform: translateY(-50%);
+  width: var(--laserW);
+  z-index: 0;             
   pointer-events: none;
 }
-
-.laserMedia img {
+.laserMedia img{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 15%;    
-  opacity: .28;
-  mix-blend-mode: multiply;
-  filter: contrast(1.02) saturate(.95) drop-shadow(0 10px 24px rgba(0,0,0,.12));
+  height: auto;
+  object-fit: contain;     
+  object-position: right center;
+  opacity: 1;              
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.12)) contrast(1.02) saturate(.98);
 }
 
-/* === TEXT OVERLAY === */
-.laserGrid {
-  /* platzhalter für Text-Layout; Inhalt vertikal angenehm positionieren */
+.laserGrid{
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  align-content: center;        /* vertikal in der Section ausrichten */
-  min-height: inherit;          /* nutzt die volle Höhe */
+  align-content: center;
+  min-height: inherit;
+
+  padding-right: calc(var(--laserW) + var(--laserOffset) + clamp(8px,1.5vw,16px));
 }
 
 .laserText {
   position: relative;
   z-index: 1;
-  max-width: 720px;             /* steht „auf“ dem Laser */
+  max-width: 720px;             
   text-wrap: balance;
 }
 
-/* Optionaler, sehr leichter „Glow“ direkt unter dem Textblock */
 .laserText::before {
   content: "";
   position: absolute;
@@ -201,7 +201,6 @@
   border-radius: 16px;
 }
 
-/* Typo */
 .laserText h3 {
   color: var(--text);
   font-size: clamp(32px, 4.2vw, 56px);
@@ -233,6 +232,7 @@
   list-style: none;
 }
 .specList li {
+  color: var(--accent);
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -240,7 +240,7 @@
 }
 .specList li::before {
   content: "•";
-  color: var(--text);
+  color: var(--accent);
   font-weight: 900;
   line-height: 1;
   margin-top: 2px;
@@ -259,26 +259,109 @@
 }
 .cta:hover { transform: translateY(-1px); }
 
-/* === MOBILE TUNING === */
 @media (max-width: 860px) {
-  /* Bild bleibt vollflächig; für mehr Laser ggf. Center */
-  .laserMedia img {
-    object-position: 50% 35%;   /* etwas höher zeigen */
-    opacity: .35;               /* leicht kräftiger unter Text */
+  .laserGrid{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 32vw);
+    align-items: start;
+    gap: clamp(12px, 4vw, 20px);
+    padding-right: 0;                
   }
 
-  .LaserSection::after {
-    background: rgba(10,12,16,.20); /* gleichmäßiger Schimmer auf klein */
+  .laserMedia{
+    position: static;
+    top: auto; right: auto; transform: none;
+    width: 100%;                      
+    justify-self: end;                
+    z-index: 0;
+    display: block;
   }
 
-  .laserGrid {
-    padding-top: 6vh;           /* etwas Luft nach oben */
+  .laserMedia img{
+    width: clamp(140px, 32vw, 220px); /* kontrollierte Größe fürs Gerät */
+    height: auto;
+    object-fit: contain;
+    object-position: right center;
+    opacity: 1;
+    mix-blend-mode: normal;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.12));
   }
 
-  .laserText {
-    max-width: 680px;
+  .laserText{
+    max-width: none;                  
+  }
+
+  .laserText h3{
+    font-size: clamp(26px, 7vw, 40px);
+  }
+
+  .LaserSection::after{
+    background: linear-gradient(90deg,
+      rgba(10,12,16,.10) 0%,
+      rgba(10,12,16,.06) 45%,
+      rgba(10,12,16,0) 80%);
   }
 }
+
+/* --- Anecdote Arrow --- */
+.anecdoteWrap{
+  --t: .38s;
+  --e: cubic-bezier(.22,.61,.36,1);
+  margin: 10px 0 18px;
+}
+
+.anecdoteBtn{
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 10%, #fff 0%);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--text); font-weight: 700; cursor: pointer;
+  transition: box-shadow var(--t) var(--e), transform .12s ease, background .2s ease;
+}
+.anecdoteBtn:hover{ box-shadow: 0 8px 18px rgba(0,0,0,.08) inset; transform: translateY(-1px); }
+.anecdoteBtn:focus-visible{ outline: 2px solid color-mix(in srgb, var(--text) 55%, transparent); outline-offset: 3px; }
+
+.anecdoteIcon{ transition: transform var(--t) var(--e); }
+.anecdoteWrap.is-open .anecdoteIcon{ transform: rotate(90deg); }
+
+.anecdotePanel{
+  overflow: clip;
+  max-height: 0;
+  opacity: 0;
+  transform: translateX(12px);
+  transition:
+    max-height var(--t) var(--e),
+    opacity var(--t) var(--e),
+    transform var(--t) var(--e);
+  will-change: transform, opacity, max-height;
+}
+.anecdotePanel p{
+  margin: 10px 4px 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent) 6%, #fff 0%);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  line-height: 1.65;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+.anecdoteWrap.is-open .anecdotePanel{
+  max-height: 260px;   /* reicht für ~5 Zeilen */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Bewegungsreduzierung respektieren */
+@media (prefers-reduced-motion: reduce){
+  .anecdotePanel, .anecdoteIcon, .anecdoteBtn{ transition: none !important; }
+}
+
+/* Optional: auf großen Screens näher ans Gerät rücken */
+@media (min-width: 1024px){
+  .anecdoteWrap{ margin-right: -6px; }
+}
+
 
 
 /* ===== UNSERE STUDIOS ===== */
