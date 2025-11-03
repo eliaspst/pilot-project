@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +9,12 @@
   font-family: 'Bodoni Moda', serif;
 }
 
+
 html, body, #root, .App {
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
   outline: 0 !important;
-  background: transparent !important;
 }
 
 

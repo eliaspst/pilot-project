@@ -73,36 +73,6 @@ export default function Home() {
     }
   }
 
-  function AnecdoteArrow() {
-  const [open, setOpen] = React.useState(false);
-  const id = "laser-anecdote";
-
-  return (
-    <div className={`anecdoteWrap ${open ? "is-open" : ""}`}>
-      <button
-        className="anecdoteBtn"
-        aria-expanded={open}
-        aria-controls={id}
-        onClick={() => setOpen(o => !o)}
-      >
-        <span className="anecdoteLabel">Kleine Anekdote</span>
-        <svg className="anecdoteIcon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M8 5l8 7-8 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
-
-      <div id={id} className="anecdotePanel" role="region">
-        <p>
-          Als wir den MeDioStar getestet haben, nannten wir ihn intern „Medi”.
-          Nach den ersten Ergebnissen blieb der Spitzname – weil alles so
-          <em> medizinisch präzise</em> war. Seitdem prüfen wir jede Neuerung gegen „Medi-Standard“. 🙂
-        </p>
-      </div>
-    </div>
-  );
-}
-
-
   const goPrev = () => {
     stopAuto();
     setIndex((i) => (i - 1 + REVIEWS.length) % REVIEWS.length);
@@ -192,14 +162,24 @@ export default function Home() {
               dauerhaften Haarentfernung – für mehr Freiheit und Selbstbewusstsein.
             </p>
 
-            <AnecdoteArrow />
-
-            <ul className="specList">
-              <li>Präzise Behandlung dank moderner Spot-Technologie</li>
-              <li>360°-Kühlung für besonders hautschonende Sessions</li>
-              <li>Schnelle Sitzungen – ideal auch für größere Areale</li>
-              <li>Geeignet für verschiedene Haut- und Haartypen</li>
-            </ul>
+            <div className="factsScroller" aria-label="Fakten zum Diodenlaser">
+              <article className="factCard">
+                <h4>Schonend</h4>
+                <p>360°-Kühlung beruhigt die Haut während der Behandlung.</p>
+              </article>
+              <article className="factCard">
+                <h4>Präzise</h4>
+                <p>Spot-Technologie trifft nur das Haar – nicht das umliegende Gewebe.</p>
+              </article>
+              <article className="factCard">
+                <h4>Schnell</h4>
+                <p>Große Areale in kurzen Sitzungen behandelbar.</p>
+              </article>
+              <article className="factCard">
+                <h4>Vielseitig</h4>
+                <p>Geeignet für verschiedene Haut- und Haartypen.</p>
+              </article>
+            </div>
 
             <button className="cta" onClick={() => window.location.href = '/tipps/studien'}>
               Klinische Studien dazu

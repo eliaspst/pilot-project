@@ -10,7 +10,7 @@
 }
 
 .page {
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-family: 'Lora', serif;
   overflow-x: hidden;
@@ -41,7 +41,7 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(12, 15, 28, 0.62), rgba(12, 15, 28, 0.62));
+  background: var(--bg);
 }
 
 .heroContent {
@@ -62,10 +62,6 @@
   right: 0;
   bottom: -1px;
   height: 120px;
-  background: linear-gradient(to bottom,
-      rgba(12, 15, 28, 0) 0%,
-      rgba(12, 15, 28, 0.25) 40%,
-      rgba(12, 15, 28, 0.6) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -92,6 +88,7 @@
   z-index: 2;
   margin-top: -90px;
   margin-bottom: 80px;
+  background: var(--bg);
 }
 
 .card {
@@ -140,14 +137,14 @@
   min-height: 90svh;
   padding: clamp(24px, 4vw, 56px);
   overflow: hidden;
-  background: #eeeff1;
+  background: var(--bg);
 
   --laserW: min(44vw, 560px);
   --laserOffset: clamp(16px, 3vw, 40px);
 }
 
 .LaserSection::after {
-  content:"";
+  content:none;
   position:absolute; inset:0;
   z-index:-1;
   background: linear-gradient(90deg,
@@ -226,25 +223,27 @@
   color: var(--accent);
 }
 
-.specList {
-  margin: 12px 0 24px;
-  padding-left: 0;
-  list-style: none;
+.factsScroller{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(220px, 70vw, 300px);
+  gap: 12px;
+  overflow-x: auto;
+  padding: 6px 2px 2px;
+  margin: 8px 0 18px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
-.specList li {
-  color: var(--accent);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 8px 0;
+.factCard{
+  scroll-snap-align: start;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 16px;
+  padding: 14px;
+  background: color-mix(in srgb, var(--accent) 6%, #fff 0%);
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
 }
-.specList li::before {
-  content: "•";
-  color: var(--accent);
-  font-weight: 900;
-  line-height: 1;
-  margin-top: 2px;
-}
+.factCard h4{ font-size: 16px; margin-bottom: 6px; }
+@keyframes hintFade{ 0%,100%{opacity:.2} 50%{opacity:.7} }
 
 .cta {
   background: var(--text);
@@ -259,109 +258,75 @@
 }
 .cta:hover { transform: translateY(-1px); }
 
-@media (max-width: 860px) {
-  .laserGrid{
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(120px, 32vw);
-    align-items: start;
-    gap: clamp(12px, 4vw, 20px);
-    padding-right: 0;                
+/* ==== MOBILE-RESET FÜR LASER-BEREICH ==== */
+@media (max-width: 900px) {
+
+  .LaserSection {
+    min-height: auto;
+    padding: 28px 16px 40px;
+    --laserW: auto;
+    --laserOffset: 0;
   }
 
-  .laserMedia{
-    position: static;
-    top: auto; right: auto; transform: none;
-    width: 100%;                      
-    justify-self: end;                
-    z-index: 0;
-    display: block;
+  .LaserSection::after {
+    background: linear-gradient(
+      180deg,
+      rgba(10,12,16,.10) 0%,
+      rgba(10,12,16,.04) 50%,
+      rgba(10,12,16,0) 100%
+    );
   }
 
-  .laserMedia img{
-    width: clamp(140px, 32vw, 220px); /* kontrollierte Größe fürs Gerät */
+  .laserGrid {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding-right: 0 !important;      /* kein Platz mehr für „unsichtbares“ Bild rechts */
+  }
+
+  /* Block optisch mittig, Headline zentriert, Text links */
+  .laserText {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .laserText h3 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .laserText p {
+    text-align: left;
+  }
+
+  .laserMedia {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: min(320px, 70vw) !important;
+    margin: 32px auto 0 !important;
+    text-align: center;
+    pointer-events: none;
+    z-index: 0 !important;
+  }
+
+  .laserMedia img {
+    width: 100% !important;
     height: auto;
     object-fit: contain;
-    object-position: right center;
-    opacity: 1;
-    mix-blend-mode: normal;
-    filter: drop-shadow(0 8px 18px rgba(0,0,0,.12));
   }
 
-  .laserText{
-    max-width: none;                  
-  }
-
-  .laserText h3{
-    font-size: clamp(26px, 7vw, 40px);
-  }
-
-  .LaserSection::after{
-    background: linear-gradient(90deg,
-      rgba(10,12,16,.10) 0%,
-      rgba(10,12,16,.06) 45%,
-      rgba(10,12,16,0) 80%);
+  .laserCtaBtn {
+    display: inline-block;
+    margin: clamp(20px, 5vw, 32px) auto 0;
   }
 }
-
-/* --- Anecdote Arrow --- */
-.anecdoteWrap{
-  --t: .38s;
-  --e: cubic-bezier(.22,.61,.36,1);
-  margin: 10px 0 18px;
-}
-
-.anecdoteBtn{
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 10%, #fff 0%);
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-  color: var(--text); font-weight: 700; cursor: pointer;
-  transition: box-shadow var(--t) var(--e), transform .12s ease, background .2s ease;
-}
-.anecdoteBtn:hover{ box-shadow: 0 8px 18px rgba(0,0,0,.08) inset; transform: translateY(-1px); }
-.anecdoteBtn:focus-visible{ outline: 2px solid color-mix(in srgb, var(--text) 55%, transparent); outline-offset: 3px; }
-
-.anecdoteIcon{ transition: transform var(--t) var(--e); }
-.anecdoteWrap.is-open .anecdoteIcon{ transform: rotate(90deg); }
-
-.anecdotePanel{
-  overflow: clip;
-  max-height: 0;
-  opacity: 0;
-  transform: translateX(12px);
-  transition:
-    max-height var(--t) var(--e),
-    opacity var(--t) var(--e),
-    transform var(--t) var(--e);
-  will-change: transform, opacity, max-height;
-}
-.anecdotePanel p{
-  margin: 10px 4px 0;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: color-mix(in srgb, var(--accent) 6%, #fff 0%);
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  line-height: 1.65;
-  box-shadow: 0 10px 22px rgba(0,0,0,.06);
-}
-
-.anecdoteWrap.is-open .anecdotePanel{
-  max-height: 260px;   /* reicht für ~5 Zeilen */
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Bewegungsreduzierung respektieren */
-@media (prefers-reduced-motion: reduce){
-  .anecdotePanel, .anecdoteIcon, .anecdoteBtn{ transition: none !important; }
-}
-
-/* Optional: auf großen Screens näher ans Gerät rücken */
-@media (min-width: 1024px){
-  .anecdoteWrap{ margin-right: -6px; }
-}
-
 
 
 /* ===== UNSERE STUDIOS ===== */
@@ -419,12 +384,12 @@
   overflow: hidden;
   background: #fff;
   box-shadow: 0 10px 28px rgba(0,0,0,.08);
-  isolation: isolate;                     /* für Overlay */
+  isolation: isolate;                     
 }
 
 .studioImg{
   width: 100%;
-  aspect-ratio: 16 / 11;                  /* harmonisches Verhältnis */
+  aspect-ratio: 16 / 11;                  
   object-fit: cover;
   display: block;
   transition: transform .45s ease;
