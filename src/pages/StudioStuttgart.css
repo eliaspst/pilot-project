@@ -7,7 +7,7 @@
 /* HERO */
 .studio-stg-hero {
   position: relative;
-  min-height: 56vh;
+  min-height: 450px;
   display: grid;
   place-items: center;
   padding: 48px 16px 64px;

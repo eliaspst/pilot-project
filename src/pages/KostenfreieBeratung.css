@@ -4,7 +4,7 @@ body{ background: var(--bg); }
 
 .hero-section{
   position: relative;
-  min-height: 44vh;
+  min-height: 450px;
   display: grid;
   place-items: center;
   padding: clamp(36px, 8vw, 96px) 16px 28px;
