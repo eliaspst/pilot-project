@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import "./Galerie.css";
 
-// Hilfsfunktion: Pfad sicher aus /public auflösen
-const pub = (p) => `${process.env.PUBLIC_URL || ""}${p}`;
 
 const RAW_IMAGES = [
   { src: "/Bilder/Galerie/Studio2.png", alt: "Behandlungsraum – Ansicht 2" },

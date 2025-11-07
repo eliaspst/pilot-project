@@ -3,6 +3,9 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 import { MENU_LEISTUNGEN, MENU_TIPPS, MENU_UEBER_UNS, MENU_UNSER_STUDIO } from "./MenuItems";
+import { pub } from "../pub";
+
+
 
 
 export default function Navbar() {
@@ -47,7 +50,7 @@ export default function Navbar() {
     <header className="header">
       <Link to="/" className="logo" onClick={closeMobileMenu}>
         <img
-          src="/logo.png"
+          src={pub("/logo.png")}
           alt="Medusa Beauty Lounge Logo"
           className="logo-img"
         />

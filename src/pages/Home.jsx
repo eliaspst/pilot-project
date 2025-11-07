@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../pages/Home.css";
 import { useNavigate } from "react-router-dom";
+import { pub } from "../pub";
 
-const HomeVideo = "/HomeVideo.mp4";
-const GoogleBewertungen = "/Google-Bewertungen.webp";
+const HomeVideo = pub("/HomeVideo.mp4");
+const GoogleBewertungen = pub("/Google-Bewertungen.webp");
 
 const REVIEWS = [
   {
@@ -188,7 +189,7 @@ export default function Home() {
 
           <div className="laserMedia" aria-hidden="true">
             <img
-              src="/MediostarLaser.png"
+              src={pub("/MediostarLaser.png")}
               alt="Diodenlaser MeDioStar"
               loading="lazy"
               width="520"
@@ -212,7 +213,7 @@ export default function Home() {
           <div className="studioGrid" role="list">
             <figure className="studioItem" role="listitem">
               <img
-                src="/images/studios/stuttgart.jpg"
+                src={pub("/images/studios/stuttgart.jpg")}
                 alt="Studio Stuttgart"
                 className="studioImg"
                 loading="lazy"
@@ -229,7 +230,7 @@ export default function Home() {
 
             <figure className="studioItem" role="listitem">
               <img
-                src="/StudioSindelfingen.png"
+                src={pub("/StudioSindelfingen.png")}
                 alt="Studio Sindelfingen"
                 className="studioImg"
                 loading="lazy"
@@ -267,7 +268,7 @@ export default function Home() {
           <div className="reviewInner">
             <p className="reviewText">“{REVIEWS[index].text}”</p>
             <p className="reviewAuthor">– {REVIEWS[index].author}</p>
-            <img src="/GoogleLogo.png" alt="Google Logo" className="googleLogo" />
+            <img src={pub("/GoogleLogo.png")} alt="Google Logo" className="googleLogo" />
           </div>
 
           <button aria-label="Nächste Bewertung" onClick={goNext} className="navButton next">›</button>

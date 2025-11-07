@@ -2,7 +2,7 @@ import React from "react";
 import "./PricesMen.css";
 import { pub } from "../pub";
 
-const HERO_IMAGE = pub("HerrenPreise.jpeg"); // Bild im public-Ordner ablegen
+const HERO_IMAGE = pub("HerrenPreise.jpeg"); 
 
 const rowsHead = [
   { part: "Bart Korrektur (Wange)", price: "50 €" },

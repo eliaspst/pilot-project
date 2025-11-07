@@ -1,7 +1,8 @@
 import React from "react";
 import "./PricesWomen.css";
+import { pub } from "../pub";
 
-const HERO_IMAGE = "/DamenPreise.jpeg"; // Bild im public-Ordner
+const HERO_IMAGE = pub("/DamenPreise.jpeg"); // Bild im public-Ordner
 
 const rowsHead = [
   { part: "Gesicht komplett", price: "70 €" },

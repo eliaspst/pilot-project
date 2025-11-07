@@ -3,7 +3,6 @@ import "./StudioStuttgart.css";
 
 const BASE = process.env.PUBLIC_URL || "";
 
-/** Drei Platzhalter-Bilder */
 const GALLERY = [
   { src: `${BASE}/placeholder.png`, alt: "Studio Stuttgart – Bild 1" },
   { src: `${BASE}/placeholder.png`, alt: "Studio Stuttgart – Bild 2" },

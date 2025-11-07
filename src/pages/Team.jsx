@@ -1,8 +1,9 @@
 import React from "react";
 import "./Team.css";
+import { pub } from "../pub";
 
-const HERO_IMAGE = "/TeamHero.png";
-const PROFILE_IMAGE = "/ViktoriaStollTeam.jpg";
+const HERO_IMAGE = pub("/TeamHero.png");
+const PROFILE_IMAGE = pub("/ViktoriaStollTeam.jpg");
 
 export default function Team() {
   return (
