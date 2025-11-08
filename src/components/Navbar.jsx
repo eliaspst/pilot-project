@@ -50,7 +50,7 @@ export default function Navbar() {
     <header className="header">
       <Link to="/" className="logo" onClick={closeMobileMenu}>
         <img
-          src={pub("/logo.png")}
+          src={pub("/Logo.png")}
           alt="Medusa Beauty Lounge Logo"
           className="logo-img"
         />
