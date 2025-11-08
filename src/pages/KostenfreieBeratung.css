@@ -61,14 +61,9 @@ body {
 }
 
 .contact-wrap .intro {
-  background: var(--accent);
   color: var(--text);
-  border: 1px solid color-mix(in srgb, var(--text) 70%, transparent);
-  border-radius: 16px;
-  padding: clamp(14px, 2.5vw, 20px) clamp(16px, 3vw, 28px);
   max-width: 820px;
   margin: 0 auto;
-  box-shadow: 0 16px 42px rgba(0, 0, 0, .35);
 }
 
 .contact-wrap .intro p {

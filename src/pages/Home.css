@@ -187,6 +187,9 @@
   z-index: 1;
   max-width: 720px;             
   text-wrap: balance;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2.6vw, 36px); 
 }
 
 .laserText::before {
@@ -206,15 +209,19 @@
   margin: 8px 0 14px;
 }
 
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
+.eyebrow{
+  display: inline-flex;              /* verhindert 100%-Breite */
+  width: fit-content;                /* falls global etwas Breite pusht */
+  align-items: center;
+  gap: .4em;
+  font-size: 11.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--accent) 65%, #000 0%);
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-  padding: 6px 10px;
+  padding: 4px 10px;
   border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
 }
 
 .laserText p {
@@ -245,19 +252,22 @@
 .factCard h4{ font-size: 16px; margin-bottom: 6px; }
 @keyframes hintFade{ 0%,100%{opacity:.2} 50%{opacity:.7} }
 
-.cta {
+.cta{
+  display: inline-flex;              /* verhindert “full width” */
+  width: auto;
+  align-self: flex-start;            /* bleibt links in der Spalte */
+  padding: 10px 16px;
+  font-size: clamp(14px, 1.05vw, 15.5px);
+  line-height: 1.15;
+  border-radius: 10px;
+  border: 2px solid var(--text);
   background: var(--text);
   color: var(--accent);
-  border: 2px solid var(--text);
   font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform .15s ease, box-shadow .2s ease;
-  box-shadow: 0 8px 22px rgba(0,0,0,.12);
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
 }
-.cta:hover { transform: translateY(-1px); }
-
+.cta:hover{ transform: translateY(-1px); filter: brightness(.98); }
 /* ==== MOBILE-RESET FÜR LASER-BEREICH ==== */
 @media (max-width: 900px) {
 

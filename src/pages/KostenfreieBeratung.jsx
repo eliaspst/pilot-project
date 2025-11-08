@@ -45,7 +45,7 @@ const KostenfreieBeratung = () => {
       <section className="contact-wrap">
         <div className="intro">
           <p>
-            Kostenfreie Erstberatung: Wir prüfen Ihr Anliegen, erklären den Ablauf
+            Wir prüfen Ihr Anliegen, erklären den Ablauf
             und beantworten alle Fragen.
           </p>
         </div>

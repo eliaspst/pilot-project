@@ -61,7 +61,6 @@ export default function BottomBar() {
         <section className="bottombar__col">
           <h4>Schnelllinks</h4>
           <ul className="bottombar__list">
-            <li><NavLink to="/kontakt" className="bottombar__link">Kontakt</NavLink></li>
             <li><NavLink to="/impressum" className="bottombar__link">Impressum</NavLink></li>
             <li><NavLink to="/datenschutz" className="bottombar__link">Datenschutzerklärungen</NavLink></li>
           </ul>
@@ -70,7 +69,7 @@ export default function BottomBar() {
 
       {/* Untere Leiste */}
       <div className="bottombar__bottom">
-        <span>© {new Date().getFullYear()} a Nils und Elias Production</span>
+        <span>© {new Date().getFullYear()} Medusa Beauty Lounge</span>
         <nav className="bottombar__nav" aria-label="Footer">
           <ul className="bottombar__menu">
           </ul>

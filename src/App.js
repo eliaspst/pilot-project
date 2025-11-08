@@ -13,6 +13,8 @@ import FrageAntwort from "./pages/FrageAntwort";
 import Galerie from "./pages/Galerie"; 
 import StudioStuttgart from "./pages/StudioStuttgart";
 import StudioSindelfingen from "./pages/StudioSindelfingen";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutzerklärungen";
 
 export default function App() {
   return (
@@ -46,6 +48,10 @@ export default function App() {
         {/* Unsere Studios */}
         <Route path = "unser-studio/stuttgart" element = {<StudioStuttgart/>} />
         <Route path = "unser-studio/sindelfingen" element = {<StudioSindelfingen/>}/>
+
+        {/* Rechtliches */}
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
 
         
       </Routes>
