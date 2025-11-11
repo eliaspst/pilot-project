@@ -1,0 +1,104 @@
+
+.impressum-page{
+  background: var(--bg);
+  color: var(--accent);
+}
+
+/* --- HERO: flach, mit Bottom-Fade --- */
+.impressum-hero{
+  position: relative;
+  min-height: clamp(160px, 24vh, 300px);
+  display: grid;
+  align-items: end;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Hintergrundbild optional per inline-style oder globaler Klasse setzen
+   .impressum-hero { background: center / cover no-repeat url(/pfad/zu/hero.jpg); } */
+.impressum-hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: inherit;            /* falls du oben ein bg-image setzt */
+  filter: saturate(95%) contrast(98%);
+  transform: scale(1.02);         /* leichte Randfüllung */
+}
+
+
+.impressum-hero-content{
+  position: relative;
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  padding: clamp(16px, 4vw, 28px) clamp(16px, 4vw, 28px);
+  z-index: 1;
+}
+
+.impressum-title{
+  margin: 0 0 clamp(8px, 1.2vw, 12px) 0;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: .5px;
+  color: color-mix(in srgb, var(--accent) 78%, var(--text) 22%); /* edler, nicht knallig */
+  text-transform: uppercase;
+  opacity: .95;
+}
+
+/* --- SECTION: ruhige Typografie, linke Akzentlinie --- */
+.impressum-section{
+  padding: clamp(20px, 6vw, 72px) 0 clamp(48px, 8vw, 96px);
+  background: #fff; /* glattes Weiß unter dem Fade (wirkt „clean“) */
+}
+
+.impressum-textblock{
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 24px);
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--accent) 92%, black 0%);
+  /* dezente linke Linie + optische Einrückung */
+  border-left: 3px solid color-mix(in srgb, var(--text) 45%, var(--accent) 55%);
+}
+
+.impressum-textblock p{
+  margin: 0 0 1.1em 0;
+}
+
+/* Abstand zwischen logischen Blöcken (wie im Screenshot) */
+.impressum-textblock p + p{
+  margin-top: .6em;
+}
+
+/* Links: Gold, dezent interaktiv */
+.impressum-textblock a{
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: .08em;
+  transition: opacity .2s ease, text-underline-offset .2s ease;
+}
+.impressum-textblock a:hover{
+  opacity: .9;
+  text-underline-offset: 4px;
+}
+.impressum-textblock a:focus-visible{
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Kleine Screens: etwas mehr Luft */
+@media (max-width: 640px){
+  .impressum-hero{ min-height: 180px; }
+  .impressum-textblock{ border-left-width: 2px; }
+}
+
+/* Print: schnörkellos */
+@media print{
+  .impressum-hero{ background: none; min-height: auto; border: 0; }
+  .impressum-hero::before, .impressum-hero::after{ display:none; }
+  .impressum-title{ font-size: 28px; text-transform:none; }
+  .impressum-section{ background: #fff; padding: 0; }
+  .impressum-textblock{ border: 0; padding: 0; }
+}

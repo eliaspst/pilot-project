@@ -66,6 +66,14 @@
   z-index: 0;
 }
 
+.title,
+.subtitle {
+  color: var(--text);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, .9);
+  paint-order: stroke fill;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+}
+
 .title {
   font-size: 52px;
   font-weight: 800;
@@ -77,6 +85,16 @@
 .subtitle {
   font-size: 20px;
   letter-spacing: 0.05em;
+}
+
+@media (max-width:640px) {
+  .title {
+    -webkit-text-stroke: .8px rgba(0, 0, 0, .95);
+  }
+
+  .subtitle {
+    -webkit-text-stroke: .6px rgba(0, 0, 0, .95);
+  }
 }
 
 /* ===== ÜBERLAPPENDER KARTEN-ABSCHNITT ===== */
@@ -130,8 +148,44 @@
   transform: translateY(-1px);
 }
 
+@media (max-width: 640px) {
+
+  /* weniger starker Überlapp, mehr Rand innen */
+  .overlapSection {
+    margin-top: -48px;
+    padding: 0 16px;
+    margin-bottom: 56px;
+  }
+
+  .card {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  .card h2 {
+    font-size: clamp(20px, 6vw, 26px);
+    line-height: 1.2;
+  }
+
+  .card p {
+    font-size: clamp(14px, 4.2vw, 16px);
+  }
+
+  .card .button {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  /* falls dein Hero 100vh nutzt: auf d/vh umstellen vermeidet iOS-Sprünge */
+  .hero-section {
+    min-height: 90dvh;
+    /* statt 100vh/svh – stabiler in Mobile Safari */
+    padding-bottom: 96px;
+  }
+}
+
 /* ===== LASER  ===== */
-.LaserSection{
+.LaserSection {
   position: relative;
   isolation: isolate;
   min-height: 90svh;
@@ -144,59 +198,61 @@
 }
 
 .LaserSection::after {
-  content:none;
-  position:absolute; inset:0;
-  z-index:-1;
+  content: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: linear-gradient(90deg,
-    rgba(10,12,16,.14) 0%,
-    rgba(10,12,16,.08) 40%,
-    rgba(10,12,16,0) 75%);
+      rgba(10, 12, 16, .14) 0%,
+      rgba(10, 12, 16, .08) 40%,
+      rgba(10, 12, 16, 0) 75%);
 }
 
-.laserMedia{
+.laserMedia {
   position: absolute;
   top: 50%;
   right: var(--laserOffset);
   transform: translateY(-50%);
   width: var(--laserW);
-  z-index: 0;             
+  z-index: 0;
   pointer-events: none;
 }
-.laserMedia img{
+
+.laserMedia img {
   width: 100%;
   height: auto;
-  object-fit: contain;     
+  object-fit: contain;
   object-position: right center;
-  opacity: 1;              
+  opacity: 1;
   mix-blend-mode: normal;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.12)) contrast(1.02) saturate(.98);
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .12)) contrast(1.02) saturate(.98);
 }
 
-.laserGrid{
+.laserGrid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   align-content: center;
   min-height: inherit;
 
-  padding-right: calc(var(--laserW) + var(--laserOffset) + clamp(8px,1.5vw,16px));
+  padding-right: calc(var(--laserW) + var(--laserOffset) + clamp(8px, 1.5vw, 16px));
 }
 
 .laserText {
   position: relative;
   z-index: 1;
-  max-width: 720px;             
+  max-width: 720px;
   text-wrap: balance;
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 2.6vw, 36px); 
+  gap: clamp(14px, 2.6vw, 36px);
 }
 
 .laserText::before {
   content: "";
   position: absolute;
   inset: -8px -10px -8px -10px;
-  background: radial-gradient(closest-side, rgba(255,255,255,.06), transparent 70%);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .06), transparent 70%);
   z-index: -1;
   border-radius: 16px;
 }
@@ -209,9 +265,11 @@
   margin: 8px 0 14px;
 }
 
-.eyebrow{
-  display: inline-flex;              /* verhindert 100%-Breite */
-  width: fit-content;                /* falls global etwas Breite pusht */
+.eyebrow {
+  display: inline-flex;
+  /* verhindert 100%-Breite */
+  width: fit-content;
+  /* falls global etwas Breite pusht */
   align-items: center;
   gap: .4em;
   font-size: 11.5px;
@@ -221,7 +279,7 @@
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
   background: color-mix(in srgb, var(--accent) 8%, transparent);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25);
 }
 
 .laserText p {
@@ -230,7 +288,7 @@
   color: var(--accent);
 }
 
-.factsScroller{
+.factsScroller {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: clamp(220px, 70vw, 300px);
@@ -241,21 +299,39 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
-.factCard{
+
+.factCard {
   scroll-snap-align: start;
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 16px;
   padding: 14px;
   background: color-mix(in srgb, var(--accent) 6%, #fff 0%);
-  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
 }
-.factCard h4{ font-size: 16px; margin-bottom: 6px; }
-@keyframes hintFade{ 0%,100%{opacity:.2} 50%{opacity:.7} }
 
-.cta{
-  display: inline-flex;              /* verhindert “full width” */
+.factCard h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+@keyframes hintFade {
+
+  0%,
+  100% {
+    opacity: .2
+  }
+
+  50% {
+    opacity: .7
+  }
+}
+
+.cta {
+  display: inline-flex;
+  /* verhindert “full width” */
   width: auto;
-  align-self: flex-start;            /* bleibt links in der Spalte */
+  align-self: flex-start;
+  /* bleibt links in der Spalte */
   padding: 10px 16px;
   font-size: clamp(14px, 1.05vw, 15.5px);
   line-height: 1.15;
@@ -264,10 +340,15 @@
   background: var(--text);
   color: var(--accent);
   font-weight: 700;
-  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
   transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
 }
-.cta:hover{ transform: translateY(-1px); filter: brightness(.98); }
+
+.cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(.98);
+}
+
 /* ==== MOBILE-RESET FÜR LASER-BEREICH ==== */
 @media (max-width: 900px) {
 
@@ -279,12 +360,10 @@
   }
 
   .LaserSection::after {
-    background: linear-gradient(
-      180deg,
-      rgba(10,12,16,.10) 0%,
-      rgba(10,12,16,.04) 50%,
-      rgba(10,12,16,0) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(10, 12, 16, .10) 0%,
+        rgba(10, 12, 16, .04) 50%,
+        rgba(10, 12, 16, 0) 100%);
   }
 
   .laserGrid {
@@ -294,7 +373,8 @@
     flex-direction: column;
     align-items: flex-start;
     min-height: auto;
-    padding-right: 0 !important;      /* kein Platz mehr für „unsichtbares“ Bild rechts */
+    padding-right: 0 !important;
+    /* kein Platz mehr für „unsichtbares“ Bild rechts */
   }
 
   /* Block optisch mittig, Headline zentriert, Text links */
@@ -386,20 +466,20 @@
 }
 
 
-.studioItem{
+.studioItem {
   position: relative;
   width: 100%;
   max-width: 520px;
   border-radius: 22px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
-  isolation: isolate;                     
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .08);
+  isolation: isolate;
 }
 
-.studioImg{
+.studioImg {
   width: 100%;
-  aspect-ratio: 16 / 11;                  
+  aspect-ratio: 16 / 11;
   object-fit: cover;
   display: block;
   transition: transform .45s ease;
@@ -410,15 +490,16 @@
   transform: scale(1.02);
 }
 
-.studioItem::after{
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,.25) 24%, transparent 60%);
+.studioItem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .25) 24%, transparent 60%);
   z-index: 0;
   pointer-events: none;
 }
 
-.studioActions{
+.studioActions {
   position: absolute;
   left: 50%;
   bottom: 14px;
@@ -475,7 +556,7 @@
   opacity: .38;
   mix-blend-mode: screen;
   pointer-events: none;
-  z-index: 0; 
+  z-index: 0;
 }
 
 .reviewBox {
@@ -490,18 +571,77 @@
   z-index: 1;
 }
 
-@media (max-width: 520px) {
+
+@media (max-width: 640px) {
+  .reviewsSection {
+    padding: 56px 16px 96px;
+    /* mehr Luft unten für Dots + Safe Area */
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+
+  /* statt fixer Höhe -> flexibel */
+  .reviewBox {
+    height: auto;
+    min-height: 320px;
+    /* Grundhöhe, wächst bei langem Text */
+  }
+
+  .reviewInner {
+    max-width: 560px;
+    padding: 16px clamp(28px, 10vw, 80px);
+    /* breite Innenränder */
+  }
+
+  .reviewText {
+    font-size: clamp(16px, 4.6vw, 18px);
+    line-height: 1.55;
+    letter-spacing: 0.2px;
+  }
+
+  .reviewAuthor {
+    font-size: clamp(15px, 4.2vw, 17px);
+    margin-top: 6px;
+  }
+
+  .navButton {
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 38px;
+    top: 50%;
+    background: rgba(12, 15, 28, .7);
+    backdrop-filter: blur(2px);
+  }
+
+  .navButton.prev {
+    left: 4px;
+  }
+
+  .navButton.next {
+    right: 4px;
+  }
+
   .reviewsBadge {
-    width: 90px;
-    opacity: 0.10;
+    position: absolute;
+    right: clamp(12px, 4vw, 56px);
+    bottom: clamp(12px, 3vw, 40px);
+    top: auto;
+    left: auto;
+    width: clamp(140px, 16vw, 220px);
+    opacity: .38;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 0;
   }
 }
 
-@media (max-width: 640px) {
-  .reviewBox {
-    height: var(--review-h-sm);
+@media (max-width: 360px) {
+  .navButton {
+    display: none;
   }
 }
+
 
 .reviewInner {
   max-width: 760px;

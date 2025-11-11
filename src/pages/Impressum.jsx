@@ -11,25 +11,25 @@ export default function Impressum() {
             </header>
             <section className="impressum-section">
                 <div className="impressum-textblock">
-                    Medusa Beauty Lounge UG
+                    <p className="impressum-company">Medusa Beauty Lounge UG</p>
 
-                    Immenhoferstraße 46
-                    70180 Stuttgart
+                    <address className="impressum-address">
+                        Immenhoferstraße 46<br />
+                        70180 Stuttgart
+                    </address>
 
                     <p>
-                        Tel.: <a href="tel: 015773756720">+49&nbsp;1577&nbsp;37&nbsp;56&nbsp;720</a><br />
+                        Tel.: <a href="tel:+4915773756720">+49&nbsp;1577&nbsp;37&nbsp;56&nbsp;720</a><br />
                         E-Mail: <a href="mailto:info@medusabeautylounge.de">info@medusabeautylounge.de</a>
                     </p>
-                    Geschäftsführerin: Viktoria Stoll
 
-                    Inhaltlich verantwortlich nach § 18 Abs. 2 MStV: Viktoria Stoll
-
-                    Handelsregister: Amtsgericht Stuttgart
-                    Registernummer: HRB 791068
-
-                    Umsatzsteuer-ID: DE363431135
+                    <p>Geschäftsführerin: Viktoria Stoll</p>
+                    <p>Inhaltlich verantwortlich nach §&nbsp;18 Abs.&nbsp;2 MStV: Viktoria Stoll</p>
+                    <p>Handelsregister: Amtsgericht Stuttgart<br />Registernummer: HRB 791068</p>
+                    <p>Umsatzsteuer-ID: DE363431135</p>
                 </div>
             </section>
+
         </main>
     )
 }
