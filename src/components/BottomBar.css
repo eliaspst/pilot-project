@@ -60,17 +60,39 @@
   border-bottom: 2px dotted color-mix(in srgb, var(--gold) 70%, transparent);
 }
 
-.bottombar__grid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+.bottombar__contactRow{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   gap: clamp(16px, 3vw, 40px);
-  margin-bottom: clamp(12px, 2vw, 20px);
 }
+
+.bottombar__col[aria-labelledby="kontakt-title"]{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(12px, 2vw, 24px);
+  align-items: start;
+}
+
+.bottombar__col[aria-labelledby="kontakt-title"] > h4{
+  grid-column: 1 / -1;
+  margin: 0 0 6px 0;
+}
+
+.bottombar__col address{
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.bottombar__col--stuttgart   { grid-area: stuttgart; }
+.bottombar__col--sindelfingen{ grid-area: sindelfingen; }
+.bottombar__col--hours       { grid-area: hours; }
+.bottombar__col--links       { grid-area: links; }
 .bottombar__col h4{
   color: var(--gold);
   margin: 0 0 10px 0;
   font-size: clamp(16px, 1.3vw, 20px);
 }
+
 .bottombar__col address,
 .bottombar__col p,
 .bottombar__col li{

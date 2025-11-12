@@ -24,11 +24,11 @@ a {
 
 html, body {
   font-family: "Bodoni Moda", ui-serif, Georgia, serif;
-  font-optical-sizing: auto; /* wichtig bei variable fonts */
+  font-optical-sizing: auto; 
 }
 
 h1, h2, .brand { 
-  font-weight: 700;   /* Bodoni wirkt erst mit fetteren Schnitten richtig “luxuriös” */
+  font-weight: 700;   
   letter-spacing: 0.5px;
 }
 p, li { 

@@ -182,7 +182,7 @@ export default function Home() {
               </article>
             </div>
 
-            <button className="cta" onClick={() => window.location.href = '/tipps/studien'}>
+            <button className="cta" onClick={() => navigate ("/tipps/studien")}>
               Klinische Studien dazu
             </button>
           </div>
