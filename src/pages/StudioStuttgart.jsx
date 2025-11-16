@@ -3,6 +3,7 @@ import "./StudioStuttgart.css";
 
 const BASE = process.env.PUBLIC_URL || "";
 
+/** Drei Platzhalter-Bilder */
 const GALLERY = [
   { src: `${BASE}/placeholder.png`, alt: "Studio Stuttgart – Bild 1" },
   { src: `${BASE}/placeholder.png`, alt: "Studio Stuttgart – Bild 2" },
@@ -51,8 +52,9 @@ export default function StudioStuttgart() {
             Professionelle Laser-Haarentfernung in Stuttgart
           </p>
 
+          {/* Adress-Button oben */}
           <a
-            className="studio-stg-address-btn"
+            className="studio-stg-btn"
             href={href}
             target="_blank"
             rel="noreferrer"
@@ -60,10 +62,12 @@ export default function StudioStuttgart() {
             {ADDRESS_TEXT}
           </a>
 
-          <a className="studio-stg-cta" href="/beratung">
+          {/* Beratungs-Button darunter */}
+          <a className="studio-stg-btn" href="/beratung">
             Kostenfreie Beratung anfragen
           </a>
         </div>
+
         <div className="studio-stg-hero-line" aria-hidden="true" />
       </section>
 
@@ -71,13 +75,14 @@ export default function StudioStuttgart() {
       <section className="studio-stg-about">
         <h2 className="studio-stg-about-title">Über unser Studio</h2>
         <p className="studio-stg-about-text">
-          Im Herzen Stuttgarts erwartet Sie ein modernes, stilvolles Ambiente, das
-          Wohlbefinden und Professionalität vereint. Unser Studio ist mit neuester
-          Lasertechnologie ausgestattet und wurde so gestaltet, dass Sie sich von
-          der ersten Minute an entspannen können. Wir legen großen Wert auf
-          Hygiene, Präzision und eine persönliche Beratung – für sichtbare
-          Ergebnisse und ein angenehmes Erlebnis. Hier trifft Innovation auf
-          Ästhetik – erleben Sie Haarentfernung auf höchstem Niveau.
+          Im Herzen Stuttgarts erwartet Sie ein modernes, stilvolles Ambiente,
+          das Wohlbefinden und Professionalität vereint. Unser Studio ist mit
+          neuester Lasertechnologie ausgestattet und wurde so gestaltet, dass
+          Sie sich von der ersten Minute an entspannen können. Wir legen großen
+          Wert auf Hygiene, Präzision und eine persönliche Beratung – für
+          sichtbare Ergebnisse und ein angenehmes Erlebnis. Hier trifft
+          Innovation auf Ästhetik – erleben Sie Haarentfernung auf höchstem
+          Niveau.
         </p>
       </section>
 
