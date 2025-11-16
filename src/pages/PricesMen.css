@@ -1,6 +1,8 @@
-/* nutzt globale Variablen --accent, --text, --bg */
+/* nutzt deine globalen Variablen --accent, --text, --bg */
 
-.pricesmen-page { background: var(--bg); }
+.pricesmen-page {
+  background: var(--bg);
+}
 
 .pricesmen-container {
   width: 100%;
@@ -20,6 +22,7 @@
   border-bottom: 2px solid var(--accent);
   overflow: hidden;
 }
+
 .pricesmen-heroBg {
   position: absolute;
   inset: 0;
@@ -31,22 +34,53 @@
     linear-gradient(rgba(12, 15, 28, 0.5), rgba(12, 15, 28, 0.5)),
     var(--hero-image);
 }
-.pricesmen-heroContent { position: relative; z-index: 1; text-align: center; }
-.pricesmen-heroTitle { color: var(--text); font-size: 42px; font-weight: 800; letter-spacing: 0.3px; margin: 0; }
+
+.pricesmen-heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.pricesmen-heroTitle {
+  color: var(--text);
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
 
 /* Abschnittsüberschrift */
-.pricesmen-sectionHeading { margin: 28px 0 12px; display: flex; align-items: center; gap: 12px; }
-.pricesmen-sectionTitle { color: var(--text); margin: 0; font-size: 22px; font-weight: 700; }
-.pricesmen-sectionRule { flex: 1; height: 2px; background: var(--accent); display: block; border-radius: 2px; }
+.pricesmen-sectionHeading {
+  margin: 30px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-/* Karte + Tabelle – FULL BLEED, weiß wie bei den Frauen */
+.pricesmen-sectionTitle {
+  color: var(--text);
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.pricesmen-sectionRule {
+  flex: 1;
+  height: 2px;
+  background: var(--accent);
+  display: block;
+  border-radius: 2px;
+}
+
+/* Karten + Tabellen – moderner Look */
 .pricesmen-card {
   width: 100%;
-  border: 2px solid var(--accent);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   background: #ffffff;
-  padding: 0 !important; /* kein Innenabstand */
+  padding: 0 !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(12, 15, 28, 0.12);
 }
 
 /* harte Resets gegen globale Styles */
@@ -57,36 +91,73 @@
   border-collapse: collapse !important;
   table-layout: fixed;
   background: #ffffff;
-  color: var(--text);
+  color: #111111; /* Tabellen-Schrift standardmäßig schwarz */
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
 
-.pricesmen-card * { box-sizing: border-box; }
+.pricesmen-card * {
+  box-sizing: border-box;
+}
 
-.pricesmen-headerRow { background: var(--accent); }
+/* Header-Row */
+.pricesmen-headerRow {
+  background: var(--accent);
+}
+
 .pricesmen-th {
   padding: 16px 20px;
-  color: var(--text);
+  color: #f9f9f9;
   font-weight: 700;
   letter-spacing: 0.3px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
-.pricesmen-tr { border-bottom: 1px solid var(--accent); }
-.pricesmen-td { padding: 14px 20px; color: var(--text); }
-.pricesmen-left { text-align: left; }
-.pricesmen-right { text-align: right; }
-.pricesmen-nowrap { white-space: nowrap; }
+
+/* Body-Rows – leicht gestriped + Hover */
+.pricesmen-tr {
+  border-bottom: 1px solid rgba(12, 15, 28, 0.06);
+}
+
+.pricesmen-tr:nth-child(even) {
+  background: #f7f7f7;
+}
+
+.pricesmen-tr:hover {
+  background: rgba(12, 15, 28, 0.035);
+}
+
+.pricesmen-td {
+  padding: 14px 20px;
+  color: #111111;
+}
+
+.pricesmen-left {
+  text-align: left;
+}
+
+.pricesmen-right {
+  text-align: right;
+}
+
+.pricesmen-nowrap {
+  white-space: nowrap;
+}
 
 /* Info-Box */
 .pricesmen-infoBox {
-  margin: 12px 0 20px 0;
-  border: 1px solid var(--accent);
-  border-radius: 10px;
-  padding: 16px;
+  margin: 18px 0 22px 0;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
   background: #ffffff;
+  border: 1px solid rgba(12, 15, 28, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
 }
-.pricesmen-infoP { margin: 0 0 8px 0; color: var(--text); line-height: 1.5; }
+
+.pricesmen-infoP {
+  margin: 0 0 8px 0;
+  color: var(--text);
+  line-height: 1.5;
+}
 
 /* Fußnoten */
 .pricesmen-footnote {
@@ -94,4 +165,151 @@
   font-size: 14px;
   font-style: italic;
   margin-top: 8px;
+}
+
+/* 🎉 Angebots-Bereich (Ticker + Label) */
+.pricesmen-offerBlock {
+  margin: 26px 0 8px;
+  text-align: center;
+}
+
+.pricesmen-offerLabel {
+  display: inline-block;
+  padding: 4px 14px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: rgba(197, 167, 98, 0.18);
+  border: 1px solid rgba(197, 167, 98, 0.7);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* eigentlicher Ticker */
+.pricesmen-offerTicker {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--gold);
+  padding: 12px 0;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade an den Rändern */
+.pricesmen-offerTicker::before,
+.pricesmen-offerTicker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+}
+
+.pricesmen-offerTicker::before {
+  left: 0;
+  background: linear-gradient(to right, var(--gold), transparent);
+}
+
+.pricesmen-offerTicker::after {
+  right: 0;
+  background: linear-gradient(to left, var(--gold), transparent);
+}
+
+.pricesmen-offerInner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track bewegt sich durch, doppelt gerendert für smooth Loop */
+.pricesmen-offerTrack {
+  display: inline-flex;
+  white-space: nowrap;
+  gap: 80px;
+  animation: pricesmen-slide 26s linear infinite;
+}
+
+.pricesmen-offerItem {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0c0f1c;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pricesmen-offerItem span:first-child {
+  font-size: 20px;
+}
+
+/* Animation für smooth Loop */
+@keyframes pricesmen-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 600px) {
+  .pricesmen-hero {
+    height: 360px;
+  }
+
+  .pricesmen-heroTitle {
+    font-size: 32px;
+  }
+
+  .pricesmen-sectionHeading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pricesmen-sectionRule {
+    width: 100%;
+  }
+
+  .pricesmen-card > .pricesmen-table {
+    font-size: 15px;
+  }
+
+  .pricesmen-td,
+  .pricesmen-th {
+    padding-inline: 14px;
+  }
+
+  .pricesmen-offerItem {
+    font-size: 16px;
+  }
+
+  .pricesmen-offerItem span:first-child {
+    font-size: 18px;
+  }
+}
+
+/* CTA-Button unten (goldener Button) */
+.pricesmen-cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #0c0f1c;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 14px 36px;
+  border-radius: 26px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.pricesmen-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
 }

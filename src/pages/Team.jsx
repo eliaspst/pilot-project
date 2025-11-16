@@ -24,54 +24,67 @@ export default function Team() {
         </div>
       </header>
 
-      {/* TEAM MEMBER SECTION */}
+      {/* TEAM SECTION */}
       <section className="team-wrap">
         <div className="team-card">
-          <div className="team-cardHeader">
-            <span className="team-badge">Inhaberin</span>
-            <h2 className="team-name">Viktoria Stoll</h2>
-            <p className="team-lead">„Ihre Haut in besten Händen.“</p>
-          </div>
-
           <div className="team-grid">
+            {/* Bild */}
             <figure className="team-figure">
               <img
                 src={PROFILE_IMAGE}
-                alt="Viktoria Stoll – Medusa Beauty Lounge"
+                alt="Viktoria Stoll"
                 className="team-img"
               />
             </figure>
 
+            {/* Text */}
             <article className="team-article">
+              <div className="team-detailsHeader">
+                <span className="team-badge">Geschäftsführerin</span>
+                <h2 className="team-name">Viktoria Stoll</h2>
+                <p className="team-lead">„Weil Ihre Haut nur das Beste verdient“</p>
+              </div>
+
               <p>
-                Mit langjähriger Erfahrung in Beauty, Kosmetik, Ernährung und
-                Meditation finde ich für jede Person eine individuelle,
-                stimmige Lösung – für das innere wie das äußere „Ich“. In der
-                Medusa Beauty Lounge setzen wir auf hochwertige Geräte „Made in
-                Germany“ und echte Beratung auf Augenhöhe.
+                🌿 <strong>Medusa Beauty Lounge – Dauerhafte Haarentfernung in Stuttgart &amp; Sindelfingen</strong>
               </p>
 
               <p>
-                Für die dauerhafte Haarentfernung arbeiten wir bewusst mit dem{" "}
+                Willkommen in der Medusa Beauty Lounge – deinem Spezialisten für
+                dauerhafte Haarentfernung mit modernster Diodenlaser-Technologie.
+                Hier verbinden sich jahrelange Erfahrung, zertifizierte Expertise
+                und echte Leidenschaft für Schönheit zu einem einzigartigen
+                Ergebnis – sichtbar, spürbar und nachhaltig.
+              </p>
+
+              <p>
+                💎 <strong>High-End-Technologie trifft auf individuelle Betreuung</strong>
+              </p>
+
+              <p>
+                Für unsere Laserbehandlungen setzen wir den{" "}
                 <a
                   href="https://asclepion.com/mediostar/"
+                  className="team-link"
                   target="_blank"
                   rel="noreferrer"
-                  className="team-link"
-                  aria-label="Mehr über den Mediostar Monolith von Asclepion (öffnet in neuem Tab)"
                 >
                   Mediostar Monolith®
                 </a>{" "}
-                – einem der schnellsten Diodenlaser weltweit.
-                Sichtbare Ergebnisse sind oft schon nach der ersten Behandlung
-                erkennbar, für alle Körperbereiche, Hauttypen und diverse
-                Haarfarben.
+                ein – einen der schnellsten und effektivsten Diodenlaser weltweit.
+                Er sorgt für schnelle, schmerzfreie und präzise Ergebnisse – für alle
+                Hauttypen und nahezu alle Haarfarben.
+              </p>
+
+              <p>
+                Dank unserer über 10-jährigen Erfahrung findest du bei uns die
+                perfekte Kombination aus modernster Technik und persönlicher
+                Beratung auf Augenhöhe.
               </p>
 
               <div className="team-badges">
                 <span className="team-badgePill">10+ Jahre Erfahrung</span>
-                <span className="team-badgePill">High-End Diodenlaser</span>
-                <span className="team-badgePill">Alle Hauttypen</span>
+                <span className="team-badgePill">NISV geschult</span>
               </div>
             </article>
           </div>

@@ -1,6 +1,8 @@
 /* nutzt globale Variablen --accent, --text, --bg */
 
-.priceswomen-page { background: var(--bg); }
+.priceswomen-page {
+  background: var(--bg);
+}
 
 .priceswomen-container {
   width: 100%;
@@ -20,6 +22,7 @@
   border-bottom: 2px solid var(--accent);
   overflow: hidden;
 }
+
 .priceswomen-heroBg {
   position: absolute;
   inset: 0;
@@ -31,57 +34,282 @@
     linear-gradient(rgba(12, 15, 28, 0.5), rgba(12, 15, 28, 0.5)),
     var(--hero-image);
 }
-.priceswomen-heroContent { position: relative; z-index: 1; text-align: center; }
-.priceswomen-heroTitle { color: var(--text); font-size: 42px; font-weight: 800; letter-spacing: 0.3px; margin: 0; }
+
+.priceswomen-heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.priceswomen-heroTitle {
+  color: var(--text);
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
 
 /* Abschnittsüberschrift */
-.priceswomen-sectionHeading { margin: 28px 0 12px; display: flex; align-items: center; gap: 12px; }
-.priceswomen-sectionTitle { color: var(--text); margin: 0; font-size: 22px; font-weight: 700; }
-.priceswomen-sectionRule { flex: 1; height: 2px; background: var(--accent); display: block; border-radius: 2px; }
+.priceswomen-sectionHeading {
+  margin: 30px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-/* Karte + Tabelle */
+.priceswomen-sectionTitle {
+  color: var(--text);
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.priceswomen-sectionRule {
+  flex: 1;
+  height: 2px;
+  background: var(--accent);
+  display: block;
+  border-radius: 2px;
+}
+
+/* Karten + Tabellen – moderner Look */
 .priceswomen-card {
   width: 100%;
-  border: 2px solid var(--accent);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   background: #ffffff;
-  padding: 0; /* bündig */
+  padding: 0 !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(12, 15, 28, 0.12);
 }
-.priceswomen-table {
-  width: 100%;
-  border-collapse: collapse;
+
+/* harte Resets gegen globale Styles */
+.priceswomen-card > .priceswomen-table {
+  width: 100% !important;
+  margin: 0 !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
   table-layout: fixed;
   background: #ffffff;
-  color: var(--text);
+  color: #111111; /* Tabellen-Schrift schwarz für bessere Lesbarkeit */
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  margin: 0;
-  border-spacing: 0;
 }
-.priceswomen-headerRow { background: var(--accent); }
+
+.priceswomen-card * {
+  box-sizing: border-box;
+}
+
+/* Header-Row */
+.priceswomen-headerRow {
+  background: var(--accent);
+}
+
 .priceswomen-th {
   padding: 16px 20px;
-  color: var(--text);
+  color: #f9f9f9; /* Header-Schrift hell */
   font-weight: 700;
   letter-spacing: 0.3px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
-.priceswomen-tr { border-bottom: 1px solid var(--accent); }
-.priceswomen-td { padding: 14px 20px; color: var(--text); }
-.priceswomen-left { text-align: left; }
-.priceswomen-right { text-align: right; }
-.priceswomen-nowrap { white-space: nowrap; }
+
+/* Body-Rows – leicht gestriped + Hover */
+.priceswomen-tr {
+  border-bottom: 1px solid rgba(12, 15, 28, 0.06);
+}
+
+.priceswomen-tr:nth-child(even) {
+  background: #f7f7f7;
+}
+
+.priceswomen-tr:hover {
+  background: rgba(12, 15, 28, 0.035);
+}
+
+.priceswomen-td {
+  padding: 14px 20px;
+  color: #111111;
+}
+
+.priceswomen-left {
+  text-align: left;
+}
+
+.priceswomen-right {
+  text-align: right;
+}
+
+.priceswomen-nowrap {
+  white-space: nowrap;
+}
 
 /* Info-Box */
 .priceswomen-infoBox {
-  margin: 12px 0 20px 0;
-  border: 1px solid var(--accent);
-  border-radius: 10px;
-  padding: 16px;
+  margin: 18px 0 22px 0;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
   background: #ffffff;
+  border: 1px solid rgba(12, 15, 28, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
 }
-.priceswomen-infoP { margin: 0 0 8px 0; color: var(--text); line-height: 1.5; }
+
+.priceswomen-infoP {
+  margin: 0 0 8px 0;
+  color: var(--text);
+  line-height: 1.5;
+}
 
 /* Fußnoten */
-.priceswomen-footnote { color: var(--text); font-size: 14px; font-style: italic; margin-top: 8px; }
+.priceswomen-footnote {
+  color: var(--text);
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* 🎉 Angebots-Bereich (Ticker + Label) */
+.priceswomen-offerBlock {
+  margin: 26px 0 8px;
+  text-align: center;
+}
+
+.priceswomen-offerLabel {
+  display: inline-block;
+  padding: 4px 14px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: rgba(197, 167, 98, 0.18);
+  border: 1px solid rgba(197, 167, 98, 0.7);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* eigentlicher Ticker */
+.priceswomen-offerTicker {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--gold);
+  padding: 12px 0;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade an den Rändern */
+.priceswomen-offerTicker::before,
+.priceswomen-offerTicker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+}
+
+.priceswomen-offerTicker::before {
+  left: 0;
+  background: linear-gradient(to right, var(--gold), transparent);
+}
+
+.priceswomen-offerTicker::after {
+  right: 0;
+  background: linear-gradient(to left, var(--gold), transparent);
+}
+
+.priceswomen-offerInner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track bewegt sich durch, doppelt gerendert für smooth Loop */
+.priceswomen-offerTrack {
+  display: inline-flex;
+  white-space: nowrap;
+  gap: 80px;
+  animation: priceswomen-slide 26s linear infinite;
+}
+
+.priceswomen-offerItem {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0c0f1c;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.priceswomen-offerItem span:first-child {
+  font-size: 20px;
+}
+
+/* Animation für smooth Loop */
+@keyframes priceswomen-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CTA-Button unten */
+.priceswomen-cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #0c0f1c;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 14px 36px;
+  border-radius: 26px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.priceswomen-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 600px) {
+  .priceswomen-hero {
+    height: 360px;
+  }
+
+  .priceswomen-heroTitle {
+    font-size: 32px;
+  }
+
+  .priceswomen-sectionHeading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .priceswomen-sectionRule {
+    width: 100%;
+  }
+
+  .priceswomen-card > .priceswomen-table {
+    font-size: 15px;
+  }
+
+  .priceswomen-td,
+  .priceswomen-th {
+    padding-inline: 14px;
+  }
+
+  .priceswomen-offerItem {
+    font-size: 16px;
+  }
+
+  .priceswomen-offerItem span:first-child {
+    font-size: 18px;
+  }
+}

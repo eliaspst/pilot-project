@@ -2,7 +2,7 @@ import React from "react";
 import "./PricesMen.css";
 import { pub } from "../pub";
 
-const HERO_IMAGE = pub("HerrenPreise.jpeg"); 
+const HERO_IMAGE = pub("HerrenPreise.jpeg");
 
 const rowsHead = [
   { part: "Bart Korrektur (Wange)", price: "50 €" },
@@ -40,19 +40,32 @@ const rowsLegs = [
 
 const rowsPackages = [
   { part: "Rücken, Schulter, Nacken", price: "240 €" },
-  { part: "Rücken, Schulter, Nacken, Bauch, Brust, Oberarme + Achsel gratis dazu", price: "450 €" },
+  {
+    part: "Rücken, Schulter, Nacken, Bauch, Brust, Oberarme + Achsel gratis dazu",
+    price: "450 €",
+  },
   { part: "Bauch, Brust", price: "190 €" },
   { part: "Intim komplett, Gesäß", price: "145 €" },
   { part: "Intim, Gesäß, Achsel", price: "180 €" },
   { part: "Ganzkörper", price: "600 €" },
 ];
 
+/** Angebote für den Ticker – Text einmal definieren */
+const OFFERS = [
+  "🔥 10% Rabatt auf alle Pakete im Februar",
+  "🎁 50€ Gutschein bei Weiterempfehlung eines Neukunden",
+  "💎 Ganzkörper-Paket jetzt zum Vorteilspreis",
+];
+
 function Hero() {
   return (
     <header className="pricesmen-hero">
-      <div className="pricesmen-heroBg" style={{ "--hero-image": `url(${HERO_IMAGE})` }} />
+      <div
+        className="pricesmen-heroBg"
+        style={{ "--hero-image": `url(${HERO_IMAGE})` }}
+      />
       <div className="pricesmen-heroContent">
-        <h1 className="pricesmen-heroTitle">Preise Haarentfernung – Herren</h1>
+        <h1 className="pricesmen-heroTitle">Leistungen – Herren</h1>
       </div>
     </header>
   );
@@ -85,11 +98,43 @@ function PricingTable({ rows }) {
           {rows.map((r, i) => (
             <tr key={i} className="pricesmen-tr">
               <td className="pricesmen-td pricesmen-left">{r.part}</td>
-              <td className="pricesmen-td pricesmen-right pricesmen-nowrap">{r.price}</td>
+              <td className="pricesmen-td pricesmen-right pricesmen-nowrap">
+                {r.price}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+/** 🎉 Angebots-Ticker-Komponente – mit doppeltem Track für smooth Loop */
+function PricesMenOfferTicker() {
+  return (
+    <div className="pricesmen-offerBlock">
+      <div className="pricesmen-offerLabel">Aktuelle Angebote</div>
+
+      <div className="pricesmen-offerTicker">
+        <div className="pricesmen-offerInner">
+          <div className="pricesmen-offerTrack">
+            {/* Track 1 */}
+            {OFFERS.map((text, idx) => (
+              <div className="pricesmen-offerItem" key={`a-${idx}`}>
+                <span>•</span>
+                <span>{text}</span>
+              </div>
+            ))}
+            {/* Track 2 (identisch) – für nahtlosen Loop */}
+            {OFFERS.map((text, idx) => (
+              <div className="pricesmen-offerItem" key={`b-${idx}`}>
+                <span>•</span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -100,16 +145,29 @@ export default function PricesMen() {
       <Hero />
 
       <div className="pricesmen-container">
+        {/* 🎉 Angebots-Ticker über den Paketen */}
+        <PricesMenOfferTicker />
+
+        {/* Pakete ganz nach oben */}
+        <SectionHeading title="Pakete" />
+        <PricingTable rows={rowsPackages} />
+
+        {/* Info-Box direkt unter den Paketen */}
         <div className="pricesmen-infoBox">
-          <p className="pricesmen-infoP">Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.</p>
           <p className="pricesmen-infoP">
-            Beim Kauf von 6 Behandlungen bekommen Sie 1 Behandlungen kostenlos dazu + 50€ Gutschein
-            (für jede beliebige Behandlungen einlösbar)
+            Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.
           </p>
-          <p className="pricesmen-infoP">Jedes Paket ist zudem in Gutscheinform erhältlich!</p>
           <p className="pricesmen-infoP">
-            Wir danken für deine Weiterempfehlung! Bist du zufrieden mit unserer Leistung empfehle uns
-            weiter! Für jede Empfehlung an Neukunden gibt es einen 50€ Gutschein als Dankeschön.
+            Beim Kauf von 6 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu + 50€ Gutschein
+            (für jede beliebige Behandlung einlösbar).
+          </p>
+          <p className="pricesmen-infoP">
+            Jedes Paket ist zudem in Gutscheinform erhältlich!
+          </p>
+          <p className="pricesmen-infoP">
+            Wir danken für deine Weiterempfehlung! Bist du zufrieden mit unserer Leistung, empfehle
+            uns weiter! Für jede Empfehlung an Neukunden gibt es einen 50€ Gutschein als
+            Dankeschön.
           </p>
         </div>
 
@@ -125,18 +183,17 @@ export default function PricesMen() {
         <SectionHeading title="Beine" />
         <PricingTable rows={rowsLegs} />
 
-        <SectionHeading title="Pakete" />
-        <PricingTable rows={rowsPackages} />
-
         <p className="pricesmen-footnote">*Einzelpreis ab 6 Behandlungen</p>
-        <p className="pricesmen-footnote">Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
+        <p className="pricesmen-footnote">
+          Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.
+        </p>
 
         <button
-          className="contact-button"
+          className="pricesmen-cta-btn"
           onClick={() => (window.location.href = "/beratung")}
-          style={{ marginTop: 20 }}
+          style={{ margin: "26px auto 0", display: "block" }}
         >
-          Jetzt beraten lassen
+          Kostenfreie Beratung anfragen
         </button>
       </div>
     </main>

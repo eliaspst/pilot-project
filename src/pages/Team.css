@@ -16,9 +16,11 @@
   overflow: hidden;
 }
 
+/* nur Position + Fallback-Farbe; Bild kommt via inline-style */
 .team-heroBg {
   position: absolute;
   inset: 0;
+  background-color: #0c0f1c; /* Fallback, falls Bild kurz lädt */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,43 +63,11 @@
   overflow: hidden;
 }
 
-/* Header */
-.team-cardHeader {
-  padding: 28px 20px 8px;
-  text-align: center;
-}
-
-.team-badge {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--text);
-  border-radius: 9999px;
-  padding: 6px 14px;
-  margin-bottom: 10px;
-}
-
-.team-name {
-  font-size: clamp(22px, 3vw, 28px);
-  color: var(--text);
-  font-weight: 800;
-  margin: 0;
-}
-
-.team-lead {
-  margin: 8px 0 0;
-  font-style: italic;
-  color: color-mix(in srgb, var(--accent) 85%, #000 15%);
-}
-
-/* GRID */
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 28px;
-  padding: 20px 28px 32px;
+  padding: 32px 28px 32px;
 }
 
 @media (max-width: 920px) {
@@ -122,7 +92,7 @@
   object-fit: cover;
 }
 
-/* Text */
+/* Textbereich */
 .team-article {
   color: var(--accent);
   font-size: 16px;
@@ -133,12 +103,44 @@
   margin: 0 0 14px;
 }
 
-/* Badges */
+/* Header im Textblock */
+.team-detailsHeader {
+  margin-bottom: 18px;
+}
+
+/* Badge "Geschäftsführerin" */
+.team-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--text);
+  border-radius: 9999px;
+  padding: 6px 18px;
+  margin-bottom: 10px;
+  border: 2px solid var(--accent);
+}
+
+.team-name {
+  font-size: clamp(26px, 3vw, 32px);
+  color: var(--text);
+  font-weight: 800;
+  margin: 4px 0 4px;
+}
+
+.team-lead {
+  margin: 4px 0 0;
+  font-style: italic;
+  color: color-mix(in srgb, var(--accent) 85%, #000 15%);
+}
+
+/* Badges unten */
 .team-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .team-badgePill {
@@ -153,20 +155,14 @@
   box-shadow: 0 8px 20px rgba(12, 15, 28, 0.15);
 }
 
-.team-badgePill:hover {
-  transform: translateY(-1px);
-  transition: all 0.2s ease;
-  box-shadow: 0 10px 26px rgba(12, 15, 28, 0.22);
-}
-
-/* ============ LINK (Mediostar Monolith) ============ */
+/* Mediostar-Link */
 .team-link {
   color: var(--text);
   font-weight: 800;
   text-decoration: none;
   border-bottom: 1px solid color-mix(in srgb, var(--text) 60%, transparent);
-  padding-bottom: 1px;
 }
+
 .team-link:hover {
   text-decoration: underline;
   border-bottom-color: transparent;

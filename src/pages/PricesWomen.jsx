@@ -2,7 +2,7 @@ import React from "react";
 import "./PricesWomen.css";
 import { pub } from "../pub";
 
-const HERO_IMAGE = pub("/DamenPreise.jpeg"); // Bild im public-Ordner
+const HERO_IMAGE = pub("DamenPreise.jpeg"); // Bild im public-Ordner
 
 const rowsHead = [
   { part: "Gesicht komplett", price: "70 €" },
@@ -54,12 +54,22 @@ const rowsPackages = [
   { part: "Ganzkörper", price: "400 €" },
 ];
 
+/** Angebote für den Ticker – kannst du jederzeit anpassen */
+const OFFERS = [
+  "✨ 10% Rabatt auf ausgewählte Damen-Pakete",
+  "🎁 50€ Gutschein bei Weiterempfehlung einer Freundin",
+  "💎 Ganzkörper-Paket jetzt zum Vorteilspreis",
+];
+
 function Hero() {
   return (
     <header className="priceswomen-hero">
-      <div className="priceswomen-heroBg" style={{ "--hero-image": `url(${HERO_IMAGE})` }} />
+      <div
+        className="priceswomen-heroBg"
+        style={{ "--hero-image": `url(${HERO_IMAGE})` }}
+      />
       <div className="priceswomen-heroContent">
-        <h1 className="priceswomen-heroTitle">Preise Haarentfernung – Damen</h1>
+        <h1 className="priceswomen-heroTitle">Leistungen – Damen</h1>
       </div>
     </header>
   );
@@ -85,18 +95,52 @@ function PricingTable({ rows }) {
         <thead>
           <tr className="priceswomen-headerRow">
             <th className="priceswomen-th priceswomen-left">Körperteil</th>
-            <th className="priceswomen-th priceswomen-right">Preis pro Behandlung</th>
+            <th className="priceswomen-th priceswomen-right">
+              Preis pro Behandlung
+            </th>
           </tr>
         </thead>
         <tbody>
           {rows.map((r, i) => (
             <tr key={i} className="priceswomen-tr">
               <td className="priceswomen-td priceswomen-left">{r.part}</td>
-              <td className="priceswomen-td priceswomen-right priceswomen-nowrap">{r.price}</td>
+              <td className="priceswomen-td priceswomen-right priceswomen-nowrap">
+                {r.price}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+/** 🎉 Angebots-Ticker-Komponente – wie bei den Herren, nur mit women-Klassen */
+function PricesWomenOfferTicker() {
+  return (
+    <div className="priceswomen-offerBlock">
+      <div className="priceswomen-offerLabel">Aktuelle Angebote</div>
+
+      <div className="priceswomen-offerTicker">
+        <div className="priceswomen-offerInner">
+          <div className="priceswomen-offerTrack">
+            {/* Track 1 */}
+            {OFFERS.map((text, idx) => (
+              <div className="priceswomen-offerItem" key={`a-${idx}`}>
+                <span>•</span>
+                <span>{text}</span>
+              </div>
+            ))}
+            {/* Track 2 – für smooth Loop */}
+            {OFFERS.map((text, idx) => (
+              <div className="priceswomen-offerItem" key={`b-${idx}`}>
+                <span>•</span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -107,18 +151,29 @@ export default function PricesWomen() {
       <Hero />
 
       <div className="priceswomen-container">
+        {/* 🎉 Angebots-Ticker über den Paketen */}
+        <PricesWomenOfferTicker />
+
+        {/* Pakete ganz nach oben */}
+        <SectionHeading title="Pakete" />
+        <PricingTable rows={rowsPackages} />
+
+        {/* Info-Box direkt unter den Paketen */}
         <div className="priceswomen-infoBox">
           <p className="priceswomen-infoP">
             Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.
           </p>
           <p className="priceswomen-infoP">
-            Beim Kauf von 6 Behandlungen bekommen Sie 1 Behandlungen kostenlos dazu + 50€ Gutschein
-            (für jede beliebige Behandlungen einlösbar)
+            Beim Kauf von 6 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu
+            + 50€ Gutschein (für jede beliebige Behandlung einlösbar).
           </p>
-          <p className="priceswomen-infoP">Jedes Paket ist zudem in Gutscheinform erhältlich!</p>
           <p className="priceswomen-infoP">
-            Wir danken für deine Weiterempfehlung! Bist du zufrieden mit unserer Leistung empfehle
-            uns weiter! Für jede Empfehlung an Neukunden gibt es einen 50€ Gutschein als Dankeschön.
+            Jedes Paket ist zudem in Gutscheinform erhältlich!
+          </p>
+          <p className="priceswomen-infoP">
+            Wir danken für deine Weiterempfehlung! Bist du zufrieden mit unserer
+            Leistung, empfehle uns weiter! Für jede Empfehlung an Neukunden
+            gibt es einen 50€ Gutschein als Dankeschön.
           </p>
         </div>
 
@@ -134,18 +189,19 @@ export default function PricesWomen() {
         <SectionHeading title="Beine" />
         <PricingTable rows={rowsLegs} />
 
-        <SectionHeading title="Pakete" />
-        <PricingTable rows={rowsPackages} />
-
-        <p className="priceswomen-footnote">*Einzelpreis ab 6 Behandlungen</p>
-        <p className="priceswomen-footnote">Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.</p>
+        <p className="priceswomen-footnote">
+          *Einzelpreis ab 6 Behandlungen
+        </p>
+        <p className="priceswomen-footnote">
+          Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.
+        </p>
 
         <button
-          className="contact-button"
+          className="priceswomen-cta-btn"
           onClick={() => (window.location.href = "/beratung")}
-          style={{ marginTop: 20 }}
+          style={{ margin: "26px auto 0", display: "block" }}
         >
-          Jetzt beraten lassen
+          Kostenfreie Beratung anfragen
         </button>
       </div>
     </main>
