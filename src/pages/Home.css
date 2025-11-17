@@ -42,7 +42,8 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: var(--bg);
+  background: transparent;   
+  pointer-events: none;
 }
 
 .heroContent {
@@ -67,15 +68,8 @@
   z-index: 0;
 }
 
-.title,
-.subtitle {
-  color: var(--text);
-  -webkit-text-stroke: 1px rgba(0, 0, 0, .9);
-  paint-order: stroke fill;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
-}
-
 .title {
+  color: var(--text);
   font-size: 52px;
   font-weight: 800;
   letter-spacing: 0.03em;
@@ -84,18 +78,9 @@
 }
 
 .subtitle {
+  color: #000;
   font-size: 20px;
   letter-spacing: 0.05em;
-}
-
-@media (max-width:640px) {
-  .title {
-    -webkit-text-stroke: .8px rgba(0, 0, 0, .95);
-  }
-
-  .subtitle {
-    -webkit-text-stroke: .6px rgba(0, 0, 0, .95);
-  }
 }
 
 /* ===== ÜBERLAPPENDER KARTEN-ABSCHNITT ===== */
@@ -105,9 +90,9 @@
   padding: 0 20px;
   position: relative;
   z-index: 2;
-  margin-top: -90px;
+  margin-top: -140px;       
   margin-bottom: 80px;
-  background: var(--bg);
+  background: transparent;   
 }
 
 .card {
@@ -117,13 +102,6 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
   padding: 48px 40px;
   text-align: center;
-}
-
-.card h2 {
-  color: var(--text);
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 20px;
 }
 
 .card p {
@@ -149,6 +127,7 @@
   transform: translateY(-1px);
 }
 
+
 @media (max-width: 640px) {
 
   /* weniger starker Überlapp, mehr Rand innen */
@@ -161,11 +140,6 @@
   .card {
     padding: 28px 22px;
     border-radius: 16px;
-  }
-
-  .card h2 {
-    font-size: clamp(20px, 6vw, 26px);
-    line-height: 1.2;
   }
 
   .card p {

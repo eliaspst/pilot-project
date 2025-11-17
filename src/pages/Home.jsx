@@ -137,7 +137,6 @@ export default function Home() {
 
       <section className="overlapSection">
         <div className="card">
-          <h2>Willkommen in der Medusa Beauty Lounge</h2>
           <p>
             Entspannen Sie in luxuriöser Atmosphäre und erleben Sie modernste ästhetische Behandlungen
             auf höchstem Niveau. Unser Anspruch: Qualität, Vertrauen und Wohlbefinden.

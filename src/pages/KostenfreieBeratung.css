@@ -1,6 +1,4 @@
-body {
-  background: var(--bg);
-}
+
 
 
 .hero-section {
@@ -188,14 +186,14 @@ section.contact>form>h2::after {
   border: 1.5px solid color-mix(in srgb, var(--text) 20%, transparent);
   border-radius: 12px;
   background: color-mix(in srgb, var(--bg) 92%, #fff 8%);
-  color: var(--text);
+  color: #000;
   outline: none;
   transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
   box-sizing: border-box;
 }
 
 .field::placeholder{
-  color: color-mix(in srgb, var(--text) 55%, transparent);
+  color: color-mix(in srgb, #000 100%, transparent);
 }
 
 .field:hover{
