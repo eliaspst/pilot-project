@@ -3,6 +3,7 @@
   color: var(--text);
 }
 
+/* ===== HERO ===== */
 .faq-hero {
   position: relative;
   height: 440px;
@@ -12,9 +13,12 @@
   justify-content: center;
   text-align: center;
   border-bottom: 2px solid var(--accent);
-  background-position: center center;
-  background-size: contain;
+
+  /* Bild kommt aus JSX über style, hier nur generelle BG-Einstellungen */
+  background-position: right center;
+  background-size: cover;
   background-repeat: no-repeat;
+
   padding: 0 16px;
 }
 
@@ -78,18 +82,17 @@
   margin-bottom: 14px;
 }
 
+/* Rahmen jetzt Navy */
 .qa-avatar-ring {
   width: 132px;
   height: 132px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(
-    180deg,
-    rgba(197, 167, 98, 0.95),
-    rgba(197, 167, 98, 0.75)
-  );
   padding: 4px;
+
+  background: #ffffff;
+  border: 4px solid var(--navy);
 }
 
 .qa-avatar {
@@ -154,9 +157,8 @@
   background: #fff;
 }
 
-.qa-panel p {
-  margin: 0;
-  padding: 12px 6px 2px;
+.qa-panel-body {
+  padding: 12px 6px 4px;
   color: var(--accent);
   line-height: 1.6;
 }
@@ -193,3 +195,15 @@
   transform: translateY(0);
 }
 
+/* Goldener Link für Mediostar */
+.faq-page a {
+  color: var(--text);         /* Gold */
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.15s ease;
+}
+
+.faq-page a:hover {
+  text-decoration: underline;
+}

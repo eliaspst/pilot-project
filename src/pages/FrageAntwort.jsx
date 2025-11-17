@@ -2,52 +2,212 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FrageAntwort.css";
 
+const MEDIOSTAR_URL = "https://asclepion.com/mediostar/";
+const HERO_IMAGE = process.env.PUBLIC_URL + "/TippsHero.jpeg";
+
 const ITEMS = [
   {
-    title: "Beratung",
+    title:
+      "Wie funktioniert die dauerhafte Haarentfernung – und was unterscheidet uns von anderen Studios?",
     img: "/placeholder.png",
-    text:
-      "Platzhalter: Kostenfreie Erstberatung – Inhalte, Ablauf, Ziele. Wir klären alle Fragen persönlich.",
+    content: (
+      <>
+        <p>
+          Ich habe mich auf die dauerhafte Haarentfernung spezialisiert und
+          arbeite bewusst mit dem{" "}
+          <a href={MEDIOSTAR_URL} target="_blank" rel="noreferrer">
+            Mediostar Monolith®
+          </a>{" "}
+          von Asclepion, dem aktuell weltweit schnellsten Diodenlaser. Das
+          integrierte Carl Zeiss Lasersystem garantiert eine außergewöhnlich
+          präzise und gleichmäßige Energieverteilung, was zu besonders
+          effektiven, sicheren und hautschonenden Ergebnissen führt. Bereits
+          nach der ersten Behandlung lassen sich bei vielen Kundinnen und Kunden
+          sichtbare Veränderungen feststellen.
+        </p>
+
+        <p>
+          <strong>Was uns von anderen Studios unterscheidet:</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>Höchste Effizienz:</strong> Deutlich stärkere Leistung und
+            Tiefenwirkung als herkömmliche IPL-Geräte oder ältere Diodenlaser.
+          </li>
+          <li>
+            <strong>Präzision durch Carl Zeiss Optik:</strong> Exakte
+            Energieabgabe für eine besonders sichere und gleichmäßige
+            Behandlung.
+          </li>
+          <li>
+            <strong>Behandlung aller Hauttypen:</strong> Auch dunkle oder sehr
+            helle Haut kann sicher und effektiv behandelt werden.
+          </li>
+          <li>
+            <strong>Breites Spektrum an Haarfarben:</strong> Während viele
+            Geräte nur dunkle, kräftige Haare zuverlässig erfassen, arbeitet der{" "}
+            <a href={MEDIOSTAR_URL} target="_blank" rel="noreferrer">
+              Mediostar Monolith®
+            </a>{" "}
+            effektiver auch bei helleren Haaren.
+          </li>
+          <li>
+            <strong>Kürzere Behandlungszeiten:</strong> Dank schnellerer
+            Impulstechnik sind die Sitzungen angenehmer und effizienter.
+          </li>
+          <li>
+            <strong>Maximaler Komfort:</strong> Die starke integrierte
+            Hautkühlung minimiert Schmerzen und schont die Haut deutlich besser
+            als viele veraltete Systeme.
+          </li>
+        </ul>
+
+        <p>
+          Durch diese Kombination aus modernster Technologie, medizinischer
+          Qualität und spezialisierter Expertise erzielen wir besonders
+          nachhaltige Ergebnisse in nur wenigen Sitzungen – und das bei höchster
+          Sicherheit für die Haut.
+        </p>
+      </>
+    ),
   },
   {
-    title: "Ablauf",
+    title: "Ist die dauerhafte Haarentfernung schmerzhaft?",
     img: "/placeholder.png",
-    text:
-      "Platzhalter: So läuft eine Behandlung ab – Ankunft, Vorbereitung, Behandlung, Nachpflege.",
+    content: (
+      <>
+        <p>
+          Die Behandlung mit dem{" "}
+          <a href={MEDIOSTAR_URL} target="_blank" rel="noreferrer">
+            Mediostar Monolith®
+          </a>{" "}
+          ist durch die integrierte, leistungsstarke Hautkühlung besonders
+          schonend.
+        </p>
+        <p>
+          Während der Laserimpulse können ein leichtes Wärmegefühl oder ein
+          sanftes Kribbeln wahrgenommen werden – die meisten Kundinnen und
+          Kunden empfinden dies als gut verträglich.
+        </p>
+      </>
+    ),
   },
   {
-    title: "Schmerzempfinden",
+    title:
+      "Wie viele Sitzungen sind für die dauerhafte Haarentfernung erforderlich?",
     img: "/placeholder.png",
-    text:
-      "Platzhalter: Sanfte Technologie & Kühlung. Empfindung meist als Wärme/Prickeln beschrieben.",
+    content: (
+      <>
+        <p>
+          Die benötigte Anzahl an Sitzungen hängt von Hauttyp, Haarfarbe,
+          Haarstärke und dem individuellen Wachstumszyklus ab.
+        </p>
+        <p>
+          Typischerweise sind <strong>6–10 Sitzungen</strong> notwendig.
+        </p>
+      </>
+    ),
   },
   {
-    title: "Sitzungen",
+    title:
+      "Welche Körperbereiche können mit der dauerhaften Haarentfernung behandelt werden?",
     img: "/placeholder.png",
-    text:
-      "Platzhalter: Übliche Anzahl & Intervalle – hängt von Haut-/Haartyp und Areal ab.",
+    content: (
+      <>
+        <p>
+          Mit dem{" "}
+          <a href={MEDIOSTAR_URL} target="_blank" rel="noreferrer">
+            Mediostar Monolith®
+          </a>{" "}
+          können nahezu alle Körperbereiche effektiv behandelt werden:
+        </p>
+        <ul>
+          <li>Gesicht</li>
+          <li>Achseln</li>
+          <li>Arme & Hände</li>
+          <li>Brust & Rücken</li>
+          <li>Bauch</li>
+          <li>Intim & Bikinizone</li>
+          <li>Beine & Füße</li>
+        </ul>
+      </>
+    ),
   },
   {
-    title: "Eignung",
+    title:
+      "Sind die Ergebnisse der dauerhaften Haarentfernung wirklich dauerhaft?",
     img: "/placeholder.png",
-    text:
-      "Platzhalter: Für die meisten Hauttypen geeignet. Vorab beraten wir individuell & sicher.",
+    content: (
+      <>
+        <p>
+          Die Behandlung führt zu einer langfristigen und deutlichen Reduzierung
+          des Haarwuchses. Einmal deaktivierte Haarfollikel wachsen in der Regel
+          nicht mehr nach.
+        </p>
+        <p>
+          Auffrischungsbehandlungen können langfristig sinnvoll sein.
+        </p>
+      </>
+    ),
   },
   {
-    title: "Nachpflege",
+    title:
+      "Gibt es Einschränkungen oder Nachsorgemaßnahmen nach der Behandlung?",
     img: "/placeholder.png",
-    text:
-      "Platzhalter: Kühlen, Sonnenschutz, milde Pflege. Keine Reizung/Peeling direkt nach der Sitzung.",
+    content: (
+      <>
+        <p>Nach der Behandlung können leichte Rötungen auftreten.</p>
+        <ul>
+          <li>Direkte Sonne vermeiden</li>
+          <li>Bei Bedarf kühlen</li>
+          <li>Sanfte Pflege (Aloe Vera)</li>
+          <li>2 Tage kein Solarium, Sauna oder intensiver Sport</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "Was sollte vor der Laserbehandlung beachtet werden?",
+    img: "/placeholder.png",
+    content: (
+      <>
+        <ul>
+          <li>4 Wochen vorher: keine Sonne / Solarium</li>
+          <li>Am Termin: keine Cremes, kein Deo, kein Make-up</li>
+          <li>24h vorher rasieren (nicht epilieren!)</li>
+          <li>1 Woche vorher: keine Peelings, Retinol, Fruchtsäuren</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title:
+      "Deine Nachsorge – worauf solltest du nach der Behandlung achten?",
+    img: "/placeholder.png",
+    content: (
+      <>
+        <ul>
+          <li>Immer LSF 50 auf die behandelten Stellen</li>
+          <li>Zwischen den Sessions darfst du rasieren (nur rasieren!)</li>
+          <li>48h kein Sport, Sauna oder heiße Duschen</li>
+          <li>Lauwarm duschen ist okay</li>
+        </ul>
+      </>
+    ),
   },
 ];
+
+// ---------------- TILE COMPONENT ----------------
 
 function Tile({ item, isOpen, onToggle, index }) {
   const panelRef = useRef(null);
   const [max, setMax] = useState(0);
 
   useEffect(() => {
-    if (panelRef.current) setMax(isOpen ? panelRef.current.scrollHeight : 0);
-  }, [isOpen, item.text]);
+    if (panelRef.current) {
+      setMax(isOpen ? panelRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
 
   const btnId = `qa-btn-${index}`;
   const panelId = `qa-panel-${index}`;
@@ -62,7 +222,6 @@ function Tile({ item, isOpen, onToggle, index }) {
 
       <h3 className="qa-title">{item.title}</h3>
 
-      {/* Nur der Pfeil als Button */}
       <button
         id={btnId}
         className="qa-button"
@@ -70,7 +229,7 @@ function Tile({ item, isOpen, onToggle, index }) {
         aria-expanded={isOpen}
         onClick={onToggle}
       >
-        <svg className="qa-chev" viewBox="0 0 24 24" aria-hidden="true">
+        <svg className="qa-chev" viewBox="0 0 24 24">
           <path
             d="M6 9l6 6 6-6"
             fill="none"
@@ -80,7 +239,6 @@ function Tile({ item, isOpen, onToggle, index }) {
         </svg>
       </button>
 
-      {/* Ausklapptext */}
       <div
         id={panelId}
         role="region"
@@ -89,11 +247,13 @@ function Tile({ item, isOpen, onToggle, index }) {
         className="qa-panel"
         style={{ maxHeight: `${max}px` }}
       >
-        <p>{item.text}</p>
+        <div className="qa-panel-body">{item.content}</div>
       </div>
     </article>
   );
 }
+
+// ---------------- PAGE ----------------
 
 export default function FrageAntwort() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -101,14 +261,13 @@ export default function FrageAntwort() {
 
   return (
     <main className="faq-page">
-      {/* Hero */}
+      {/* HERO */}
       <section
         className="faq-hero"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(12,15,28,0.55), rgba(12,15,28,0.55)), url(/MedusaFace.png)",
-          backgroundPosition: "center center",
-          backgroundSize: "contain",
+          backgroundImage: `linear-gradient(rgba(12,15,28,0.55), rgba(12,15,28,0.55)), url(${HERO_IMAGE})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -116,7 +275,7 @@ export default function FrageAntwort() {
         <p>Häufige Fragen – kompakt beantwortet</p>
       </section>
 
-      {/* Grid mit Kreisen */}
+      {/* GRID */}
       <section className="qa-grid">
         {ITEMS.map((item, i) => (
           <Tile
@@ -124,12 +283,14 @@ export default function FrageAntwort() {
             item={item}
             index={i}
             isOpen={openIndex === i}
-            onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+            onToggle={() =>
+              setOpenIndex(openIndex === i ? null : i)
+            }
           />
         ))}
       </section>
 
-      {/* Goldener Button unter der letzten Reihe */}
+      {/* CTA */}
       <div className="qa-bottom-btn-wrap">
         <button
           className="qa-bottom-btn"

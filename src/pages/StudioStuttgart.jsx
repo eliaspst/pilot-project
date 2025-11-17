@@ -30,11 +30,9 @@ export default function StudioStuttgart() {
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen]);
 
-  // Smart-Link: iOS -> Apple Maps, sonst Google Maps
-  const isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent);
-  const href = isIOS
-    ? "https://maps.apple.com/place?address=Immenhofer%20Stra%C3%9Fe%2046,%20S%C3%BCd,%2070180%20Stuttgart,%20Germany&coordinate=48.763281,9.176591&name=Medusa%20Beauty%20Lounge&place-id=I8CE1AD4F67C3335D&map=h"
-    : "https://maps.app.goo.gl/SM7NzrKYApnJ2A2b7";
+  // IMMER Google Maps öffnen
+  const href =
+    "https://maps.app.goo.gl/SM7NzrKYApnJ2A2b7";
 
   return (
     <main className="studio-stg-page">

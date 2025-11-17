@@ -23,22 +23,21 @@ export default function StudioSindelfingen() {
     if (!lightboxOpen) return;
     const onKey = (e) => {
       if (e.key === "Escape") setLightboxOpen(false);
-      if (e.key === "ArrowLeft") setIndex((i) => (i - 1 + GALLERY.length) % GALLERY.length);
-      if (e.key === "ArrowRight") setIndex((i) => (i + 1) % GALLERY.length);
+      if (e.key === "ArrowLeft")
+        setIndex((i) => (i - 1 + GALLERY.length) % GALLERY.length);
+      if (e.key === "ArrowRight")
+        setIndex((i) => (i + 1) % GALLERY.length);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen]);
 
-  // Dynamischer Maps-Link
-  const isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent);
-  const href = isIOS
-    ? "https://maps.apple.com/place?address=Wettbachstra%C3%9Fe%2015,%20Mitte,%2071063%20Sindelfingen,%20Deutschland&coordinate=48.707647,8.998846&name=Pieksfein%20Tattoo%20%26%20Piercing&place-id=I556141FDFFCD158&map=h"
-    : "https://www.google.com/maps/place/Pieksfein+Sindelfingen/";
+  // Immer Google Maps öffnen
+  const href =
+    "https://www.google.com/maps/place/Pieksfein+Sindelfingen+Piercing+%26+Tattoo/@48.707623,8.9989137,17z/data=!4m15!1m8!3m7!1s0x4799dfc99c3708a3:0x7ed1563e3f3daaea!2sWettbachstra%C3%9Fe+15,+71063+Sindelfingen!3b1!8m2!3d48.707623!4d8.9989137!16s%2Fg%2F11b8v4vm3j!3m5!1s0x4799dfc99c36aaab:0x2b11918d2fd5068b!8m2!3d48.7076086!4d8.9989587!16s%2Fg%2F11scr5j4_f?entry=ttu";
 
   return (
     <main className="studio-sifi-page">
-
       {/* ===== HERO ===== */}
       <section
         className="studio-sifi-hero"
@@ -54,7 +53,12 @@ export default function StudioSindelfingen() {
           </p>
 
           {/* Adresse */}
-          <a className="studio-sifi-address-btn" href={href} target="_blank" rel="noreferrer">
+          <a
+            className="studio-sifi-address-btn"
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+          >
             {ADDRESS_TEXT}
           </a>
 
