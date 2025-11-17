@@ -1,11 +1,20 @@
 import React from "react";
 import "./Studie.css";
 
-const BASE = "/"; 
+// Helper wie auf den anderen Seiten
+const pub = (p) => `${process.env.PUBLIC_URL || ""}${p}`;
 
 const Img = ({ src, alt }) => (
   <div className="studie-image-wrap">
-    <img className="studie-image" src={src} alt={alt} />
+    <img
+      className="studie-image"
+      src={src}
+      alt={alt}
+      onError={(e) => {
+        console.warn("Bild nicht gefunden:", src);
+        e.currentTarget.style.display = "none";
+      }}
+    />
   </div>
 );
 
@@ -21,7 +30,11 @@ export default function Studie() {
       {/* HERO */}
       <header
         className="studie-hero"
-        style={{ "--hero-image": `url('/Logo.png')` }}
+        style={{
+          backgroundImage: `linear-gradient(rgba(12,15,28,0.65), rgba(12,15,28,0.65)), url(${pub(
+            "/StudieHero.png"
+          )})`,
+        }}
       >
         <div className="studie-hero-content">
           <h1 className="studie-title">Studien</h1>
@@ -87,11 +100,11 @@ export default function Studie() {
       </TextBlock>
 
       {/* Bilder 1–5 */}
-      <Img src={`${BASE}1.png`} alt="Figure 1" />
-      <Img src={`${BASE}2.png`} alt="Figure 2" />
-      <Img src={`${BASE}3.png`} alt="Figure 3" />
-      <Img src={`${BASE}4.png`} alt="Figure 4" />
-      <Img src={`${BASE}5.png`} alt="Figure 5" />
+      <Img src={pub("/1.png")} alt="Figure 1" />
+      <Img src={pub("/2.png")} alt="Figure 2" />
+      <Img src={pub("/3.png")} alt="Figure 3" />
+      <Img src={pub("/4.png")} alt="Figure 4" />
+      <Img src={pub("/5.png")} alt="Figure 5" />
 
       {/* Text + Bilder 6–11 */}
       <TextBlock>
@@ -101,7 +114,7 @@ export default function Studie() {
         laser.
       </TextBlock>
       {[6, 7, 8, 9, 10, 11].map((n) => (
-        <Img key={n} src={`${BASE}${n}.png`} alt={`Figure ${n}`} />
+        <Img key={n} src={pub(`/${n}.png`)} alt={`Figure ${n}`} />
       ))}
 
       {/* Text + Bilder 12–17 */}
@@ -115,7 +128,7 @@ export default function Studie() {
         two treatments.
       </TextBlock>
       {[12, 13, 14, 15, 16, 17].map((n) => (
-        <Img key={n} src={`${BASE}${n}.png`} alt={`Figure ${n}`} />
+        <Img key={n} src={pub(`/${n}.png`)} alt={`Figure ${n}`} />
       ))}
 
       {/* Text + Bilder 18–19 */}
@@ -134,8 +147,8 @@ export default function Studie() {
         habit of plucking one area at a time. Over four months and reduced
         plucking, both sides appear equally balanced.
       </TextBlock>
-      <Img src={`${BASE}18.png`} alt="Figure 18" />
-      <Img src={`${BASE}19.png`} alt="Figure 19" />
+      <Img src={pub("/18.png")} alt="Figure 18" />
+      <Img src={pub("/19.png")} alt="Figure 19" />
 
       {/* Text + Bilder 20–24 */}
       <TextBlock>
@@ -143,7 +156,7 @@ export default function Studie() {
         side – Diode (808) patient left side
       </TextBlock>
       {[20, 21, 22, 23, 24].map((n) => (
-        <Img key={n} src={`${BASE}${n}.png`} alt={`Figure ${n}`} />
+        <Img key={n} src={pub(`/${n}.png`)} alt={`Figure ${n}`} />
       ))}
 
       {/* Schluss/Quelle */}
