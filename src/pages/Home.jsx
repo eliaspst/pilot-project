@@ -202,7 +202,7 @@ export default function Home() {
         <div className="studioGrid">
           <div className="studioText">
             <h3>Unsere Studios</h3>
-            <p>
+            <p className = "studiosSection__intro">
               Entscheiden sie sich für eins unserer tollen Studios.
               Jedes Studio besticht durch sein einzigartiges Design und seine
               hochwertige Ausstattung.

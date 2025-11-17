@@ -424,6 +424,11 @@
   margin-bottom: 12px;
 }
 
+.studiosSection__intro {
+  color: #000; 
+  font-size: clamp(16px, 1.6vw, 18px);
+}
+
 .studioText p {
   color: color-mix(in srgb, var(--accent) 80%, #000 0%);
   font-size: clamp(16px, 1.6vw, 18px);
