@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pilot-project/static/css/main.5be65612.css",
-    "main.js": "/pilot-project/static/js/main.3a554c32.js",
+    "main.css": "/pilot-project/static/css/main.0dff8d67.css",
+    "main.js": "/pilot-project/static/js/main.6f3eedee.js",
     "index.html": "/pilot-project/index.html",
-    "main.5be65612.css.map": "/pilot-project/static/css/main.5be65612.css.map",
-    "main.3a554c32.js.map": "/pilot-project/static/js/main.3a554c32.js.map"
+    "main.0dff8d67.css.map": "/pilot-project/static/css/main.0dff8d67.css.map",
+    "main.6f3eedee.js.map": "/pilot-project/static/js/main.6f3eedee.js.map"
   },
   "entrypoints": [
-    "static/css/main.5be65612.css",
-    "static/js/main.3a554c32.js"
+    "static/css/main.0dff8d67.css",
+    "static/js/main.6f3eedee.js"
   ]
 }
