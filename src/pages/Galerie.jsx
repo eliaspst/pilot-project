@@ -7,22 +7,22 @@ const pub = (p) => `${process.env.PUBLIC_URL || ""}${p}`;
 const VIDEOS = [
   {
     src: pub("/video1.mp4"),
-    title: "Behandlung – Einblick 1",
+    title: "Behandlung - Bein",
   },
   {
     src: pub("/video2.mp4"),
-    title: "Behandlung – Einblick 2",
+    title: "Behandlung – Axel",
   },
   {
     src: pub("/video3.mp4"),
-    title: "Studio – Rundgang",
+    title: "Behandlung - Bein",
   }
 ];
 
 export default function Galerie() {
   return (
     <main className="galerie-page">
-      {/* Hero mit DEINEM neuen Bild */}
+      {/* Hero mit DEINEM Bild */}
       <section
         className="galerie-hero"
         style={{
@@ -42,9 +42,19 @@ export default function Galerie() {
               <video
                 className="galerie-video"
                 src={vid.src}
-                controls
                 playsInline
+
+                /* 🔒 Ton komplett blockiert */
+                muted
+                volume="0"
+                onVolumeChange={(e) => { e.target.volume = 0; }}
+
+                /* 🔒 Ton-Icon ausblenden */
+                controls
+                controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
+                disablePictureInPicture
               />
+
               {vid.title && (
                 <figcaption className="galerie-caption">
                   {vid.title}
