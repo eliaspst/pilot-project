@@ -20,15 +20,16 @@
   padding:0 16px;
 }
 .galerie-hero h1{
-  margin:0 0 8px;
-  font-size:42px;
-  font-weight:800;
-  color:var(--text);
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: var(--text);
 }
 .galerie-hero p{
-  margin:0;
-  font-size:18px;
-  color:var(--text);
+   margin: 0;
+  opacity: 0.95;
+  font-size: 20px;
+  color: var(--black);
 }
 
 /* WRAP & GRID */

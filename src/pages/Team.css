@@ -35,17 +35,17 @@
 }
 
 .team-title {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: 44px;
   font-weight: 800;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: var(--text);
 }
 
 .team-sub {
   margin: 0;
-  font-size: clamp(16px, 2.2vw, 20px);
   opacity: 0.95;
-  color: color-mix(in srgb, var(--text) 92%, #fff 8%);
+  font-size: 20px;
+  color: var(--black);
 }
 
 /* ============ TEAM CARD ============ */

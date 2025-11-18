@@ -25,16 +25,17 @@
 }
 
 .studie-title{
-  color: var(--text);
-  font-size: 42px;
+ font-size: 44px;
   font-weight: 800;
-  margin: 0;
+  margin: 0 0 10px;
+  color: var(--text);
 }
 
 .studie-subtitle{
-  color: var(--text);
-  font-size: 18px;
-  margin-top: 10px;
+   margin: 0;
+  opacity: 0.95;
+  font-size: 20px;
+  color: var(--black);
 }
 
 /* Sections & text */

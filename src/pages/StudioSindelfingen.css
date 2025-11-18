@@ -28,15 +28,17 @@
 }
 
 .studio-sifi-title {
-  font-size: clamp(36px, 5vw, 56px);
+   font-size: 44px;
   font-weight: 800;
-  margin: 0;
+  margin: 0 0 10px;
+  color: var(--text);
 }
 
 .studio-sifi-sub {
-  font-size: clamp(16px, 2.3vw, 20px);
-  color: color-mix(in srgb, var(--text) 92%, #fff 8%);
-  margin: 0;
+ margin: 0;
+  opacity: 0.95;
+  font-size: 20px;
+  color: var(--black);
 }
 
 /* GOLD BUTTONS */

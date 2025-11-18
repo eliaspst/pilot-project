@@ -42,11 +42,10 @@
 }
 
 .pricesmen-heroTitle {
-  color: var(--text);
-  font-size: 42px;
+   font-size: 44px;
   font-weight: 800;
-  letter-spacing: 0.3px;
-  margin: 0;
+  margin: 0 0 10px;
+  color: var(--text);
 }
 
 /* Abschnittsüberschrift */
