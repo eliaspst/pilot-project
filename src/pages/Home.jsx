@@ -3,7 +3,7 @@ import "../pages/Home.css";
 import { useNavigate } from "react-router-dom";
 import { pub } from "../pub";
 
-const HomeVideo = pub("/HomeVideo.mp4");
+const HomeVideo = pub("/HomeVideo.mov");
 const GoogleBewertungen = pub("/Google-Bewertungen.webp");
 
 const REVIEWS = [
