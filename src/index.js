@@ -1,11 +1,20 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { HashRouter as BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import App from "./App";
 
-const root = createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+
+if (!container) {
+  throw new Error("Root-Element mit id='root' wurde nicht gefunden.");
+}
+
+const root = createRoot(container);
+
 root.render(
-  <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/pilot-project" : "/"}>
-    <App />
-  </BrowserRouter>
+  <React.StrictMode>
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </React.StrictMode>
 );
