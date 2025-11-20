@@ -6,7 +6,15 @@
   color: #000;
 }
 
-.datenschutz-title,
+.datenschutz-title {
+  margin: 0 0 clamp(8px, 1.2vw, 12px) 0;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: .5px;
+  color: color-mix(in srgb, var(--accent) 78%, var(--text) 22%);
+  text-transform: uppercase;
+  opacity: .95;
+}
 .ds-container h1,
 .ds-container h2,
 .ds-container h3,

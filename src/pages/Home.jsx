@@ -154,7 +154,6 @@ export default function Home() {
       <section className="LaserSection">
         <div className="laserGrid">
           <div className="laserText">
-            <span className="eyebrow">Technologie</span>
             <h3>Dauerhafte Haarentfernung mit Diodenlaser</h3>
             <p>
               Erleben Sie glatte Haut ohne Kompromisse. Unsere fortschrittlichen
@@ -218,6 +217,7 @@ export default function Home() {
                 loading="lazy"
               />
               <figcaption className="studioActions">
+                <h4 className="studioTitle">Studio Stuttgart</h4>
                 <button
                   className="studioBtn"
                   onClick={() => navigate("/unser-studio/stuttgart")}
@@ -235,6 +235,7 @@ export default function Home() {
                 loading="lazy"
               />
               <figcaption className="studioActions">
+                <h4 className="studioTitle">Studio Sindelfingen</h4>
                 <button
                   className="studioBtn"
                   onClick={() => navigate("/unser-studio/sindelfingen")}

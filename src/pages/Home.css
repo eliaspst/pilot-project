@@ -81,7 +81,7 @@
 }
 
 .subtitle {
-  color: #000;
+  color: var(--black);
   font-size: 20px;
   letter-spacing: 0.05em;
 }
@@ -137,7 +137,6 @@
     height: 460px;
   }
 
-  /* weniger starker Überlapp, mehr Rand innen */
   .overlapSection {
     margin-top: -48px;
     padding: 0 16px;
@@ -158,10 +157,8 @@
     font-size: 15px;
   }
 
-  /* falls dein Hero 100vh nutzt: auf d/vh umstellen vermeidet iOS-Sprünge */
   .hero-section {
     min-height: 90dvh;
-    /* statt 100vh/svh – stabiler in Mobile Safari */
     padding-bottom: 96px;
   }
 }
@@ -247,23 +244,6 @@
   margin: 8px 0 14px;
 }
 
-.eyebrow {
-  display: inline-flex;
-  /* verhindert 100%-Breite */
-  width: fit-content;
-  /* falls global etwas Breite pusht */
-  align-items: center;
-  gap: .4em;
-  font-size: 11.5px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25);
-}
-
 .laserText p {
   line-height: 1.7;
   margin: 10px 0 16px;
@@ -310,10 +290,8 @@
 
 .cta {
   display: inline-flex;
-  /* verhindert “full width” */
   width: auto;
   align-self: flex-start;
-  /* bleibt links in der Spalte */
   padding: 10px 16px;
   font-size: clamp(14px, 1.05vw, 15.5px);
   line-height: 1.15;
@@ -432,12 +410,12 @@
 }
 
 .studiosSection__intro {
-  color: #000; 
+  color: var(--black); 
   font-size: clamp(16px, 1.6vw, 18px);
 }
 
 .studioText p {
-  color: color-mix(in srgb, var(--accent) 80%, #000 0%);
+  color: color-mix(in srgb, var(--accent) 80%, var(--black) 0%);
   font-size: clamp(16px, 1.6vw, 18px);
 }
 
@@ -464,12 +442,21 @@
   isolation: isolate;
 }
 
+.studioTitle {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+}
+
 .studioImg {
   width: 100%;
   aspect-ratio: 16 / 11;
   object-fit: cover;
   display: block;
   transition: transform .45s ease;
+  filter: brightness(0.55);
   background: #f3f3f3;
 }
 
@@ -488,22 +475,32 @@
 
 .studioActions {
   position: absolute;
-  left: 50%;
-  bottom: 14px;
-  transform: translateX(-50%);
-  z-index: 1;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;      
+  justify-content: space-between;
+  padding: 24px 32px;
+  text-align: left;             
+  color: #fff;
+  pointer-events: none;         
 }
 
 .studioBtn {
-  appearance: none;
-  border: 1px solid color-mix(in srgb, var(--text) 70%, transparent);
-  background: var(--text);
-  color: #111;
-  font-weight: 600;
-  padding: 12px 18px;
+  pointer-events: auto;               
+  align-self: center;                 
+  margin-bottom: 24px;
+
+  border: none;
   border-radius: 999px;
+  padding: 10px 32px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--text);            
+  color: var(--black);               
   cursor: pointer;
-  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+              background 0.2s ease, color 0.2s ease;
 }
 
 .studioBtn:hover {

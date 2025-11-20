@@ -11,6 +11,8 @@
   padding: clamp(20px, 3vw, 40px) clamp(16px, 5vw, 64px);
 }
 
+/* ===== PARTNER ===== */
+
 .bottombar__partners{
   display:flex;
   flex-wrap:wrap;
@@ -24,12 +26,15 @@
 .bottombar__partnersLabel{
   color: var(--gold);
   font-weight: 700;
-  margin-right: 6px;          
-  white-space: nowrap;        
+  margin-right: 6px;
+  white-space: nowrap;
 }
 
 @media (max-width: 600px){
-  .bottombar__partnersLabel{ width:100%; margin:0 0 6px 0; } /* Label über den Badges auf Mobile */
+  .bottombar__partnersLabel{
+    width:100%;
+    margin:0 0 6px 0; 
+  }
 }
 
 .bottombar__partner{
@@ -52,6 +57,8 @@
   color: var(--gold);
 }
 
+/* ===== KONTAKT-LAYOUT ===== */
+
 .bottombar__addrTitle{
   display:inline-block;
   font-weight: 700;
@@ -62,52 +69,71 @@
 
 .bottombar__contactRow{
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr; /* links Grid mit 4 Blöcken, rechts Tel/Mail */
   gap: clamp(16px, 3vw, 40px);
+  align-items: flex-start;
 }
+
 
 .bottombar__col[aria-labelledby="kontakt-title"]{
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: clamp(12px, 2vw, 24px);
-  align-items: start;
+  grid-template-areas:
+    "title      title"
+    "stuttgart  sindelfingen"
+    "hours      links";
+  column-gap: clamp(20px, 3vw, 36px);
+  row-gap: clamp(12px, 2vw, 18px);
+  align-items: flex-start;
 }
 
 .bottombar__col[aria-labelledby="kontakt-title"] > h4{
-  grid-column: 1 / -1;
-  margin: 0 0 6px 0;
+  grid-area: title;
+  margin: 0 0 10px 0;
 }
 
-.bottombar__col address{
-  font-style: normal;
-  line-height: 1.6;
-}
+.bottombar__col--stuttgart    { grid-area: stuttgart; }
+.bottombar__col--sindelfingen { grid-area: sindelfingen; }
+.bottombar__col--hours        { grid-area: hours; }
+.bottombar__col--links        { grid-area: links; }
 
-.bottombar__col--stuttgart   { grid-area: stuttgart; }
-.bottombar__col--sindelfingen{ grid-area: sindelfingen; }
-.bottombar__col--hours       { grid-area: hours; }
-.bottombar__col--links       { grid-area: links; }
 .bottombar__col h4{
   color: var(--gold);
-  margin: 0 0 10px 0;
   font-size: clamp(16px, 1.3vw, 20px);
 }
 
 .bottombar__col address,
 .bottombar__col p,
 .bottombar__col li{
-  margin: 6px 0;
+  margin: 4px 0;
   font-style: normal;
   line-height: 1.6;
 }
-.bottombar__list{ list-style:none; padding:0; margin:0; }
+
+.bottombar__col[aria-labelledby="kontakt-wege"]{
+  align-self: flex-start;                    
+  justify-self: start;
+  margin-top: clamp(32px, 3vw, 44px);        
+}
+
+
+.bottombar__list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
 
 .bottombar__link{
   color: var(--text);
   text-decoration: none;
   border-bottom: 1px dotted color-mix(in srgb, var(--gold) 50%, transparent);
 }
-.bottombar__link:hover{ color: var(--gold); border-bottom-color: var(--gold); }
+.bottombar__link:hover{
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ===== UNTERE LEISTE ===== */
 
 .bottombar__bottom{
   margin-top: clamp(8px, 1.5vw, 14px);
@@ -119,25 +145,58 @@
   gap: 16px;
   font-size: clamp(13px, 1.1vw, 15px);
 }
+
 .bottombar__menu{
   display:flex;
   gap: clamp(12px, 2vw, 24px);
   list-style:none;
-  margin:0; padding:0;
+  margin:0;
+  padding:0;
 }
 
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 820px){
-  .bottombar__partners{ grid-auto-flow: row; grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .bottombar__grid{ grid-template-columns: 1fr; }
-  .bottombar__bottom{ flex-direction: column; align-items: flex-start; }
+  .bottombar__partners{
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .bottombar__contactRow{
+    grid-template-columns: 1fr; /* rechts unter links */
+  }
+
+  .bottombar__col[aria-labelledby="kontakt-title"]{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "stuttgart"
+      "sindelfingen"
+      "hours"
+      "links";
+  }
+
+  .bottombar__col[aria-labelledby="kontakt-wege"]{
+    align-self: flex-start;
+    margin-top: 12px; /* auf Mobile kleiner Abstand */
+  }
+
+  .bottombar__bottom{
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
+
+/* ===== APP-HÖHE ===== */
 
 html, body, #root { height: 100%; }
 .app-root{ min-height: 100dvh; display:flex; flex-direction: column; }
 .app-main{ flex:1; }
 
+
 .bottombar a[href^="tel:"],
-.bottombar a[href^="mailto:"]{
+.bottombar a[href^="mailto:"],
+.bottombar__socialLink{
   color: var(--gold);
   text-decoration: none; 
   border-bottom: 1px dotted color-mix(in srgb, var(--gold) 60%, transparent);
@@ -145,10 +204,14 @@ html, body, #root { height: 100%; }
 
 .bottombar a[href^="tel:"]:hover,
 .bottombar a[href^="mailto:"]:hover,
+.bottombar__socialLink:hover,
 .bottombar a[href^="tel:"]:focus-visible,
 .bottombar a[href^="mailto:"]:focus-visible,
+.bottombar__socialLink:focus-visible,
 .bottombar a[href^="tel:"]:visited,
-.bottombar a[href^="mailto:"]:visited{
+.bottombar a[href^="mailto:"]:visited,
+.bottombar__socialLink:visited{
   color: var(--gold);
   border-bottom-color: var(--gold);
 }
+

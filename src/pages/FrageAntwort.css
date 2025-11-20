@@ -14,7 +14,6 @@
   text-align: center;
   border-bottom: 2px solid var(--accent);
 
-  /* Bild kommt aus JSX über style, hier nur generelle BG-Einstellungen */
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -195,9 +194,8 @@
   transform: translateY(0);
 }
 
-/* Goldener Link für Mediostar */
 .faq-page a {
-  color: var(--text);         /* Gold */
+  color: var(--text);         
   font-weight: 700;
   text-decoration: none;
   border-bottom: 1px solid transparent;
