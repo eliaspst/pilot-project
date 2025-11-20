@@ -16,6 +16,7 @@
   font-family: 'Lora', serif;
   overflow-x: hidden;
   isolation: isolate;
+  padding-top: 80px;
 }
 
 .hero {
