@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";        // <— WICHTIG für Navigation
 import "./StudioSindelfingen.css";
 
 const BASE = process.env.PUBLIC_URL || "";
@@ -34,7 +35,7 @@ export default function StudioSindelfingen() {
 
   // Immer Google Maps öffnen
   const href =
-    "https://www.google.com/maps/place/Pieksfein+Sindelfingen+Piercing+%26+Tattoo/@48.707623,8.9989137,17z/data=!4m15!1m8!3m7!1s0x4799dfc99c3708a3:0x7ed1563e3f3daaea!2sWettbachstra%C3%9Fe+15,+71063+Sindelfingen!3b1!8m2!3d48.707623!4d8.9989137!16s%2Fg%2F11b8v4vm3j!3m5!1s0x4799dfc99c36aaab:0x2b11918d2fd5068b!8m2!3d48.7076086!4d8.9989587!16s%2Fg%2F11scr5j4_f?entry=ttu";
+    "https://www.google.com/maps/place/Pieksfein+Sindelfingen+Piercing+%26+Tattoo/@48.707623,8.9989137,17z";
 
   return (
     <main className="studio-sifi-page">
@@ -62,10 +63,10 @@ export default function StudioSindelfingen() {
             {ADDRESS_TEXT}
           </a>
 
-          {/* CTA */}
-          <a className="studio-sifi-cta" href="/beratung">
+          {/* CTA → FIX mit Link statt <a> */}
+          <Link className="studio-sifi-cta" to="/beratung">
             Kostenfreie Beratung anfragen
-          </a>
+          </Link>
         </div>
 
         <div className="studio-sifi-hero-line" aria-hidden="true" />

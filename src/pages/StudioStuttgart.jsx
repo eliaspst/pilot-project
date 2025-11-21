@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";           // <— NEU
 import "./StudioStuttgart.css";
 
 const BASE = process.env.PUBLIC_URL || "";
@@ -30,9 +31,8 @@ export default function StudioStuttgart() {
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen]);
 
-  // IMMER Google Maps öffnen
-  const href =
-    "https://maps.app.goo.gl/SM7NzrKYApnJ2A2b7";
+  // IMMER Google Maps öffnen (externer Link)
+  const href = "https://maps.app.goo.gl/SM7NzrKYApnJ2A2b7";
 
   return (
     <main className="studio-stg-page">
@@ -50,7 +50,7 @@ export default function StudioStuttgart() {
             Professionelle Laser-Haarentfernung in Stuttgart
           </p>
 
-          {/* Adress-Button oben */}
+          {/* Adress-Button oben – externer Link */}
           <a
             className="studio-stg-btn"
             href={href}
@@ -60,10 +60,10 @@ export default function StudioStuttgart() {
             {ADDRESS_TEXT}
           </a>
 
-          {/* Beratungs-Button darunter */}
-          <a className="studio-stg-btn" href="/beratung">
+          {/* Beratungs-Button darunter – interner Link über React Router */}
+          <Link className="studio-stg-btn" to="/beratung">
             Kostenfreie Beratung anfragen
-          </a>
+          </Link>
         </div>
 
         <div className="studio-stg-hero-line" aria-hidden="true" />
