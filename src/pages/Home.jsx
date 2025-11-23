@@ -180,7 +180,7 @@ export default function Home() {
               </article>
             </div>
 
-            <button className="cta" onClick={() => navigate ("/tipps/studien")}>
+            <button className="cta" onClick={() => navigate("/tipps/studien")}>
               Klinische Studien dazu
             </button>
           </div>
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="studioGrid">
           <div className="studioText">
             <h3>Unsere Studios</h3>
-            <p className = "studiosSection__intro">
+            <p className="studiosSection__intro">
               Entscheiden sie sich für eins unserer tollen Studios.
               Jedes Studio besticht durch sein einzigartiges Design und seine
               hochwertige Ausstattung.
@@ -263,15 +263,35 @@ export default function Home() {
           onTouchEnd={handleTouchEnd}
           aria-roledescription="carousel"
         >
-          <button aria-label="Vorherige Bewertung" onClick={goPrev} className="navButton prev">‹</button>
-
+          {/* TEXTBLOCK */}
           <div className="reviewInner">
             <p className="reviewText">“{REVIEWS[index].text}”</p>
             <p className="reviewAuthor">– {REVIEWS[index].author}</p>
-            <img src={pub("/GoogleLogo.png")} alt="Google Logo" className="googleLogo" />
+            <img
+              src={pub("/GoogleLogo.png")}
+              alt="Google Logo"
+              className="googleLogo"
+            />
           </div>
 
-          <button aria-label="Nächste Bewertung" onClick={goNext} className="navButton next">›</button>
+          {/* PFEILE – Desktop überlagern, Mobile darunter */}
+          <div className="reviewNavRow">
+            <button
+              aria-label="Vorherige Bewertung"
+              onClick={goPrev}
+              className="navButton prev"
+            >
+              ‹
+            </button>
+
+            <button
+              aria-label="Nächste Bewertung"
+              onClick={goNext}
+              className="navButton next"
+            >
+              ›
+            </button>
+          </div>
         </div>
 
         <div className="dots">
@@ -288,6 +308,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
     </main>
   );
 }
