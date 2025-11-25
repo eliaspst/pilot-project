@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import OfferTicker from "./components/OfferTicker";
 import BottomBar from "./components/BottomBar";
 import Home from "./pages/Home";
 import PricesMen from "./pages/PricesMen";
@@ -19,6 +20,7 @@ import Datenschutz from "./pages/Datenschutzerklärungen";
 export default function App() {
   return (
     <>
+      <OfferTicker />
       <Navbar />
 
       <Routes>

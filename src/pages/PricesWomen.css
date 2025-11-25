@@ -158,15 +158,6 @@
   line-height: 1.5;
 }
 
-/* Fußnoten */
-.priceswomen-footnote {
-  color: var(--text);
-  font-size: 14px;
-  font-style: italic;
-  margin-top: 8px;
-}
-
-/* 🎉 Angebots-Bereich (Ticker + Label) */
 .priceswomen-offerBlock {
   margin: 26px 0 8px;
   text-align: center;

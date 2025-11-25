@@ -1,0 +1,41 @@
+.offerBlock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100; 
+}
+
+.offerTicker {
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.offerInner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.offerTrack {
+  display: inline-flex;
+  gap: 32px;
+  animation: offer-ticker 20s linear infinite;
+}
+
+.offerItem span {
+  font-weight: 500;
+}
+
+@keyframes offer-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -50,7 +50,6 @@ const rowsPackages = [
   { part: "Ganzkörper", price: "600 €" },
 ];
 
-/** Angebote für den Ticker – Text einmal definieren */
 const OFFERS = [
   "🔥 10% Rabatt auf alle Pakete im Februar",
   "🎁 50€ Gutschein bei Weiterempfehlung eines Neukunden",
@@ -90,7 +89,7 @@ function PricingTable({ rows }) {
         </colgroup>
         <thead>
           <tr className="pricesmen-headerRow">
-            <th className="pricesmen-th pricesmen-left">Körperteil</th>
+            <th className="pricesmen-th pricesmen-left">Areal</th>
             <th className="pricesmen-th pricesmen-right">Preis pro Behandlung</th>
           </tr>
         </thead>
@@ -109,7 +108,6 @@ function PricingTable({ rows }) {
   );
 }
 
-/** 🎉 Angebots-Ticker-Komponente – mit doppeltem Track für smooth Loop */
 function PricesMenOfferTicker() {
   return (
     <div className="pricesmen-offerBlock">
@@ -118,17 +116,13 @@ function PricesMenOfferTicker() {
       <div className="pricesmen-offerTicker">
         <div className="pricesmen-offerInner">
           <div className="pricesmen-offerTrack">
-            {/* Track 1 */}
             {OFFERS.map((text, idx) => (
               <div className="pricesmen-offerItem" key={`a-${idx}`}>
-                <span>•</span>
                 <span>{text}</span>
               </div>
             ))}
-            {/* Track 2 (identisch) – für nahtlosen Loop */}
             {OFFERS.map((text, idx) => (
               <div className="pricesmen-offerItem" key={`b-${idx}`}>
-                <span>•</span>
                 <span>{text}</span>
               </div>
             ))}
@@ -145,14 +139,11 @@ export default function PricesMen() {
       <Hero />
 
       <div className="pricesmen-container">
-        {/* 🎉 Angebots-Ticker über den Paketen */}
         <PricesMenOfferTicker />
 
-        {/* Pakete ganz nach oben */}
         <SectionHeading title="Pakete" />
         <PricingTable rows={rowsPackages} />
 
-        {/* Info-Box direkt unter den Paketen */}
         <div className="pricesmen-infoBox">
           <p className="pricesmen-infoP">
             Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.
@@ -183,11 +174,7 @@ export default function PricesMen() {
         <SectionHeading title="Beine" />
         <PricingTable rows={rowsLegs} />
 
-        <p className="pricesmen-footnote">*Einzelpreis ab 6 Behandlungen</p>
-        <p className="pricesmen-footnote">
-          Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.
-        </p>
-
+      
         <button
           className="pricesmen-cta-btn"
           onClick={() => (window.location.href = "/beratung")}

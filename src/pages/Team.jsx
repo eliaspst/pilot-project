@@ -16,12 +16,6 @@ export default function Team() {
             backgroundImage: `linear-gradient(rgba(12,15,28,.55), rgba(12,15,28,.55)), url(${HERO_IMAGE})`,
           }}
         />
-        <div className="team-heroInner">
-          <h1 className="team-title">Unser Team</h1>
-          <p className="team-sub">
-            Lernen Sie die Gesichter hinter der Medusa Beauty Lounge kennen.
-          </p>
-        </div>
       </header>
 
       {/* TEAM SECTION */}

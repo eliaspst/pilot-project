@@ -94,7 +94,7 @@ function PricingTable({ rows }) {
         </colgroup>
         <thead>
           <tr className="priceswomen-headerRow">
-            <th className="priceswomen-th priceswomen-left">Körperteil</th>
+            <th className="priceswomen-th priceswomen-left">Areal</th>
             <th className="priceswomen-th priceswomen-right">
               Preis pro Behandlung
             </th>
@@ -115,7 +115,6 @@ function PricingTable({ rows }) {
   );
 }
 
-/** 🎉 Angebots-Ticker-Komponente – wie bei den Herren, nur mit women-Klassen */
 function PricesWomenOfferTicker() {
   return (
     <div className="priceswomen-offerBlock">
@@ -127,14 +126,12 @@ function PricesWomenOfferTicker() {
             {/* Track 1 */}
             {OFFERS.map((text, idx) => (
               <div className="priceswomen-offerItem" key={`a-${idx}`}>
-                <span>•</span>
                 <span>{text}</span>
               </div>
             ))}
             {/* Track 2 – für smooth Loop */}
             {OFFERS.map((text, idx) => (
               <div className="priceswomen-offerItem" key={`b-${idx}`}>
-                <span>•</span>
                 <span>{text}</span>
               </div>
             ))}
@@ -189,13 +186,7 @@ export default function PricesWomen() {
         <SectionHeading title="Beine" />
         <PricingTable rows={rowsLegs} />
 
-        <p className="priceswomen-footnote">
-          *Einzelpreis ab 6 Behandlungen
-        </p>
-        <p className="priceswomen-footnote">
-          Hinweis: Es besteht die Möglichkeit, in Raten zu zahlen.
-        </p>
-
+      
         <button
           className="priceswomen-cta-btn"
           onClick={() => (window.location.href = "/beratung")}

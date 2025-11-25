@@ -197,7 +197,6 @@ const ITEMS = [
   },
 ];
 
-// ---------------- TILE COMPONENT ----------------
 
 function Tile({ item, isOpen, onToggle, index }) {
   const panelRef = useRef(null);
@@ -271,7 +270,7 @@ export default function FrageAntwort() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h1>FAQ</h1>
+        <h1>Tipps</h1>
         <p>Häufige Fragen – kompakt beantwortet</p>
       </section>
 
@@ -296,7 +295,7 @@ export default function FrageAntwort() {
           className="qa-bottom-btn"
           onClick={() => navigate("/beratung")}
         >
-          Jetzt beraten lassen
+          Kostenfreie Beratung anfragen
         </button>
       </div>
     </main>
