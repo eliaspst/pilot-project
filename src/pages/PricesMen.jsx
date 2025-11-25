@@ -5,49 +5,49 @@ import { pub } from "../pub";
 const HERO_IMAGE = pub("HerrenPreise.jpeg");
 
 const rowsHead = [
-  { part: "Bart Korrektur (Wange)", price: "50 €" },
-  { part: "Hals", price: "55 €" },
+  { part: "Bart Korrektur (Wange)", price: "70 €" },
+  { part: "Hals", price: "80 €" },
   { part: "Ohren", price: "30 €" },
-  { part: "Nacken", price: "55 €" },
-  { part: "Bart Korrektur (Wange), Hals", price: "85 €" },
+  { part: "Nacken", price: "80 €" },
+  { part: "Bart Korrektur (Wange), Hals", price: "130 €" },
 ];
 
 const rowsBody = [
-  { part: "Achseln", price: "55 €" },
-  { part: "Oberarme", price: "75 €" },
-  { part: "Unterarme", price: "75 €" },
-  { part: "Hände", price: "30 €" },
-  { part: "Schultern", price: "75 €" },
-  { part: "Brust", price: "95 €" },
-  { part: "Bauch", price: "110 €" },
-  { part: "Rücken", price: "130 €" },
-  { part: "Rücken Seiten", price: "75 €" },
-  { part: "Steiß", price: "55 €" },
+  { part: "Achseln", price: "70 €" },
+  { part: "Oberarme", price: "90 €" },
+  { part: "Unterarme", price: "90 €" },
+  { part: "Hände", price: "40 €" },
+  { part: "Schultern", price: "85 €" },
+  { part: "Brust", price: "120 €" },
+  { part: "Bauch", price: "130 €" },
+  { part: "Rücken", price: "170 €" },
+  { part: "Rücken Seiten", price: "100 €" },
+  { part: "Steiß", price: "100 €" },
 ];
 
 const rowsIntim = [
-  { part: "Intimbereich", price: "70 €" },
-  { part: "Pofalte", price: "50 €" },
-  { part: "Gesäß (komplett)", price: "85 €" },
+  { part: "Intimbereich", price: "100 €" },
+  { part: "Pofalte", price: "70 €" },
+  { part: "Gesäß (komplett)", price: "95 €" },
 ];
 
 const rowsLegs = [
-  { part: "Oberschenkel", price: "110 €" },
-  { part: "Unterschenkel", price: "110 €" },
-  { part: "Füße", price: "40 €" },
-  { part: "Beine komplett", price: "200 €" },
+  { part: "Oberschenkel", price: "140 €" },
+  { part: "Unterschenkel", price: "140 €" },
+  { part: "Füße", price: "50 €" },
+  { part: "Beine komplett", price: "250 €" },
 ];
 
 const rowsPackages = [
-  { part: "Rücken, Schulter, Nacken", price: "240 €" },
+  { part: "Rücken, Schulter, Nacken", price: "300 €" },
   {
-    part: "Rücken, Schulter, Nacken, Bauch, Brust, Oberarme + Achsel gratis dazu",
-    price: "450 €",
+    part: "Rücken, Schulter, Nacken, Oberarme",
+    price: "350 €",
   },
-  { part: "Bauch, Brust", price: "190 €" },
-  { part: "Intim komplett, Gesäß", price: "145 €" },
-  { part: "Intim, Gesäß, Achsel", price: "180 €" },
-  { part: "Ganzkörper", price: "600 €" },
+  { part: "Bauch, Brust", price: "220 €" },
+  { part: "Intim komplett, Pofalte", price: "170 €" },
+  { part: "Bart, Hals", price: "130 €" },
+  { part: "Ganzkörper", price: "700 €" },
 ];
 
 const OFFERS = [

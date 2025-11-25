@@ -263,7 +263,6 @@ export default function Home() {
           onTouchEnd={handleTouchEnd}
           aria-roledescription="carousel"
         >
-          {/* TEXTBLOCK */}
           <div className="reviewInner">
             <p className="reviewText">“{REVIEWS[index].text}”</p>
             <p className="reviewAuthor">– {REVIEWS[index].author}</p>
@@ -274,7 +273,6 @@ export default function Home() {
             />
           </div>
 
-          {/* PFEILE – Desktop überlagern, Mobile darunter */}
           <div className="reviewNavRow">
             <button
               aria-label="Vorherige Bewertung"
@@ -306,6 +304,17 @@ export default function Home() {
               className={`dot ${i === index ? "active" : ""}`}
             />
           ))}
+        </div>
+
+        <div className="moreReviewsBtn">
+          <a
+            className="button"
+            href="https://www.google.com/search?sca_esv=852891e6be60f6b4&sxsrf=AE3TifP_X9zuHKSY4V1CMrb40AslfFO_tw:1764083185439&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E9e8TgkNNUIz3D3fFE_GabPIgkbY1VBEuQUsyey4WV6cyeduE0AX1SyOFnj165XuvNWRbDNpM-o819A9VvHbuEJPpOt2_E5ANPZq7ySlImSMuUniYg%3D%3D&q=Medusa+Beauty+Lounge+Rezensionen&sa=X&ved=2ahUKEwj18_z8yY2RAxXr1QIHHUxHOoAQ0bkNegQIKBAE&biw=562&bih=842&dpr=2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Weitere Bewertungen
+          </a>
         </div>
       </section>
 

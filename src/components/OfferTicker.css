@@ -9,9 +9,9 @@
 .offerTicker {
   background: var(--gold);
   color: var(--navy);
-  font-size: 12px;
-  line-height: 1;
-  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 11px 22px;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -24,7 +24,7 @@
 .offerTrack {
   display: inline-flex;
   gap: 32px;
-  animation: offer-ticker 20s linear infinite;
+  animation: offer-ticker 30s linear infinite;
 }
 
 .offerItem span {

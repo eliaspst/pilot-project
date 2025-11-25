@@ -122,12 +122,10 @@ export default function BottomBar() {
         </section>
       </div>
 
-      {/* UNTERE LEISTE */}
       <div className="bottombar__bottom">
         <span>© {new Date().getFullYear()} Medusa Beauty Lounge</span>
         <nav className="bottombar__nav" aria-label="Footer">
           <ul className="bottombar__menu">
-            {/* optional weitere Links */}
           </ul>
         </nav>
       </div>

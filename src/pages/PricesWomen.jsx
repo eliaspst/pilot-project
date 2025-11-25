@@ -5,56 +5,55 @@ import { pub } from "../pub";
 const HERO_IMAGE = pub("DamenPreise.jpeg"); // Bild im public-Ordner
 
 const rowsHead = [
-  { part: "Gesicht komplett", price: "70 €" },
-  { part: "Gesicht, Hals", price: "80 €" },
-  { part: "Oberlippe", price: "35 €" },
-  { part: "Koteletten", price: "40 €" },
-  { part: "Kinn", price: "35 €" },
-  { part: "Hals", price: "40 €" },
-  { part: "Nacken", price: "40 €" },
+  { part: "Gesicht komplett", price: "100 €" },
+  { part: "Oberlippe, Kinn", price: "80 €" },
+  { part: "Oberlippe", price: "40 €" },
+  { part: "Koteletten", price: "45 €" },
+  { part: "Kinn", price: "45 €" },
+  { part: "Hals", price: "45 €" },
+  { part: "Nacken", price: "45 €" },
 ];
 
 const rowsBody = [
-  { part: "Achseln", price: "45 €" },
-  { part: "Oberarme", price: "55 €" },
-  { part: "Unterarme", price: "55 €" },
-  { part: "Arme komplett, Hände", price: "100 €" },
+  { part: "Achseln", price: "55 €" },
+  { part: "Oberarme", price: "60 €" },
+  { part: "Unterarme", price: "60 €" },
+  { part: "Arme komplett, Hände", price: "105 €" },
   { part: "Hände", price: "35 €" },
-  { part: "Dekolleté", price: "40 €" },
-  { part: "Brust", price: "60 €" },
-  { part: "Brustwarzen", price: "40 €" },
-  { part: "Bauch", price: "60 €" },
-  { part: "Bauchlinie", price: "35 €" },
-  { part: "Rücken komplett", price: "70 €" },
-  { part: "Steiß", price: "50 €" },
+  { part: "Dekolleté", price: "60 €" },
+  { part: "Brust", price: "80 €" },
+  { part: "Brustwarzen", price: "45 €" },
+  { part: "Bauch", price: "70 €" },
+  { part: "Bauchlinie", price: "40 €" },
+  { part: "Rücken komplett", price: "80 €" },
+  { part: "Steiß", price: "45 €" },
 ];
 
 const rowsIntim = [
-  { part: "Intim, Bikini, Pofalte", price: "120 €" },
+  { part: "Intim, Bikini, Pofalte", price: "150 €" },
   { part: "Intim & Bikini", price: "85 €" },
-  { part: "Intim", price: "55 €" },
-  { part: "Bikini (Seiten)", price: "55 €" },
-  { part: "Pofalte", price: "45 €" },
-  { part: "Po", price: "55 €" },
+  { part: "Intim", price: "75 €" },
+  { part: "Bikini (Seiten)", price: "70 €" },
+  { part: "Pofalte", price: "50 €" },
+  { part: "Po komplett", price: "75 €" },
 ];
 
 const rowsLegs = [
-  { part: "Oberschenkel (mit Knie)", price: "90 €" },
-  { part: "Unterschenkel (mit Knie)", price: "85 €" },
-  { part: "Füße", price: "35 €" },
-  { part: "Beine komplett", price: "145 €" },
+  { part: "Oberschenkel (mit Knie)", price: "120 €" },
+  { part: "Unterschenkel (mit Knie)", price: "120 €" },
+  { part: "Füße", price: "45 €" },
+  { part: "Beine komplett", price: "210 €" },
 ];
 
 const rowsPackages = [
-  { part: "Intim, Bikini, Pofalte", price: "120 €" },
-  { part: "Intim, Bikini, Pofalte, Achsel", price: "140 €" },
-  { part: "Intim, Bikini, Pofalte, Unterschenkel", price: "175 €" },
+  { part: "Intim, Bikini, Pofalte", price: "150 €" },
+  { part: "Intim, Bikini, Pofalte, Achsel", price: "180 €" },
+  { part: "Intim, Bikini, Pofalte, Unterschenkel", price: "270 €" },
   { part: "Intim, Bikini, Pofalte, Achsel, Unterschenkel", price: "200 €" },
-  { part: "Beine komplett, Intim komplett", price: "285 €" },
-  { part: "Ganzkörper", price: "400 €" },
+  { part: "Beine komplett, Intim komplett", price: "320 €" },
+  { part: "Ganzkörper", price: "500 €" },
 ];
 
-/** Angebote für den Ticker – kannst du jederzeit anpassen */
 const OFFERS = [
   "✨ 10% Rabatt auf ausgewählte Damen-Pakete",
   "🎁 50€ Gutschein bei Weiterempfehlung einer Freundin",
