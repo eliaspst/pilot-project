@@ -130,7 +130,7 @@ export default function Home() {
         </div>
         <div className="heroContent">
           <h1 className="title">Medusa Beauty Lounge</h1>
-          <p className="subtitle">Dauerhafte Haarentfernung im Premium-Studio für Damen und Herren.</p>
+          <p className="subtitle">Dauerhafte Haarentfernung mit modernster Technologie – für Damen und Herren.</p>
         </div>
         <div className="heroFade" />
       </section>
@@ -200,11 +200,11 @@ export default function Home() {
       <section className="StudioSection">
         <div className="studioGrid">
           <div className="studioText">
-            <h3>Unsere Studios</h3>
+            <h3>Unsere Orte für Schönheit & Wohlbefinden</h3>
             <p className="studiosSection__intro">
-              Entscheiden sie sich für eins unserer tollen Studios.
-              Jedes Studio besticht durch sein einzigartiges Design und seine
-              hochwertige Ausstattung.
+              Wählen Sie eines unserer exklusiven Studios. 
+              Jedes überzeugt mit individuellem Design, 
+              modernster Technik und einer Ausstattung auf höchstem Niveau.
             </p>
           </div>
 

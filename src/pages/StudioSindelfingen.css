@@ -4,10 +4,9 @@
   color: var(--accent);
 }
 
-/* HERO – identisch zu Stuttgart (min-height: 450px) */
 .studio-sifi-hero {
   position: relative;
-  min-height: 450px; /* ← GENAU WIE STUTTGART */
+  min-height: 450px; 
   display: grid;
   place-items: center;
   padding: 48px 16px 64px;

@@ -71,7 +71,7 @@ export default function StudioStuttgart() {
 
       {/* Über unser Studio */}
       <section className="studio-stg-about">
-        <h2 className="studio-stg-about-title">Über unser Studio</h2>
+        <h2 className="studio-stg-about-title"></h2>
         <p className="studio-stg-about-text">
           Im Herzen Stuttgarts erwartet Sie ein modernes, stilvolles Ambiente,
           das Wohlbefinden und Professionalität vereint. Unser Studio ist mit

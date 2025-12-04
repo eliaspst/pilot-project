@@ -74,7 +74,7 @@ export default function StudioSindelfingen() {
 
       {/* ===== ÜBER UNSER STUDIO ===== */}
       <section className="studio-sifi-about">
-        <h2 className="studio-sifi-about-title">Über unser Studio</h2>
+        <h2 className="studio-sifi-about-title"></h2>
 
         <p className="studio-sifi-about-text">
           Im Herzen Sindelfingens erwartet Sie ein modernes, angenehmes Ambiente,

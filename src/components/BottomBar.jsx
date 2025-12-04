@@ -71,26 +71,6 @@ export default function BottomBar() {
               geschlossen
             </p>
           </div>
-
-          {/* Schnelllinks */}
-          <nav
-            className="bottombar__col--links"
-            aria-labelledby="quicklinks-title"
-          >
-            <h4 id="quicklinks-title">Schnelllinks</h4>
-            <ul className="bottombar__list">
-              <li>
-                <NavLink to="/impressum" className="bottombar__link">
-                  Impressum
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/datenschutz" className="bottombar__link">
-                  Datenschutzerklärung
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
         </section>
 
         {/* RECHTE SPALTE: Telefon / Mail / Instagram */}
@@ -124,8 +104,19 @@ export default function BottomBar() {
 
       <div className="bottombar__bottom">
         <span>© {new Date().getFullYear()} Medusa Beauty Lounge</span>
-        <nav className="bottombar__nav" aria-label="Footer">
+
+        <nav className="bottombar__nav" aria-label="Footer-Navigation">
           <ul className="bottombar__menu">
+            <li>
+              <NavLink to="/impressum" className="bottombar__link">
+                Impressum
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/datenschutz" className="bottombar__link">
+                Datenschutzerklärung
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>
