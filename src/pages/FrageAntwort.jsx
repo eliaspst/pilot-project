@@ -9,7 +9,7 @@ const ITEMS = [
   {
     title:
       "Wie funktioniert die dauerhafte Haarentfernung – und was unterscheidet uns von anderen Studios?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS1.jpeg",
     content: (
       <>
         <p>
@@ -73,7 +73,7 @@ const ITEMS = [
   },
   {
     title: "Ist die dauerhafte Haarentfernung schmerzhaft?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS2.jpeg",
     content: (
       <>
         <p>
@@ -95,7 +95,7 @@ const ITEMS = [
   {
     title:
       "Wie viele Sitzungen sind für die dauerhafte Haarentfernung erforderlich?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS3.jpeg",
     content: (
       <>
         <p>
@@ -111,7 +111,7 @@ const ITEMS = [
   {
     title:
       "Welche Körperbereiche können mit der dauerhaften Haarentfernung behandelt werden?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS4.jpeg",
     content: (
       <>
         <p>
@@ -136,7 +136,7 @@ const ITEMS = [
   {
     title:
       "Sind die Ergebnisse der dauerhaften Haarentfernung wirklich dauerhaft?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS5.jpeg",
     content: (
       <>
         <p>
@@ -153,7 +153,7 @@ const ITEMS = [
   {
     title:
       "Gibt es Einschränkungen oder Nachsorgemaßnahmen nach der Behandlung?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS6.jpeg",
     content: (
       <>
         <p>Nach der Behandlung können leichte Rötungen auftreten.</p>
@@ -168,7 +168,7 @@ const ITEMS = [
   },
   {
     title: "Was sollte vor der Laserbehandlung beachtet werden?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS7.jpeg",
     content: (
       <>
         <ul>
@@ -183,7 +183,7 @@ const ITEMS = [
   {
     title:
       "Deine Nachsorge – worauf solltest du nach der Behandlung achten?",
-    img: "/placeholder.png",
+    img: process.env.PUBLIC_URL + "/TIPPS8.jpeg",
     content: (
       <>
         <ul>

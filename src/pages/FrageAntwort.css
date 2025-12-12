@@ -98,11 +98,20 @@
   border: 4px solid var(--navy);
 }
 
+/* ===== FIX: Icon im Bild wirklich mittig ===== */
 .qa-avatar {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+
+  /* wichtig: die Icons sind im Originalbild unten -> hochziehen */
+  object-position: center 35%;
+
+  /* leicht zoomen, damit der leere Rand weg ist */
+  transform: scale(1.15);
+
+  display: block;
   background: #ececec;
 }
 
@@ -114,7 +123,7 @@
   color: var(--text);
   line-height: 1.4;
 
-  min-height: 96px;          
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +212,7 @@
 }
 
 .faq-page a {
-  color: var(--text);         
+  color: var(--text);
   font-weight: 700;
   text-decoration: none;
   border-bottom: 1px solid transparent;
