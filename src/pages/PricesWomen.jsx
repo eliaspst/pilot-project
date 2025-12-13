@@ -18,7 +18,7 @@ const rowsBody = [
   { part: "Achseln", price: "55 €" },
   { part: "Oberarme", price: "60 €" },
   { part: "Unterarme", price: "60 €" },
-  { part: "Arme komplett, Hände", price: "105 €" },
+  { part: "Arme komplett", price: "105 €" },
   { part: "Hände", price: "35 €" },
   { part: "Dekolleté", price: "60 €" },
   { part: "Brust", price: "80 €" },
@@ -31,11 +31,10 @@ const rowsBody = [
 
 const rowsIntim = [
   { part: "Intim, Bikini, Pofalte", price: "150 €" },
-  { part: "Intim & Bikini", price: "85 €" },
   { part: "Intim", price: "75 €" },
   { part: "Bikini (Seiten)", price: "70 €" },
   { part: "Pofalte", price: "50 €" },
-  { part: "Po komplett", price: "75 €" },
+  { part: "Po komplett, Pofalte", price: "75 €" },
 ];
 
 const rowsLegs = [
@@ -48,16 +47,11 @@ const rowsLegs = [
 const rowsPackages = [
   { part: "Intim, Bikini, Pofalte", price: "150 €" },
   { part: "Intim, Bikini, Pofalte, Achsel", price: "180 €" },
-  { part: "Intim, Bikini, Pofalte, Unterschenkel", price: "270 €" },
-  { part: "Intim, Bikini, Pofalte, Achsel, Unterschenkel", price: "200 €" },
+  { part: "Intim, Bikini, Pofalte, Achsel, Unterschenkel", price: "270 €" },
   { part: "Beine komplett, Intim komplett", price: "320 €" },
+  { part: "Gesicht komplett", price: "100 €" },
+  { part: "Arme komplett", price: "105 €" },
   { part: "Ganzkörper", price: "500 €" },
-];
-
-const OFFERS = [
-  "✨ 10% Rabatt auf ausgewählte Damen-Pakete",
-  "🎁 50€ Gutschein bei Weiterempfehlung einer Freundin",
-  "💎 Ganzkörper-Paket jetzt zum Vorteilspreis",
 ];
 
 function Hero() {
@@ -114,47 +108,13 @@ function PricingTable({ rows }) {
   );
 }
 
-function PricesWomenOfferTicker() {
-  return (
-    <div className="priceswomen-offerBlock">
-      <div className="priceswomen-offerLabel">Aktuelle Angebote</div>
-
-      <div className="priceswomen-offerTicker">
-        <div className="priceswomen-offerInner">
-          <div className="priceswomen-offerTrack">
-            {/* Track 1 */}
-            {OFFERS.map((text, idx) => (
-              <div className="priceswomen-offerItem" key={`a-${idx}`}>
-                <span>{text}</span>
-              </div>
-            ))}
-            {/* Track 2 – für smooth Loop */}
-            {OFFERS.map((text, idx) => (
-              <div className="priceswomen-offerItem" key={`b-${idx}`}>
-                <span>{text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function PricesWomen() {
   return (
     <main className="priceswomen-page">
       <Hero />
 
       <div className="priceswomen-container">
-        {/* 🎉 Angebots-Ticker über den Paketen */}
-        <PricesWomenOfferTicker />
 
-        {/* Pakete ganz nach oben */}
-        <SectionHeading title="Pakete" />
-        <PricingTable rows={rowsPackages} />
-
-        {/* Info-Box direkt unter den Paketen */}
         <div className="priceswomen-infoBox">
           <p className="priceswomen-infoP">
             Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.
@@ -172,6 +132,9 @@ export default function PricesWomen() {
             gibt es einen 50€ Gutschein als Dankeschön.
           </p>
         </div>
+        
+        <SectionHeading title="Pakete" />
+        <PricingTable rows={rowsPackages} />
 
         <SectionHeading title="Kopf" />
         <PricingTable rows={rowsHead} />

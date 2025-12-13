@@ -7,7 +7,6 @@ const HERO_IMAGE = pub("HerrenPreise.jpeg");
 const rowsHead = [
   { part: "Bart Korrektur (Wange)", price: "70 €" },
   { part: "Hals", price: "80 €" },
-  { part: "Ohren", price: "30 €" },
   { part: "Nacken", price: "80 €" },
   { part: "Bart Korrektur (Wange), Hals", price: "130 €" },
 ];
@@ -17,10 +16,11 @@ const rowsBody = [
   { part: "Oberarme", price: "90 €" },
   { part: "Unterarme", price: "90 €" },
   { part: "Hände", price: "40 €" },
+  { part: "Arme komplett", price: "165 €" },
   { part: "Schultern", price: "85 €" },
   { part: "Brust", price: "120 €" },
   { part: "Bauch", price: "130 €" },
-  { part: "Rücken", price: "170 €" },
+  { part: "Rücken komplett", price: "170 €" },
   { part: "Rücken Seiten", price: "100 €" },
   { part: "Steiß", price: "100 €" },
 ];
@@ -29,6 +29,8 @@ const rowsIntim = [
   { part: "Intimbereich", price: "100 €" },
   { part: "Pofalte", price: "70 €" },
   { part: "Gesäß (komplett)", price: "95 €" },
+  { part: "Intim, Pofalte ", price: "170 €" },
+
 ];
 
 const rowsLegs = [
@@ -47,13 +49,8 @@ const rowsPackages = [
   { part: "Bauch, Brust", price: "220 €" },
   { part: "Intim komplett, Pofalte", price: "170 €" },
   { part: "Bart, Hals", price: "130 €" },
+  { part: "Oberkörper komplett", price: "480 €" },
   { part: "Ganzkörper", price: "700 €" },
-];
-
-const OFFERS = [
-  "🔥 10% Rabatt auf alle Pakete im Februar",
-  "🎁 50€ Gutschein bei Weiterempfehlung eines Neukunden",
-  "💎 Ganzkörper-Paket jetzt zum Vorteilspreis",
 ];
 
 function Hero() {
@@ -108,30 +105,6 @@ function PricingTable({ rows }) {
   );
 }
 
-function PricesMenOfferTicker() {
-  return (
-    <div className="pricesmen-offerBlock">
-      <div className="pricesmen-offerLabel">Aktuelle Angebote</div>
-
-      <div className="pricesmen-offerTicker">
-        <div className="pricesmen-offerInner">
-          <div className="pricesmen-offerTrack">
-            {OFFERS.map((text, idx) => (
-              <div className="pricesmen-offerItem" key={`a-${idx}`}>
-                <span>{text}</span>
-              </div>
-            ))}
-            {OFFERS.map((text, idx) => (
-              <div className="pricesmen-offerItem" key={`b-${idx}`}>
-                <span>{text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function PricesMen() {
   return (
@@ -139,12 +112,8 @@ export default function PricesMen() {
       <Hero />
 
       <div className="pricesmen-container">
-        <PricesMenOfferTicker />
 
-        <SectionHeading title="Pakete" />
-        <PricingTable rows={rowsPackages} />
-
-        <div className="pricesmen-infoBox">
+         <div className="pricesmen-infoBox">
           <p className="pricesmen-infoP">
             Beim Kauf von 5 Behandlungen bekommen Sie 1 Behandlung kostenlos dazu.
           </p>
@@ -161,6 +130,9 @@ export default function PricesMen() {
             Dankeschön.
           </p>
         </div>
+        
+        <SectionHeading title="Pakete" />
+        <PricingTable rows={rowsPackages} />
 
         <SectionHeading title="Kopf" />
         <PricingTable rows={rowsHead} />

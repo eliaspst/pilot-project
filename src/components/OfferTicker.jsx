@@ -2,9 +2,10 @@ import React from "react";
 import "./OfferTicker.css";
 
 const OFFERS = [
-  "🔥 10% Rabatt auf alle Pakete im Februar",
+  "🔥 20% für Studenten und Schüler",
   "🎁 50€ Gutschein bei Weiterempfehlung eines Neukunden",
   "💎 Ganzkörper-Paket jetzt zum Vorteilspreis",
+  "🎅🏼 Auf der Suche nach einem Weinachtsgeschenk? ",
 ];
 
 export default function OfferTicker() {

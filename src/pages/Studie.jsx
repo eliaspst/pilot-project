@@ -38,10 +38,6 @@ export default function Studie() {
       >
         <div className="studie-hero-content">
           <h1 className="studie-title">Studien</h1>
-          <p className="studie-subtitle">
-            Medusa Beauty Lounge Stuttgart – Vergleichsstudie zu verschiedenen
-            Diodenlasern
-          </p>
         </div>
       </header>
 

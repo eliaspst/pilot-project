@@ -31,13 +31,6 @@
   color: var(--text);
 }
 
-.studie-subtitle{
-   margin: 0;
-  opacity: 0.95;
-  font-size: 20px;
-  color: var(--black);
-}
-
 /* Sections & text */
 .studie-section{
   max-width: 1000px;
