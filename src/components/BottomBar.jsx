@@ -30,7 +30,7 @@ export default function BottomBar() {
 
       {/* KONTAKT-BEREICH */}
       <div className="bottombar__contactRow" aria-label="Kontakt">
-        {/* LINKE SPALTE: Kontakt-Grid */}
+        {/* LINKE SPALTE */}
         <section className="bottombar__col" aria-labelledby="kontakt-title">
           <h4 id="kontakt-title">Kontakt</h4>
 
@@ -57,28 +57,37 @@ export default function BottomBar() {
           {/* Öffnungszeiten */}
           <div className="bottombar__col--hours">
             <h4>Öffnungszeiten</h4>
-            <p>
-              Mo–Fr
-              <br />
-              10:00–18:00
-              <br />
-              Sa
-              <br />
-              geschlossen
-              <br />
-              So/Feiertage
-              <br />
-              geschlossen
-            </p>
+
+            <table className="bottombar__hoursTable" aria-label="Öffnungszeiten">
+              <tbody>
+                <tr>
+                  <td>Montag – Freitag</td>
+                  <td>10:00 – 18:00 Uhr</td>
+                </tr>
+                <tr>
+                  <td>Samstag</td>
+                  <td>geschlossen</td>
+                </tr>
+                <tr>
+                  <td>Sonntag &amp; Feiertage</td>
+                  <td>geschlossen</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
-        {/* RECHTE SPALTE: Telefon / Mail / Instagram */}
+        {/* RECHTE SPALTE: Termine + Telefon / Mail / Instagram */}
         <section className="bottombar__col" aria-labelledby="kontakt-wege">
           <h4 id="kontakt-wege" className="sr-only">
             Kontaktwege
           </h4>
-          <p>
+
+          <div className="bottombar__appointmentNote" aria-label="Hinweis Termine">
+            Termine nur nach Vereinbarung.
+          </div>
+
+          <p className="bottombar__contactWays">
             Tel.:{" "}
             <a href="tel:+4915773756720">
               +49&nbsp;1577&nbsp;37&nbsp;56&nbsp;720

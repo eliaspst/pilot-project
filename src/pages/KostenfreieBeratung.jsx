@@ -39,10 +39,6 @@ const KostenfreieBeratung = () => {
         />
         <div className="hero-content">
           <h1>Kostenfreie Beratung</h1>
-          <p className = "herosubtext">
-            Wir prüfen Ihr Anliegen, erklären den Ablauf
-            und beantworten alle Fragen.
-            </p>
         </div>
       </header>
 

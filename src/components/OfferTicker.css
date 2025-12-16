@@ -39,3 +39,176 @@
     transform: translateX(-50%);
   }
 }
+
+.offerItem--clickable {
+  cursor: pointer;
+}
+
+.offerModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.offerModal {
+  position: relative;
+  width: min(980px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.25);
+  max-height: calc(100vh - 36px);
+  overflow: hidden;
+}
+
+.offerModal__content {
+  padding: 44px 56px;
+  overflow: auto;
+  max-height: calc(100vh - 36px);
+}
+
+.offerModal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.75);
+  background: #fff;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.offerModal__title {
+  margin: 0 0 18px;
+  font-size: 34px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.offerModal__text {
+  margin: 0 0 28px;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.offerModal__link {
+  display: inline-block;
+  font-size: 22px;
+  text-decoration: underline;
+  color: #111;
+}
+
+@media (max-width: 700px) {
+  .offerModal__content {
+    padding: 28px 20px;
+  }
+  .offerModal__close {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    font-size: 30px;
+  }
+  .offerModal__title {
+    font-size: 26px;
+  }
+  .offerModal__text {
+    font-size: 18px;
+  }
+}
+
+.offerItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  flex: 0 0 auto;     
+  width: fit-content;   
+}
+
+.offerItem__text {
+  display: inline-block;
+  flex: 0 1 auto;       /* darf schrumpfen */
+  min-width: 0;         /* WICHTIG bei Flex, sonst schrumpft es nicht sauber */
+}
+
+
+.offerItem__details {
+  border: 1px solid rgba(255,255,255,0.8);
+  background: transparent;
+  color: inherit;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+
+.offerItem__details:hover {
+  opacity: 0.9;
+}
+
+.offerItem__details:focus {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .offerBlock { padding: 0; } /* keine weißen Ränder mehr */
+
+  .offerTicker {
+    position: relative;
+    padding: 11px 14px; /* statt offerBlock padding */
+  }
+
+  /* Kanten “übermalen”, damit keine halben Buttons/Wörter sichtbar sind */
+  .offerTicker::before,
+  .offerTicker::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 18px;                 /* ggf. 22px wenn du’s stärker willst */
+    background: var(--gold);     /* gleiche Farbe wie der Ticker */
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .offerTicker::before { left: 0; }
+  .offerTicker::after  { right: 0; }
+
+  /* damit der Track nicht über den Abdeck-Leisten liegt */
+  .offerInner { position: relative; z-index: 1; }
+}
+
+
+@media (max-width: 520px) {
+  .offerModal__title {
+    letter-spacing: 0;            
+    font-size: clamp(18px, 5vw, 24px);
+    line-height: 1.05;
+  }
+
+  .offerModal__text {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 380px) {
+  .offerItem__text {
+    max-width: 62vw;
+  }
+  .offerItem__details {
+    padding: 4px 7px;
+    font-size: 12px;
+  }
+}
